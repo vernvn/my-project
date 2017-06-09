@@ -1,8 +1,0 @@
-<div class="itemize-body">
-    <h1>{{pageData.title}}</h1>
-    <p>{{pageData.text}}</p>
-    <ul class="itemize-list">
-        <li *ngFor='let item of pageData.itemizeList' [@flyIn]="animation">{{item}}</li>
-    </ul>
-    <point-dialog [data]="pageData.point[0]" (click)="clickModal(pageData.point[0])"></point-dialog>
-</div>
