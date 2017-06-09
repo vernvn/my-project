@@ -1,0 +1,22 @@
+<gy-beacon></gy-beacon>
+<div class="gy-body">
+      <div class="right">
+        <div class='gy-content'>
+            <!--<span [ngStyle]="pageData.content.imgs?.top?.style">{{pageData.content.imgs?.top?.content}}</span>-->
+            <div class="imgContent">
+                <img class="max" src="{{pageData.content.imgs?.img}}">
+            </div>
+            <!--<span [ngStyle]="pageData.content.imgs?.bottom?.style">{{pageData.content.imgs?.bottom?.content}}</span>-->
+        </div>
+    </div>
+
+    <div class="left">
+             <ul >
+            <li *ngFor="let item of pageData.content.targetList; let i = index; trackBy: trackByFn" [@flyIn]="pageData?.animations"  [ngStyle]="pageData?.listyle" >
+                <span class="bk_box"></span>
+                {{item}}
+            </li>
+        </ul>
+    </div>
+
+</div>

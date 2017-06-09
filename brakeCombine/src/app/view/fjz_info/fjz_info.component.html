@@ -1,0 +1,20 @@
+<div class="fjz-info-body" >
+    <div class="info">
+        
+        <h1 class="color_b margin_b_8">目标</h1>
+        <p class="f_size_16 color_g">{{pageData.targetText}}</p>
+        <h2 class="margin_t_20 color_b">课程结束后，您将能够：</h2>
+         <ul >
+            <li *ngFor="let item of pageData.targetList; let i = index; trackBy: trackByFn" >
+                <span class="bk_box"></span> <span class="box_content color_g">{{item}}</span>
+            </li>
+        </ul>
+      
+        <h2 class="margin_t_20 color_b">注意事项</h2>
+        <p class="f_size_16 color_g">
+            也许您需要在课程中场进行休息，当您点击左下角退出按钮时，它会记住您的学习进度，并在您下次开启课程时继续当前进度
+        </p>
+        <p class="f_size_16 color_g">当您完成课程后，会有一个包含多种题型的课后测试</p>
+         
+    </div>
+</div>

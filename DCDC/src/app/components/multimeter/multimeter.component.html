@@ -1,0 +1,56 @@
+<!--/**
+* @createDate   2015-08-4 下午05:28:38
+* @author       hao liqiang
+* @email        lq.hao@xiaochejiang.com
+* @version      1.0
+*万用表表身
+*/-->
+<div class="multimeter-contain"  *ngIf="!! multimeterServiceMdata.multimeterStatus">
+    <div id="mask-multimeter">
+        <div class="multimeter" id="hehhe">
+            <div class="multimeter-topUnit"  >{{multimeterServiceMdata.multimeterScreenUnit}}</div>
+            <div class="multimeter-rightUnit">{{multimeterServiceMdata.multimeterScreenrightUnit}}</div>
+            <div class="multimeter-top"  id="multimeterShowData" align="left"
+                  [ngSwitch]='modelOrself' *ngIf="multimeterServiceMdata.multimeterScreenStatus">
+                  <span *ngSwitchCase="'model'">{{multimeterServiceMout.Out1NER_Multi_ToScreen_x_x}}</span>
+                  <span *ngSwitchCase="'self'">{{multimeterServiceMdata.multimeterScreenNum}}</span>
+                  <span *ngSwitchDefault>{{multimeterServiceMout.Out1NER_Multi_ToScreen_x_x}}</span>
+                  <!--"!!multimeterServiceMdata.multimeterScreenStatus">{{multimeterServiceMout.Out1NER_Multi_ToScreen_x_x}}-->
+            </div>
+            <div class="showDateUnit" *ngIf="!!multimeterServiceMdata.multimeterScreenStatus">{{multimeterServiceMdata.multimetershowDateUnit}}</div>
+            <div class="multimeter-topHot" id="multimeter-topHot" ></div>
+
+            <div class="clickcircle cursor-pointer" ></div>
+            <div class="circleinfobox" (mouseover)="onMouseover()" (mouseout)="onMouseout()"></div>
+            <div class="multimeter-hotarea" (click)="multimeterCircle()" (mouseover)="change2pointer()" (mouseout)="change2default()"></div>
+            <div id="multimeter-bottom"   class="multimeter-bottom"></div>
+            <div class="opacitybox"></div>
+            <div class="opacitybox2"></div>
+            <div class="multimeter-off cursor-pointer"  (click)="multimeteroff();"></div>
+            <!--<div class="multimeter-vv cursor-pointer"  (click)="multimetervv();"></div>-->
+            <div class="multimeter-v cursor-pointer"  (click)="multimeterv();"></div>
+            <!--<div class="multimeter-mv cursor-pointer"  (click)="multimetermv();"></div>-->
+            <!--<div class="multimeter-k cursor-pointer"  (click)="multimeterk();"></div>-->
+            <!--<div class="multimeter-nofine cursor-pointer" (click)="multimeternofine();"></div>-->
+            <!--<div class="multimeter-AA cursor-pointer"  (click)="multimeterAA();"></div>-->
+            <!--<div class="multimeter-A cursor-pointer"  (click)="multimeterA();"></div>-->
+            <!--<div class="multimeter-mA cursor-pointer"  (click)="multimetermA();"></div>-->
+            <div class="multimeter-res cursor-pointer"  (click)="multimeterres();"></div>
+            <div class="multimeter-Red"></div>
+            <div class="multimeter-black"></div>
+            <div class="multimeter-coe close cursor-pointer"  (click)="closemultimeter();"></div>
+        </div>
+    </div>
+    <div id="hhjmultimeterRed-hotspot" class="hhjmultimeterRed-hotspot ui-draggable" *ngIf="!!multimeterServiceMdata.SvgRedStatus"></div>
+    <div id="hhjmultimeterRed" class="multimeterRed" *ngIf="!!multimeterServiceMdata.SvgRedStatus"></div>
+    <div id="hhjmultimeterBlack-hotspot" class="hhjmultimeterBlack-hotspot ui-draggable" *ngIf="!!multimeterServiceMdata.SvgBlackStatus"></div>
+    <div id="hhjmultimeterBlack" class="multimeterBlack" *ngIf="!!multimeterServiceMdata.SvgBlackStatus"></div>
+
+</div>
+
+<div id="mask-svg"  style="overflow:hidden"   ng-controller="multimeterCtrl" *ngIf="!!multimeterServiceMdata.SvgStatus">
+    <svg width='896' height='450' version='1.1' xmlns='http://www.w3.org/2000/svg' id='svg'>
+        <path d='M440 100 C440 100 420 37 403 375' style='fill:none;stroke:#d83747;stroke-width:5' id='path_Red' *ngIf="!!multimeterServiceMdata.SvgRedStatus" />
+        <path d='M282 100 C282 100 302 37 376 375 ' style='fill:none;stroke:#656261;stroke-width:5' id='path_black' *ngIf="!!multimeterServiceMdata.SvgBlackStatus" />
+    </svg>
+</div>

@@ -1,0 +1,161 @@
+
+.menu {
+    position: relative;
+
+    // height: 100%;
+    .tip {
+        display: none;
+
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+
+        -moz-box-sizing: border-box;
+             box-sizing: border-box;
+        border-radius: 2px;
+        // width: 390px;
+        padding: 0 25px;
+        height: 50px;
+
+        font-size: 16px;
+        line-height: 50px;
+        text-align: center;
+        white-space: nowrap;
+
+        color: #000;
+        background-color: #fff;
+
+        box-shadow: 0 0 2px 0;
+    }
+}
+.menu-btn {
+    position: absolute;
+    top: 120px;
+
+    width: 26px;
+    height: 70px;
+
+    cursor: pointer;
+    &.menu-left-btn {
+        left: 0;
+
+        // background-image: url("./images/左1.png");
+        &:hover {
+            // background-image: url("./images/左2.png");
+            .tip {
+                display: block;
+            }
+        }
+        .tip {
+            // display: block;
+            bottom: 10px;
+            left: 32px;
+        }
+    }
+    &.menu-right-btn {
+        right: 0;
+
+        // background-image: url("./images/右1.png");
+        &:hover {
+            // background-image: url("./images/右2.png");
+            .tip {
+                display: block;
+            }
+        }
+        .tip {
+            // display: block;
+            bottom: 10px;
+            left: -430px;
+        }
+    }
+}
+.menu-content-wapper {
+    height: 560px;
+
+    background: #fff;
+    h2 {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+
+        font-size: 20px;
+
+        color: #003c65;
+    }
+    .menu-content-foot {
+        position: absolute;
+        right: 0;
+        bottom: -50px;
+
+        width: 100%;
+        height: 50px;
+
+        // background-color: #666;
+    }
+
+    .menu-content {
+        // float: left;
+        position: relative;
+        top: 70px;
+
+        width: 100%;
+        height: 466px;
+        // background: #555;
+
+        box-shadow: 0 0 4px 0;
+
+
+        &.menu-content-left {
+            ul {
+                display: block;
+                // position: absolute;
+
+                top: 0;
+                left: 0;
+
+                margin: 0 auto;
+                padding-top: 120px;
+                width: 800px;
+                li {
+                    float: left;
+
+                    width: 160px;
+                    height: 134px;
+
+                    font-size: 16px;
+                    line-height: 300px;
+                    text-align: center;
+
+                    color: #000;
+                    // background-image: url("./images/按1.png");
+                    // background-color: #ccc;
+                    background-repeat: no-repeat;
+                    background-position: center;
+
+                    &:hover {
+                        // background-image: url("./images/01.png");
+                        .tip {
+                            display: block;
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        background-image: url("./images/V.A.S6160.png");
+                    }
+                    &:nth-child(2) {
+                        background-image: url("./images/02.png");
+                    }
+                    &:nth-child(3) {
+                        background-image: url("./images/01.png");
+                    }
+                    &:nth-child(4) {
+                        background-image: url("./images/03.png");
+                    }
+                    &:nth-child(5) {
+                        background-image: url("./images/04.png");
+                    }
+                }
+            }
+        }
+    }
+}

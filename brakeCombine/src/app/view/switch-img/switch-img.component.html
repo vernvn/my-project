@@ -1,0 +1,11 @@
+<div class="switch-img-body">
+    <div class="header-content" [ngStyle]="pageData.content.head?.style">
+        <h1> {{pageData.content.title}} </h1>
+    </div>
+    <div class="foot-img">
+        <div>
+            <img class="first" src="{{itemSrc}}">
+        </div>
+    </div>
+    <point-dialog [data]="pageData.content.buttonStyle" (click)="switchImg($event)"></point-dialog>
+</div>

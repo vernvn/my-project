@@ -1,0 +1,17 @@
+<div class="body-8">
+    <div class="header-content" [ngStyle]="pageData.content.head?.style">
+        <h1> {{pageData.content.head.title}} </h1>
+        <p>  {{pageData.content.head.p_contents.p_content.content}}</p>
+        <div *ngFor="let item of pageData.content.head.Text">
+            <p>{{item.pText}}</p>
+            <ul class="header-content-explain">
+                <li *ngFor="let li of item.liText"><span class="bk_box"></span><span class="box_content color_g">{{li}}</span></li>
+            </ul>
+        </div>
+    </div>
+    <img *ngIf="pageData.content.imgs.img"  src="{{pageData.content.imgs.img}}" alt="" [ngStyle]='pageData.content.imgs.bottom.style'>
+    <point-dialog [data]="pageData.point[0]" (click)="clickModal(pageData.point[0])"*ngIf="pageData.point[0]"></point-dialog>
+    <point-dialog [data]="pageData.point[1]" (click)="clickModal(pageData.point[1])"*ngIf="pageData.point[1]"></point-dialog>
+    <point-dialog [data]="pageData.point[2]" (click)="clickModal(pageData.point[2])"*ngIf="pageData.point[2]"></point-dialog>
+
+</div>

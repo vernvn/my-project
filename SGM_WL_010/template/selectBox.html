@@ -1,0 +1,51 @@
+<audio src="audio/error.mp3"  id="error"></audio>
+<audio src="audio/correct.mp3"  id="correct"></audio>
+<div ng-app="modelChoice" ng-controller="modelWorkOrder">
+    <div class="selection_box" id="topic" ng-show="data.choosBox">
+        <p class="selection_box_description">
+            <span>{{data.description}}</span>
+        </p>
+        <div class="selection_box_con">
+            <p class="selection_box_title">
+                {{data.title}}
+            </p>
+            <p class="selection_box_answer"    ng-click="selectID='a';selected($event.target)">
+                <span>A.</span> {{data.chooses[0]}}
+            </p>
+            <p class="selection_box_answer"   ng-click="selectID='b';selected($event.target)">
+                <span>B.</span> {{data.chooses[1]}}
+            </p>
+            <p class="selection_box_answer"    ng-click="selectID='c';selected($event.target)" ng-show="data.chooses[2]">
+                <span>C.</span> {{data.chooses[2]}}
+            </p>
+            <p class="selection_box_answer"     ng-click="selectID='d';selected($event.target)" ng-show="data.chooses[3]">
+                <span>D.</span> {{data.chooses[3]}}
+            </p>
+            <button   class="btn005 selection_box_submit"  id="btnSubmit"   ng-click="submit(selectID);"> 提&nbsp;&nbsp;交</button>
+        </div>
+    </div>
+    <div id="myModal" class="reveal-modal" ng-show="data.answerTrue&&answerTrue">
+        <h2 class="reveal_modal_c">
+            正确
+        </h2>
+        <p>
+            <span>正确，</span>{{data.answerTrue}}
+        </p>
+        <button  class="btn_goNext"  ng-click="goOn()" >继&nbsp;&nbsp;续</button>
+
+        <a class="close-reveal-modal">×</a>
+    </div>
+    <div class="clear"></div>
+
+    <div id="myModal_1" class="reveal-modal_1" ng-show="data.answerFalse&&answerFalse">
+        <h2 class="reveal_modal_c">
+            错误
+        </h2>
+        <p>
+            <span>不正确，</span>{{data.answerFalse}}
+        </p>
+        <button class="btn_goNext" id="rtn-005">返&nbsp;&nbsp;回</button>
+        <a class="close-reveal-modal">×</a>
+    </div>
+    <div class="clear"></div>
+</div>

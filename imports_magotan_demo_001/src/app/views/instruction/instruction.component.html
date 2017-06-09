@@ -1,0 +1,70 @@
+<div class="instruction-body">
+  <h2>匹配指导</h2>
+  <div class="menu" *ngIf="!isDetail">
+    <ul>
+      <li (click)="showDetail(1)">J393</li>
+      <li (click)="showDetail(2)">J623</li>
+      <li (click)="showDetail(3)">J764</li>
+      <li (click)="showDetail(4)">点火钥匙</li>
+      <li (click)="showDetail(5)">车辆ID</li>
+      <li (click)="showDetail(6)">锁止组件</li>
+    </ul>
+
+    <div class="com-button warning" style="left: 40px; top: 236px; width: 30px; height: 30px; z-index: 100; ">
+      <div halo [halo]="'halo'" style="left: 40px; top: 236px; width: 30px; height: 30px; z-index: 100; background-image: url(&quot;./assets/images/instruction/9.png&quot;);">
+
+      </div>
+      <div class="tip">
+        不同的部件组合关系会有不同的说明，请仔细阅读
+      </div>
+
+    </div>
+    <div class="com-txt" style="left: 80px; top: 438px; width: 790px; z-index: 2;">
+      <span style="color: rgb(22, 79, 117); font-size: 14px; line-height: 22px;">
+      辉腾/途锐的防盗锁止系统适用于“2/4”规则。 也就是说，除非可以读出 2 个不同的防盗锁止系统零部件，否则需要继续按照程序“新车辆 ID”操作。 对于防盗装置来说，所有车辆的规则均为：如果两把钥匙都“没有被读出”，则须安装新的锁止组件并继续按照相应测试仪的功能操作。
+      </span>
+
+
+    </div>
+    <div class="bg-img-10"> </div>
+
+  </div>
+  <sk-instruction-detail *ngIf="isDetail" [data]="currentData"></sk-instruction-detail>
+</div>
+
+
+
+<!--页码-->
+<div class="pagination-wapper">
+  <div class="button prev"></div>
+  <div class="pagination">--/--</div>
+  <div class="button next"></div>
+</div>
+
+<!--返回按钮-->
+<div class="menu-wapper">
+  <div class="button prev" (click)="showDetail(0)">
+    <div class="tip">
+      【重新选择】按钮，点击将返回【匹配指导】部件首页
+    </div>
+  </div>
+  <div class="button next" (click)="showModal(0)">
+    <div class="tip">
+      【案例测试】按钮，点击将进入测评界面
+    </div>
+  </div>
+</div>
+
+
+<!--弹窗-->
+<div class="modal" *ngIf="modal">
+  <div class="modal-dialog">
+    <p>
+      您是否已经对部件更换列表的内容掌握的非常娴熟了呢？<br>您可以验证一下学习成果，但切记您的成绩将被存档跟踪，敬请谅解！
+    </p>
+    <hr>
+    <button (click)="go2router('/question')">试一试</button>
+    <button (click)="reStudy()">下次吧</button>
+  </div>
+
+</div>

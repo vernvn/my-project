@@ -1,0 +1,148 @@
+@import "bourbon";
+
+
+.boxStyle1{
+          border: 2px solid #f4b183;
+          width:  208px !important;
+          
+}
+.boxStyle2{
+        border: 2px solid red;
+        width:  208px !important;
+         
+        
+}
+
+.tip-btn {
+    @include size(40px 40px);
+    position: absolute;
+    z-index:10;
+    top: 50px;
+    left: 50px;
+    margin-top: -18px;
+    margin-left: -18px;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    // background-image: url("./images/1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1);
+    cursor: pointer;
+    &.blue-point {
+        // background-image: url("./images/point_bt.png");
+    }
+    &.mail {
+        width: 34px;
+        height: 46px;
+        //background-color:rgba(0,0,0,0);
+        span {
+            background-image: url("./images/mail-btn.png");
+        }
+    }
+  
+    &.box {
+        //background-color:rgba(0,0,0,0);
+        span {
+            background: transparent;
+        }
+    }
+    
+
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-image: url("./images/point_halo.png");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.tip-btn1 {
+    @include size(40px 40px);
+
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 7;
+    margin-top: -18px;
+    margin-left: -18px;
+
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+
+    color: #fff;
+    background-image: url("./images/point_bt.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transform: scale(1);
+
+    cursor: pointer;
+    
+    &.blue-point {
+        background-image: url("./images/point_bt.png");
+        z-index: 7;
+    }
+    &.mail {
+         width: 56px;
+            height: 56px;
+            border: 2px solid #457dc9;
+            border-radius: 28px;
+            background: white;
+            z-index: 6;
+            span {
+                background-image: url("./images/mail-btn.png");
+                color: white;
+                font-size: 28px;
+                line-height: 59px;
+                font-weight: bold;
+            }
+    }
+  
+    &.box {
+        background: transparent;
+        span {
+            background: transparent;
+        }
+    }
+    
+
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-image: url("./images/point_halo.png");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.tip-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    max-width: 380px;
+
+}
+
+#tip-canvas {
+    width: 1024px;
+    height: 580px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+

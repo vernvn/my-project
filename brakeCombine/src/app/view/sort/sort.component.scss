@@ -1,0 +1,67 @@
+.sort-body{
+    box-sizing: border-box;
+    padding: 50px 100px;
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        font-size: 20px;
+        text-align: left;
+    }
+    p {
+        font-size: 16px;
+    }
+    .problem {
+        font-size: 14px;
+        // color: black;
+    }
+    .answer-area{
+        margin-top: 50px;
+        dl{
+            overflow: hidden;
+        }
+        dt{
+            float: left;
+            width: 16px;
+            text-align: center;
+            vertical-align: middle;
+            background: #486AAD;
+            color: #fff;
+            padding: 10px 5px;
+            margin-right: 20px;
+            border: 1px solid #BDC9E1;
+        }
+        dd{
+            float: left;
+            text-align: left;
+            max-width: 720px;
+
+            .itemize-list {
+                width: 645px;
+                height: 211px;
+                background-image: url("./images/li_bg_9.png");
+                background-position: 0 0;
+                background-repeat: no-repeat;
+            }
+
+            li{
+                padding: 5px 20px;
+                color: #333;
+                margin-bottom: 20px;
+                cursor: pointer;
+                width: 605px;
+                height: 48px;
+            }
+
+            span{
+                display: block;
+            }
+        }
+    }
+}

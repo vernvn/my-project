@@ -1,0 +1,37 @@
+<!--结构 页面-->
+<div class="structure-body">
+    <div class="waterflowbox">
+        <div class="waterflow waterflow1"></div>
+        <div class="waterflow waterflow2"></div>
+        <div class="waterflow waterflow3"></div>
+        <div class="waterflow waterflow4"></div>
+    </div>
+    <div class="emptyflowbox">
+        <div class="emptyflow emptyflow1"></div>
+        <div class="emptyflow emptyflow2"></div>
+        <div class="emptyflow emptyflow3"></div>
+        <div class="emptyflow emptyflow4"></div>
+    </div>
+    <div class="waterpumpAsix"></div>
+    <div class="waterpump"  *ngIf="(dashboardService.stalls == 1)"></div>
+    <div class="press2vcu" *ngIf="(dashboardService.stalls == 1)"></div>
+    <div class="liquid2vcu" *ngIf="(dashboardService.stalls == 1)"></div>
+    <div class="brake2vcu" *ngIf="(gearPanelService.isBrake == 1)"></div>
+    <div class="arrowstructure1 arrowpurple"></div>
+    <div class="arrowstructure2 arrowblue"></div>
+    <div class="arrowstructure3 arrowblue"></div>
+    <div class="arrowstructure4 arrowpurple"></div>
+    <div class="arrowstructure5 arrowpurple"></div>
+    <div class="arrowstructure6 arrowblue"></div>
+    <div class="thermometerbox">
+        <div class="thermometer"></div>
+    </div>
+    <div class="fan2vcu" *ngIf="(dashboardService.fanisOK && dashboardService.stalls == 1)"></div>
+    <div class="down fix-down"  [ngClass]="{'down-active':downStatus}" (mousedown)="downmousedown()" (mouseout)="cleartimeoutdown()" (mouseup)="downmouseup()"></div>
+    <div class="up fix-up"  [ngClass]="{'up-active': upStatus}" (mousedown)="upmousedown()" (mouseout)="cleartimeoutup()" (mouseup)="upmouseup()"></div>
+    <div class="fan"></div>
+    <div class="watchhand"></div>
+    <div class="brakepedal"></div>
+    <div class="vcu2beng" *ngIf="(pressureStatus && dashboardService.stalls == 1)"></div>
+    <div class="pressurefan"></div>
+</div>

@@ -1,0 +1,24 @@
+<div class="info-body" [style.background]="1 ? 'url('+ appService.state.current.img+')': 'grey'">
+    <div class="info">
+        <h1>课程简介</h1>
+        <h2>目标</h2>
+
+
+        <ul>
+            <li>
+                本课程将向大家介绍SGMW新车型知识
+            </li>
+            <li>
+                <p>课程结束后，您将能够：</p>
+                {{appService.state.current.text}}
+            </li>
+            <li>
+                <p>注意事项</p>
+                <p>
+                    也许您需要在课程中场进行休息，当您点击左下角退出按钮时，它会记住您的学习进度，并在您下次开启课程时继续当前进度
+                </p>
+                <p>当您完成课程后，会有一个包含多种题型的课后测试</p>
+            </li>
+        </ul>
+    </div>
+</div>

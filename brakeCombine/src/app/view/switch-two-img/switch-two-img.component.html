@@ -1,0 +1,19 @@
+<div class="switch-two-img-body">
+    <div class="header-content" [ngStyle]="pageData.head?.style">
+        <h1> {{pageData.title}} </h1>
+        <p *ngFor="let item of pageData.content">{{item}}</p>
+    </div>
+    
+    <div class="foot-img">
+        <div>
+            <span [ngStyle]="pageData.spanStyle">{{spanText}}</span>
+            <span *ngIf="spanText2" [ngStyle]="pageData.spanStyle2">{{spanText2}}</span>
+            <img src="" alt="" src="{{pageData.fixedImg}}" *ngIf="pageData.fixedImg" id="fixedImg">
+            <img class="first" src="{{itemSrc}}" [ngStyle]="pageData.imgstyle" [ngClass]="{'hide':!itemSrc}">
+        </div>
+    </div>
+    <point-dialog [data]="pageData.pointStyleArr[0]" (click)="switchImg1_2(pageData.pointStyleArr[0]);"></point-dialog>
+    <point-dialog [data]="pageData.pointStyleArr[1]" (click)="switchImg2_1(pageData.pointStyleArr[1]);"></point-dialog>
+    <point-dialog *ngIf = "pageData.pointStyleArr[2]"  [data]="pageData.pointStyleArr[2]" (click)="switchImg3_1(pageData.pointStyleArr[2]);"></point-dialog>
+    <button-click *ngFor="let item of pageData.textArr" [data]="item"></button-click>
+</div>

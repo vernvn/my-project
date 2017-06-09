@@ -1,0 +1,214 @@
+/*结构页面 S===================================================================================================*/
+.structure-body{
+    width: 900px;
+    height: 450px;
+    background: url(./images/structure_bg.png) no-repeat;
+    position: relative;left:-2px;top:0;
+    .liquid2vcu{
+        width: 113px;
+        height: 105px;
+        background: url(./images/liquid2vcu.png) no-repeat;
+        position: absolute;left:252px;top:84px;
+    }
+    .press2vcu{
+        width: 83px;
+        height: 2px;
+        background: url(./images/press2vcu.png) no-repeat;
+        position: absolute;left:260px;top:223px;
+    }
+    .waterpump{
+        width: 96px;
+        height: 98px;
+        background: url(./images/waterpump.png) no-repeat;
+        position: absolute;left:428px;top:84px;
+    }
+    .arrowpurple{
+        width:13px;
+        height:13px;
+        background: url(./images/purple-arrow.png) no-repeat;
+        position: absolute;
+        display: none;
+    }
+    .arrowblue{
+        width:13px;
+        height:13px;
+        background: url(./images/blue-arrow.png) no-repeat;
+        position: absolute;
+        display: none;
+    }
+    .arrowstructure1{
+        left: 423px;top: 167px;transform: rotate(0deg);
+    }
+    .arrowstructure2{
+        left: 278px;top: 79px;transform: rotate(90deg);
+    }
+    .arrowstructure3{
+        left: 264px;top: 217px;transform: rotate(90deg);
+    }
+    .arrowstructure4{
+        left: 438px;top: 235px;transform: rotate(180deg);
+    }
+    .arrowstructure5{
+        left: 458px;top: 216px;transform: rotate(90deg);
+    }
+    .arrowstructure6{
+        left: 250px;top: 363px;transform: rotate(90deg);
+    }
+    .waterpumpAsix{
+        width:45px;
+        height:45px;
+        background: url(./images/waterpumpAsix.png) no-repeat;
+        position: absolute;left: 733px;top: 67px;
+        transform: rotate(0deg);
+    }
+    .thermometerbox{
+        width:11px;
+        height:115px;
+        position: absolute;left: 74px;top: 27px; 
+        overflow: hidden;
+        .thermometer{
+            width:11px;
+            height:115px;
+            background: url(./images/thermometer.png) no-repeat;
+            position: relative;left: 0;top: 87px;
+        }
+    }
+    .fan2vcu{
+        width:97px;
+        height:136px;
+        background: url(./images/fan2vcu.png) no-repeat;
+        position: absolute;left: 443px;top: 234px;
+    }
+    .down{
+        width:47px;
+        height:21px;
+        background: url(./images/down.png) no-repeat;
+        position: absolute;left: 112px;top: 128px;
+        cursor: pointer;
+    }
+    .down-active{
+        width:47px;
+        height:21px;
+        background: url(./images/down_deep.png) no-repeat;
+        position: absolute;left: 112px;top: 128px;
+        cursor: pointer;
+    }
+    .up{
+        width:47px;
+        height:21px;
+        background: url(./images/up.png) no-repeat;
+        position: absolute;left: 112px;top: 102px;
+        cursor: pointer;
+    }
+    .up-active{
+        width:47px;
+        height:21px;
+        background: url(./images/up_deep.png) no-repeat;
+        position: absolute;left: 112px;top: 102px;
+        cursor: pointer;
+    }
+    .fan{
+        width:80px;
+        height:80px;
+        background: url(./images/fan.png) no-repeat;
+        position: absolute;left: 681px;top: 340px;
+        transform: rotate(0deg);
+    }
+    .watchhand{
+        width:65px;
+        height:65px;
+        background: url(./images/watchhand.png) no-repeat;
+        position: absolute;left: 70px;top: 197px;
+        transform: rotate(0deg);
+    }
+    .brakepedal{
+        width:169px;
+        height:170px;
+        background: url(./images/brakepedal.png) no-repeat;
+        position: absolute;left: 150px;top: 238px;
+        transform: rotate(-5deg);
+    }
+    .vcu2beng{
+        width:64px;
+        height:2px;
+        background: url(./images/vcu2beng.png) no-repeat;
+        position: absolute;left: 456px;top: 222px;
+    }
+    .pressurefan{
+        width:75px;
+        height:75px;
+        background: url(./images/pressurefan.png) no-repeat;
+        position: absolute;left: 689px;top: 212px;
+        transform: rotate(0deg);
+    }
+    .brake2vcu{
+        width:113px;
+        height:136px;
+        background: url(./images/brake2vcu.png) no-repeat;
+        position: absolute;left: 242px;top: 235px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .waterflowbox{
+        width: 162px;
+        height: 115px;
+        position: absolute;left:673px;top:26px;
+        .waterflow{
+            width: 162px;
+            height: 115px;
+            position: absolute;left:0;top:0;
+        }
+        .waterflow1{
+            background: url(./images/water1.png) no-repeat;
+        }
+        .waterflow2{
+            background: url(./images/water2.png) no-repeat;
+            display: none;
+        }
+        .waterflow3{
+            background: url(./images/water3.png) no-repeat;
+            display: none;
+        }
+        .waterflow4{
+            background: url(./images/water4.png) no-repeat;
+            display: none;
+        }
+    }
+
+    .emptyflowbox{
+        width: 92px;
+        height: 44px;
+        position: absolute;left:680px;top:189px;
+        .emptyflow{
+            width:92px;
+            height: 44px;
+            position: absolute;left:0;top:0;
+        }
+        .emptyflow1{
+            background: url(./images/empty1.png) no-repeat;
+        }
+        .emptyflow2{
+            background: url(./images/empty2.png) no-repeat;
+            display: none;
+        }
+        .emptyflow3{
+            background: url(./images/empty3.png) no-repeat;
+            display: none;
+        }
+        .emptyflow4{
+            background: url(./images/empty4.png) no-repeat;
+            display: none;
+        }
+    }
+    
+}

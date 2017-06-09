@@ -1,0 +1,39 @@
+<div class="principle-wrapper">
+    <div class="aniamte-wrapper" *ngIf="principleAnimatePage">
+        <div class="theory">
+            <sgm-image *ngFor = "let item of imageComponentArray"  [data]="item" (event)="this.dataResolverService.eventHandler($event,item)"> </sgm-image>
+            <sgm-arrow *ngFor = "let item of arrowComponentArray"  [data]="item" (event)="this.dataResolverService.eventHandler($event,item)"> </sgm-arrow>
+            <sgm-promp *ngFor = "let item of prompComponentArray"  [data]="item" (event)="this.dataResolverService.eventHandler($event,item)"> </sgm-promp>
+        </div>
+    </div>
+
+    <div class="textInfo-wrapper"  *ngIf="principleAnimatePage" >
+        <div class="textInfoBox" PerfectScrollbar>
+          <sgm-buttonlee *ngFor = "let item of buttonComponentArray"  [data]="item" (event)="this.dataResolverService.eventHandler($event,item)"> </sgm-buttonlee>
+        </div>
+    </div>
+    <span class="pageName">原理</span>
+
+    <div class="start" *ngIf="!principleAnimatePage">
+      <ul>
+        <li><span (click)="turnTPrinciplePage()" class="startButton">启动授权</span></li>
+        <li><span>无钥匙进入</span></li>
+        <li><span>无钥匙离开</span></li>
+        <li><span>无钥匙启动</span></li>
+      </ul>
+    </div>
+</div>
+<!--页码-->
+<div class="pagination-wapper">
+  <div class="button prev"></div>
+  <div class="pagination">--/--</div>
+  <div class="button next"></div>
+</div>
+<!--返回按钮-->
+<div class="menu-wapper" *ngIf="isDetail">
+  <div class="button prev" (click)="showDetail(1)">
+    <div class="tip">
+      【重新选择】按钮，点击将返回【原理】部件首页
+    </div>
+  </div>
+</div>

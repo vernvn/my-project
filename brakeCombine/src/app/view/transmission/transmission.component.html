@@ -1,0 +1,17 @@
+<div class="transmission-body">
+    <h1>{{pageData.title}}</h1>
+    <p *ngFor="let item of pageData.text">{{item}}</p>
+    <div class="ratio-box">
+        <div class="ratio-first ratio">
+            <span class="mark mark1">A</span><span class="mark mark2">B</span>
+            <img src="{{pageData.imgs[0]}}" alt="" class="ratio1">
+
+        </div>
+        <div class="ratio-two ratio">
+            <span class="mark mark3">A</span><span class="mark mark4">B</span>
+            <img src="{{pageData.imgs[1]}}" alt="" class="ratio2">
+        </div>
+    </div>
+    <img src="{{pageData.imgs[2]}}" alt="" class="bottom">
+    <button-click *ngFor="let item of pageData.textArr" [data]="item"></button-click>
+</div>

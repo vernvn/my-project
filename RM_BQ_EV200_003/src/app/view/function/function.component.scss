@@ -1,0 +1,151 @@
+
+.function-body{
+    width:897px;
+    height:451px;
+    background-image: url(./images/function_bg.png);
+    position: relative;left:0;top:0;
+    color: #fff;
+    .hidden{
+        display: none;
+    }
+    button{
+        width:106px;
+        height: 105px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 16px;
+        background: url(./images/circle_b.png);
+        position: absolute;
+        cursor: pointer;
+     }
+    button:hover {
+  	    background: url(./images/circle_g.png);
+    }
+    .bigfont{
+    	color: #fff;
+    	font-size: 20px;
+    	position: relative;
+    	left: 412px;
+    	top: 96px;
+    	width: 100px;
+    	height: 50px;
+    }
+    .performance1 {
+        left: 140px;
+        top: 60px; 
+        p{
+            margin-left: 6px;
+    	    margin-top: 0px;
+            span{
+                display: inline-block;
+                margin-left: -7px;
+                margin-top: 5px;
+            }
+        }
+    }
+    .performance2 {
+        left: 200px;
+        top: 228px;
+        p{
+            margin-left: 0;
+    	    margin-top: 0;
+            span{
+                display: inline-block;
+    	margin-top: 5px;
+            }
+        }
+    }
+    .performance3 {
+        left: 397px;
+    top: 322px; 
+        p{
+            margin-left: 0;
+    	    margin-top: 0;
+            span{
+                display: inline-block;
+    	margin-top: 5px;
+            }
+        }
+    }
+    .performance4 {
+        left: 593px;
+    top: 235px;
+        p{
+            margin-left: 0;
+    	margin-top: 0;
+            span{
+                display: block;
+    	margin-top: 5px;
+            }
+        }
+    }
+    .performance6 {
+        left: 655px;
+    top: 60px;
+        p{
+            margin-left: 0;
+    	margin-top: 0;
+            span{
+                display: block;
+    	margin-top: 5px;
+            }
+        }
+    }
+    .circle1{
+        left: 140px;
+        top: 60px;
+        z-index: 5;
+        opacity: 1;
+   }
+   .circle2{
+        left: 200px;
+    top: 228px;
+    z-index:5;
+    opacity: 1;
+   }
+   .circle3{
+        left: 397px;
+    top: 322px;
+    z-index: 5;
+    opacity: 1;
+   }
+   .circle4{
+        left: 593px;
+    top: 235px;
+    z-index: 5;
+    opacity: 1;
+   }
+   .circle6{
+        left: 655px;
+    top: 60px;
+    z-index: 5;
+    opacity: 1;
+   }
+   .gray{
+   	background: url(./images/circle_h.png);
+       z-index: 5;
+   }
+   .close{
+        position: absolute;right: 3px;top: 9px;cursor: pointer;
+        color: #000;
+        z-index: 7;
+        font-size: 15px;
+        line-height: 25px;
+        text-align: center;
+        width: 40px;
+    }
+    .discharge{
+        width: 34px;
+        height: 34px;
+        position: relative;left: 750px;top: 257px;
+        z-index: 10;
+     
+    }
+    .charge{
+        width: 34px;
+        height: 34px;
+        position: relative;left: 650px;top: 257px;
+        z-index: 10;
+        
+    }
+}

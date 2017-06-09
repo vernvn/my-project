@@ -1,0 +1,5 @@
+<div class="pagination-body">
+    <div class="button prev" (click)="go2page(-1)" onselectstart="return false;" [class.disabled]="appService.preStatus"></div>
+    <div class="pagination">{{appService.state.current.page}}/{{appService.pages.length}}</div>
+    <div class="button next" [class.disabled]="!appService.nextPage"  (click)="go2page(1)" onselectstart="return false;"></div>
+</div>

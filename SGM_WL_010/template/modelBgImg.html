@@ -1,0 +1,23 @@
+<div ng-app="modelChoice" ng-controller="bgIMgctrl" class="bgimg_color inner_container">
+    <!-- <audio ng-src="{{audioSrc(data.audioUrl[0])}}" autoplay="autoplay" id="audio1" on-finish-render-filters></audio> -->
+    <script type="text/javascript">
+        IsSpearker();
+    </script>
+    <div class="svg_pic overScroll_x">
+        <img ng-src="{{data.bgimg[0]}}" width="865">
+        <img ng-src="{{data.bgimg[1]}}" width="865" ng-show="data.bgimg[1]">
+    </div>
+    <div class="Prompt_box" id="box">
+        <p class="text-1">
+            <button class="btn" id="btn" onclick="closeDiv()">
+                ×
+            </button>
+            <span id="p-con"  ng-bind="data.tips"> </span>
+
+        </p>
+    </div>
+    <span id="popBtn" class="popBtn" onclick="toggleDiv()" ></span>
+</div>
+<script>
+ NextDarkOrLignt(1); 
+</script>

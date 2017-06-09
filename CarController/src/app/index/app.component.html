@@ -1,0 +1,45 @@
+<div class="welcome-wrap"    *ngIf="showOrHide">
+    <div class="welcome">
+        <button class="cursor-pointer" (click)="enterCourseware()">开始课程</button>
+    </div>
+</div>
+<div class="container "    *ngIf="!showOrHide">
+    <div class="header">
+        
+        <a class="overview-button cursor-pointer"  (click)="changeRouter('principle')" [ngClass]="{ 'header-button-bg': (showpage==='principle')}"  >整车高压控制</a>
+        <a class="structure-button cursor-pointer"  (click)="changeRouter('structure')" [ngClass]="{ 'header-button-bg': (showpage==='structure')}"  >整车辅助控制</a>
+       <close-window></close-window>
+    </div>
+    <!--导航 e-->
+    <!--概述 功能 原理 结构 s-->
+    <div class="main">
+        <!--包含内容-->
+        <div class="main-content">
+            <structure   [ngClass]="{'hidden':!(showpage==='structure')}"></structure>
+            <principle   [ngClass]="{'hidden':!(showpage==='principle')}"></principle>
+        </div>
+        <!--文本按钮-->
+        <popup ></popup>
+
+        <!--声音按钮-->
+        <audio-center ></audio-center>
+        <!--控制中心按钮-->
+
+
+        <!--右侧文本框-->
+
+
+    </div>
+    <ctrl-center></ctrl-center>
+    <sidebar-tool></sidebar-tool>
+    <handle-error></handle-error>
+    <dashboard></dashboard>
+    
+    <!--功能 结构原理 检测 e-->
+    <!--上一步，下一步 s-->
+    <div class="foot">
+        <a class="structureLast hide-important cursor-pointer" (click)="changeRouter('principle')">上一步</a>
+        <a class="principleNext  cursor-pointer" (click)="changeRouter('structure')" >下一步</a>
+    </div>
+    <!--上一步，下一步 e-->
+</div>

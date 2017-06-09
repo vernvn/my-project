@@ -1,0 +1,75 @@
+<div class="home-scene">
+  <h2></h2>
+  <div class="bg" [ngStyle]="elsaWinService?.currPage?.img?.style">
+    <div class="com-button"   [halo]="'halo'" *ngIf="elsaWinService?.currPage?.box?.type==='1'" [ngStyle]="elsaWinService?.currPage?.box?.style">
+
+    </div>
+
+    <div class="com-button2"   [halo]="'halo'"  *ngIf="elsaWinService?.currPage?.box?.type==='2'"  [ngStyle]="elsaWinService?.currPage?.box?.style" (click)="click()">
+    </div>
+
+    <div *ngFor="let item of elsaWinService?.currPage?.inputs">
+      <input *ngIf="item?.clickType === '1'"  #box maxlength="6" 
+          type="text" [ngStyle]="item?.style" (keyup.enter)="onEnter(box.value)">
+          
+      <input *ngIf="item?.clickType === '2'"  #box1  maxlength="18" 
+      type="text" [ngStyle]="item?.style" (keyup)="changeHandler(box1.value)">
+    </div>
+
+    <img *ngIf="elsaWinService?.currPage?.img?.dongtu" [src]="elsaWinService?.currPage?.img?.dongtu" [ngStyle]="elsaWinService?.currPage?.img?.dongtuStyle">
+
+    <div *ngIf="elsaWinService?.currPage?.img?.src" style="height: 100%; overflow-y: auto;position: relative;overflow-x: hidden;">
+       <img [src]="elsaWinService?.currPage?.img?.src">
+       <div class="com-button3"   [halo]="'halo'"   [ngStyle]="elsaWinService?.currPage?.box?.style" (click)="click()">
+      </div>
+    </div>
+
+    <div *ngIf="elsaWinService?.currPage?.img?.bigsrc" style="height: 400px; overflow-y: auto;position: relative;overflow-x: hidden;width:200px; z-index:1;top:66px">
+       <img [src]="elsaWinService?.currPage?.img2?.src">
+    </div>
+
+    <div *ngIf="elsaWinService?.currPage?.img?.bigsrc" style="height: 200px; overflow:hidden;position: absolute;width:100%;top:6px">
+       <img [src]="elsaWinService?.currPage?.img3?.src">
+    </div>
+
+    <div id='svgmap'  *ngIf="elsaWinService?.currPage?.img?.bigsrc">
+       <div id="filebody" style="height: 100%;position: relative;left:0">
+        <img id="svgContainer" viewbox="300 300 300 300" width="874" height="3600"  [src]="elsaWinService?.currPage?.img?.bigsrc" type="image/svg+xml">
+       
+      </div>
+       
+    </div>
+
+    <div class="option" *ngIf="elsaWinService?.currPage?.img?.bigsrc">
+            <!-- <span class="img1" (click)='setScroll(2)'>
+
+            </span>
+
+            <span class="img2" (click)='setScroll(1)'>
+              
+            </span>
+
+            <span class="img3" (click)='setScroll(3)'>
+              
+            </span>
+
+            <span class="img4" (click)='setScroll(4)'>
+              
+            </span> -->
+
+            <span class="img5" (click)="Amplification(1)"  [ngClass]="this.elsaWinService.scale < 16 && this.elsaWinService.scale >=10  ? '' : 'cursorDefault' ">
+            </span>
+            <span class="img6" (click)="Amplification(2)" [ngClass]="this.elsaWinService.scale > 10 && this.elsaWinService.scale <= 16  &&  resetScale  ? '' : 'cursorDefault' ">
+            </span>
+            <!-- <span class="img7" (click)="Amplification(3)" [ngClass]=" resetScale ? '' : 'cursorDefault' "></span> -->
+
+        </div>
+   
+  </div>
+</div>
+
+<div class="pagination-wapper">
+  <div class="button prev"></div>
+  <div class="pagination">--/--</div>
+  <div class="button next"></div>
+</div>

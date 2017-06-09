@@ -1,0 +1,62 @@
+	<script type="text/javascript">
+		IsSpearker();
+	</script>
+	<div id="container_djcc">
+			<div id="gz_bg1" class="gz_bg1">
+				<img src="images/bgpages29.png">
+				<div id="cc_dj3" class="cc_djs3 imgZoomIn"  onclick="clickTimes3(3);"></div>
+				<img src="images/bgpages29_zoom.png" class="zoomImg3 zoomImg">
+			</div>
+	</div>
+	<div class="Prompt_box" id="box">
+		<p class="text-1">
+			<button class="btn" id="btn" onclick="closeDiv()">
+				×
+			</button>
+			<span id="p-con" >点击半透明区域查看故障可疑位置。</span>
+		</p>
+	</div>
+	<span id="popBtn" class="popBtn" onclick="toggleDiv()"></span>
+
+	<script type="text/javascript">
+		slideShowOrHide(0);
+		slideHideAndDark();
+		var maskLayer=0;
+		var maskPageClick=0;
+		//裴露婕------20170110
+		function clickTimes3(para){
+			//裴露婕------20170110
+			$('#audio1')[0].pause();
+			if(para === 3) {
+				$('#p-con').text('检查离合器电机及插头连接情况。');
+				imgZoomIn($('.zoomImg3'));
+				$('#audio1').attr('src', 'audio/31.mp3');
+				NextDarkOrLignt(1);
+			}
+			// speakerPlayOrPause();
+			//------------------end
+			//阻止冒泡
+			if (event.stopPropagation) {
+				// this code is for Mozilla and Opera
+				event.stopPropagation();
+			}
+			else if (window.event) {
+				// this code is for IE
+				window.event.cancelBubble = true;
+			}
+		}
+		function imgZoomIn(obj){
+			if(obj){
+				obj.animate({
+					width: '100%',
+					height: '100%',
+					left: 0,
+					top: 0,
+					opacity: 1
+				}, 500);
+			}
+			
+			// console.log(obj.class);
+		}
+	</script>
+

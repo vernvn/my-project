@@ -1,0 +1,71 @@
+/*控制面板*/
+.gear-wrap {
+    position: absolute;
+    bottom: 92px; 
+    left: 0;
+
+    width: 96px;
+    height: 94px;
+    background: url(./images/gear_wrap.png) no-repeat;
+    .switch{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: relative;left: 27px;top: 17px;
+        cursor:pointer;
+    }
+    .close {
+    position: absolute;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    width: 24px;
+    height: 24px;
+
+    font: 18px "microsoft yahei";
+    line-height: 20px;
+
+    color: #f1a703;
+
+    cursor: pointer;
+}
+}
+.gear-wrap-charge {
+    position: absolute;
+    bottom: 92px; 
+    left: 0;
+
+    width: 96px;
+    height: 94px;
+    background: url(./images/gear_wrap2.png) no-repeat;
+    .switch{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: relative;left: 27px;top: 17px;
+        cursor:pointer;
+    }
+    .close {
+    position: absolute;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    width: 24px;
+    height: 24px;
+
+    font: 18px "microsoft yahei";
+    line-height: 20px;
+
+    color: #f1a703;
+
+    cursor: pointer;
+}
+}
+.gear-wrap .close {
+    margin: -1px -1px 3px 23px;
+}
+

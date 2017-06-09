@@ -1,0 +1,19 @@
+<div class="sort-body">
+    <h1>{{pageData.title}}</h1>
+    <!--说明-->
+    <p *ngIf="pageData.explain">{{pageData.explain}}</p>
+    <!--题目-->
+    <p *ngIf="pageData.problem" class="problem"><b>{{pageData.problem}}</b></p>
+    <!--拖拽选项-->
+    <div class="answer-area">
+        <dl>
+            <dt>{{pageData.optionTitle}}</dt>
+            <dd>
+                <ul id="sortable" class="itemize-list" *ngIf="pageData.options">
+                    <li *ngFor='let option of pageData.options' [attr.id]="option.answer"><span [ngStyle]="{lineHeight:option.lineHeight}">{{option.text}}</span>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+</div>

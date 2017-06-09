@@ -1,0 +1,26 @@
+<canvas id="tip-canvas"></canvas>
+
+<div #tipModal>
+    <div *ngIf="data.pointStyle==='box'" (@halo.done)="animationDone(data)" [class.boxStyle1]="!data.mouseoverFlag" [class.boxStyle2]="data.mouseoverFlag" [@halo]="halo"  id="mouseover_{{data.type}}" class="tip-btn box" (mouseover)="mouseover($event)" (mouseout)="mouseout()"  [ngStyle]="data.boxStyle">
+    </div>
+    <div *ngIf="data.pointStyle==='mail'"  class="{{style?'tip-btn1':'tip-btn'}}"  (click)="mouseover($event)"  [ngStyle]="pointPosition()" [ngClass]="pointBgClass">
+        <span (@halo.done)="animationDone(data)" [@halo]="halo" (click)="openTip(tipModal,$event)" [ngStyle]="data.pointTextStyle">
+            {{data.point}}
+        </span>
+    </div>
+    <div *ngIf="data.pointStyle==='point'"  class="tip-btn1"  (click)="mouseover($event)"  [ngStyle]="pointPosition()" [ngClass]="pointBgClass">
+        <span (@halo.done)="animationDone(data)" [@halo]="halo" (click)="openTip(tipModal,$event)" [ngStyle]="data.pointTextStyle">
+            {{data.point}}
+        </span>
+    </div>
+    <div class="tip-modal" *ngIf="data.showTip" [@flyIn]="data.animation" [ngStyle]="tipPosition()">
+        <div class="haha" >
+        <p *ngFor="let key of data.content.text | keys">
+            <span *ngFor="let item of data.content.text[key]" [ngStyle]='item?.style'> 
+                {{item.content}}
+            </span>
+        </p>
+        <img *ngIf="data.content.img" [src]="data.content.img" alt=""  [ngStyle]="data.content.imgStyle">
+        </div>
+    </div>
+</div>

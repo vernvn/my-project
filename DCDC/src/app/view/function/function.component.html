@@ -1,0 +1,175 @@
+<!--功能 页面-->
+<div class="function-body">
+    <div class="post-charge"><span>动力电池</span></div>
+	<div class="vehicle-control"><span>整车控制器</span></div>
+    <div class="high-pressure-box"><span>高压控制盒</span></div>
+    <div class="twisted-pair"><span>双绞线</span></div>
+    <!--<div class="charge-ecu"><span>电池管理系统</span></div>-->
+    <div class="high-power-line"><span></span></div>
+    <div class="high-power-line-short"><span></span></div>
+    <div class="assist"><span>低压辅助用电设备</span></div>
+    <div class="assist-charge"><span>辅助电池</span></div>
+
+
+    <div class="DCDCbox" (mouseleave)="onmouseout($event)">
+        
+        <div class="function-button1" [ngClass]="{'hidden':!buttonshowStatus}" #DirectCurrent (click)="openpage('DirectCurrent')" >直流斩波式降压转换器</div>
+        <div class="function-button2" [ngClass]="{'hidden':!buttonshowStatus}" #SingleEnded (click)="openpage('SingleEnded')" >单端正激式降压转换器</div>
+        <div class="DCDC" (mouseover)="onmouseover($event)"><span>DC/DC转换器</span></div>
+    </div>
+    
+    <SingleEnded *ngIf="pagename=='SingleEnded'"></SingleEnded>
+    <DirectCurrent *ngIf="pagename=='DirectCurrent'"></DirectCurrent>
+    <span class="close" *ngIf ="pagename" (click)="closepage()">关闭</span>
+    <div class="line-assist"></div>
+    <div class="left-line"></div>
+    <div class="left-top-line-red"></div>
+    <div class="feedback-line"><span>反馈信号</span></div>
+    <div class="enable-line"><span>使能信号</span></div>
+    <div class="circle-left"></div>
+    <div class="circle-right"></div>
+    <div class="arrow-turnBox">
+        <div class="arrow-turn2" id="arrow-turn2"></div>
+    </div>
+    <div class="switch"><span>点火开关</span></div>
+
+
+
+    <div class="arrow1 arrow"></div>
+    <div class="arrow2 arrow"></div>
+    <div id="redpointbox">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    <div id="redpointbox2">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    <div id="redpointbox3">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    <div id="redpointbox6">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    <div id="redpointbox7">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    <div id="redpointbox8">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    <div id="redpointbox9">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+</div>

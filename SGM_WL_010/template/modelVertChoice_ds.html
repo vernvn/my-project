@@ -1,0 +1,93 @@
+﻿
+
+	<div ng-app="myMalfunction" ng-controller="malfunction">
+		<!-- <audio ng-src="{{audioSrc(myMalfunctioncontent.audioSrc[0])}}" autoplay="autoplay" id="audio1" on-finish-render-filters></audio> -->
+		<script type="text/javascript">
+			IsSpearker();
+		</script>
+		<audio ng-src="{{audioSrc(myMalfunctioncontent.audioSrc[1])}}"  id="audio2" on-finish-render-filters></audio>
+		<audio src="audio/error.mp3"  id="error"></audio>
+		<div id="cen_21" class="cen_21" >
+			<div id="dj_R21" class="dj_R21">
+				<div id="vert17">
+				<div  class="TechnicalBulletins">
+					<pre>
+						<div ng-click="engine()" id="insert" class="vert_btn vert_btn_width2 curpot disNo"></div>
+						<div id="insert_other" class="text_left">
+							<span ng-click="engine()" class="curpot vert_btn vert_btn_width1">发动机</span>
+							<span class="vert_btn vert_btn_width1">变速器</span>
+							<span class="vert_btn vert_btn_width1">制动系统</span>
+							<span class="vert_btn vert_btn_width1">EPS</span>
+							<span class="vert_btn vert_btn_width1">防盗停机器</span>
+							<span class="vert_btn vert_btn_width1">空调</span>
+							<span class="vert_btn vert_btn_width1">SRS空气囊</span>
+							<span class="vert_btn vert_btn_width1">电动车窗</span>
+							<span class="vert_btn vert_btn_width1">滑动天窗</span>
+							<span class="vert_btn vert_btn_width1">组合仪表</span>
+							<span class="vert_btn vert_btn_width1">车身电器</span>
+							<span class="vert_btn vert_btn_width1">悬架</span>
+							<span class="vert_btn vert_btn_width1">传动</span>
+						</div>
+
+						</pre>
+				</div>
+				<div id="vert_choice">
+					<div class="dj_three1" ng-show="myMalfunctioncontent.description[0]">
+						<span data-reveal-id="myModal_1" id="1" class="test015Menu"  ng-click="selectID='a';submit(selectID);">
+							{{myMalfunctioncontent.description[0]}}
+						</span>
+					</div>
+					<div class="dj_three" ng-show="myMalfunctioncontent.description[1]">
+						<span id="2" data-reveal-id="myModal_1" class="test015Menu" ng-click="selectID='b';submit(selectID);">{{myMalfunctioncontent.description[1]}}</span>
+					</div>
+					<div class="dj_three" ng-show="myMalfunctioncontent.description[2]">
+						<span id="abc3" data-reveal-id="myModal_1" class="test015Menu" ng-click="selectID='c';submit(selectID);">{{myMalfunctioncontent.description[2]}}</span>
+					</div>
+	
+					<div class="dj_three" ng-show="myMalfunctioncontent.description[3]">
+						<span  id="abc4"  class="test015Menu" data-reveal-id="myModal_1" ng-click="selectID='d';submit(selectID);">{{myMalfunctioncontent.description[3]}}
+						</span>
+					</div>
+					<div class="dj_three" ng-show="myMalfunctioncontent.description[4]">
+						<span id="abc5" data-reveal-id="myModal_1" class="test015Menu" ng-click="selectID='e';submit(selectID);">{{myMalfunctioncontent.description[4]}}</span>
+					</div>
+					<div class="dj_three" ng-show="myMalfunctioncontent.description[5]">
+						<span id="abc6" data-reveal-id="myModal_1" class="test015Menu" ng-click="selectID='f';submit(selectID);">{{myMalfunctioncontent.description[5]}}</span>
+					</div>
+					<p ng-show="!myMalfunctioncontent.description[0]"  style="font-size: 16px;text-align: center;line-height: 424px;margin-left:40px;">无服务通告</p>
+				</div>
+				
+				</div>
+
+			</div>
+		</div>
+
+		<div id="myModal_1" class="reveal-modal_1"   ng-hide="vertmyError">
+			<h2 class="reveal_modal_c">
+				错误
+			</h2>
+			<p>
+				<span></span>不是最好的选择，请重新选择！
+			</p>
+			<div class="anniu_1">
+				<div class="jx" ng-click="closeSubmit()">
+					<a id="rtn-005" style="color: #ffffff;">返回</a>
+				</div>
+			</div>
+			<a class="close-reveal-modal" ng-click="closeSubmit()">×</a>
+		</div>
+		<div style="text-align: center; clear: both"></div>
+		<div class="Prompt_box" id="box">
+			<p class="text-1">
+				<button class="btn" id="btn" onclick="closeDiv()">
+					×
+				</button>
+				<span id="p-con" class="p-con" ng-bind="myMalfunctioncontent.tips"></span>
+			</p>
+		</div>
+		<span id="popBtn" class="popBtn" onclick="toggleDiv()" ></span>
+	</div>
+	<script>
+		slideShowOrHide(0);
+		slideHideAndDark();
+	</script>

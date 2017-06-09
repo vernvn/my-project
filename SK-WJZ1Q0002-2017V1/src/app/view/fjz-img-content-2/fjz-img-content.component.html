@@ -1,0 +1,25 @@
+<gy-beacon></gy-beacon>
+<div class="body-2">
+    <div class="header-content">
+        <ul [ngStyle]="appService?.state?.current?.content?.style" [@flyIn]="pageData?.animations">
+            <li *ngFor="let item of pageData.content.targetList; let i = index; trackBy: trackByFn">
+                <span class="bk_box"></span> {{item}}
+            </li>
+        </ul>
+    </div>
+    <div class="foot-img-lists">
+        <p *ngFor="let item of pageData.content.imgs">
+            <span [ngStyle]="item?.top?.style">{{item?.top?.content}}</span>
+            <img src="{{item?.img}}" [ngStyle]="appService.state.current.content.size">
+            <li>
+                <!--{{item?.bottom?.content}}-->
+                <span [ngStyle]="item?.bottom?.style">
+                    {{item?.bottom?.content}}
+                    <b [ngStyle]="item?.bottom?.styles">
+                         {{item?.bottom?.text}}
+                    </b>
+                </span>
+            </li>
+        </p>
+    </div>
+</div>

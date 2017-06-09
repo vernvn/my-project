@@ -1,0 +1,53 @@
+<div   ng-app="modelChoice">
+	<!-- <audio id="audio1" src="audio/010.mp3" autoplay="autoplay"></audio> -->
+	<!-- <audio id="audio2" src="audio/start1.mp3"></audio> -->
+	<script type="text/javascript">
+		IsSpearker();
+	</script>
+	<div id="zdy" class="zdys">
+		<div>
+			<div ui-view="ignition"></div>
+			<!--<div id="btn4" class="btn4 curpot diagnostic_icon" onclick="hidex()"></div>-->
+			<div id="box_one" class="box_one">
+				<div  ui-view="zdyPage"></div>
+			</div>
+			<input id="sta" type="hidden" value=""/>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var sb=1;
+	var openDiagnosticEleven= 0;
+	// stallStatus = false;
+	//step1 工具栏出现
+	slideToolBox(1);
+	// step2  显示工具栏，拿出诊断仪
+	function tobiao(){
+		$("#sta").attr("value","1");
+		$("#mask-zdy").css('display', 'block');
+		$("#box_one").css('display', 'block');
+		slideToolBox(0);
+		$("#p-con").html("请使用诊断仪对车辆进行故障码读取。");
+		// $("#audio1").remove();
+		if(globalSound==1){
+			// $("#audio2")[0].play();
+		}
+		if(!switchStallsStatus){
+			switchStallsLink();
+		}
+		// openDiagnosticEleven = $("#sta").val();
+	}
+	//step3 点击诊断仪接口
+	function hidex(){
+		openDiagnosticEleven = $("#sta").val();
+		stallStatus = true;
+		if(openDiagnosticEleven==1){
+			$("#btn4").css('display','none');
+			$("#sta").attr("value","2");
+		}
+		
+	}
+	// setTimeout(function(){
+	// 	NextDarkOrLignt(0);
+	// },0)
+</script>

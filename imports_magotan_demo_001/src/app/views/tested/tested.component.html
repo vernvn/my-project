@@ -1,0 +1,59 @@
+<div class="notice-body" *ngIf="!isResult">
+  <h2>测试</h2>
+  <div class="bg" >
+    <h3>&nbsp;&nbsp; {{theme}}</h3>
+        <div class="line"></div>
+        <ul class="content">
+          <li *ngFor="let item of option">
+              <label (click)="onSelect(item)"  [ngClass]=" item.isRight ? 'radio':'un-radio'"   for="{{item.id}}"><input type="radio" name="{{item.description}}" />{{item.description}}</label>
+          </li>
+        </ul>
+        <div class="line"></div>
+  </div>
+</div>
+  <div class="frame" *ngIf="isResult">
+       <h2 class="title">测试</h2>
+       <div class="inner-frame">
+            <div class="content">
+                  <div class="line"></div>
+
+                 <div class="title">测试结果</div>
+                 <div class="score">
+                      <span>当前得分：{{score}}</span>
+                      <span>及格分数：80</span>
+
+                      <div class="mood" *ngIf="!isPass">
+                          <span class="fail"></span>
+                          <span class="text">很遗憾！！！<br>您没有通过测试。</span>
+                      </div>
+
+                      <div class="mood" *ngIf="isPass">
+                          <span class="succss"></span>
+                          <span class="text">恭喜！！！<br>您通过了测试。</span>
+                      </div>
+                      <button (click)="resetTest()" class="submit">重新测试</button>
+                 </div>
+
+                 <div class="details">
+                     <div class="theme">测试结果详情</div>
+                      <ul>  
+                          <li *ngFor="let item of question">
+                                <span>{{item.id}}</span>
+                                <div [ngClass]=" item.isRight ? 'correct':'error'" ></div>
+                          </li>
+                      </ul>
+                 </div>
+            </div>
+       </div>
+  </div>
+
+<!--页码-->
+
+<div class="pagination-wapper">
+  <div class="button prev"  [class.disabled]="testedService.tested[idx].id==='1'||isTest" (click)="onPrevPage()"></div>
+  <div class="pagination">{{testedService.tested[idx].id}}/{{testedService.tested.length}}</div>
+  <div class="button next" [class.disabled]="isResult"  *ngIf="idx==9" (click)="onSubmit()"></div>
+  <div class="button next"  *ngIf="idx<9" (click)="onNextPage()"></div>
+
+
+</div>

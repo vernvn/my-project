@@ -1,0 +1,39 @@
+<div class="target-body" [style.background-image]="1 ? 'url('+ appService.state.current.img+')': 'grey'">
+    <h1>{{appService.state.current.title}}</h1>
+    <p *ngIf="appService.state.current.contentText">{{appService.state.current.contentText}}</p>
+    <ul *ngIf="appService.state.current.liText">
+        <li *ngFor="let item of appService.state.current.liText; let i = index; trackBy: trackByFn" >
+            <span class="bk_box"></span> <span class="box_content color_g">{{item}}</span>
+        </li>
+    </ul>
+    <ul>
+        <li *ngFor="let item of imgArr" class="point" (click)="showImg(item)" [class.active]="!item.showed" [ngStyle]="position(item)"
+            [ngClass]="pointBgClass">
+            {{item.point}}
+        </li>
+    </ul>
+    <img src="{{appService.state.current.fixedImg}}" alt="" *ngIf="appService.state.current.fixedImg" [ngStyle]="appService.state.current.fixedImgstyle">
+    <canvas id="canvas"></canvas>
+    <div *ngFor="let item of imgArr" class="modal" [ngStyle]="positions(item)">
+
+        <div class="mod" id="mod_{{item.type}}" [ngStyle]="style(item)">
+            <img *ngIf="item.content.img" [src]="item.content.img" alt=""> {{item.content.text}}
+            <div *ngFor="let text of item.Text">
+                <p>{{text.pText}}</p>
+                <ul class="header-content-explain">
+                    <li *ngFor="let li of text.liText"><span class="bk_box"></span><span class="box_content color_g">{{li}}</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <button-click *ngFor="let item of appService.state.current.textArr" [data]="item"></button-click>
+</div>
+<point-tip  *ngFor="let item of emails" [data]="item" [style]="appService.state.current.order" (open)="showtip(item)"></point-tip>
+
+<!--<point-dialog [event]="haha" [data]="imgArr[0]" (close)="close(imgArr,$event)"></point-dialog>-->
+<!--<point-dialog [data]="imgArr[1]"></point-dialog>-->
+<!--<point-dialog [data]="imgArr[2]"></point-dialog>-->
+<!--<point-tip [data]="imgArr[0]" (open)="showtip(imgArr[0])" >     </point-tip>
+<point-tip [data]="imgArr[1]" (open)="showtip(imgArr[1])" >     </point-tip>-->
+
+<!--<drag-drop [dataAnswer]="imgArr[0]"></drag-drop>-->

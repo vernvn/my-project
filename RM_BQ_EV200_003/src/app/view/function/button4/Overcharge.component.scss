@@ -1,0 +1,29 @@
+.Overcharge_bg{
+    width: 896px;
+    height: 450px;
+    background-image: url(../images/alert_wrap_bg.png);
+    position: absolute;left: -1px;top: -1px;
+    border: 1px solid #000;
+    z-index: 6;
+    .Overcharge{
+        width: 339px;
+        height: 254px;
+        background-image: url(./img/Overcharge.png);
+        position: absolute;left: 72px;top: 72px;
+        span{
+            position: absolute;left:120px;top: 265px;font-size: 15px;color: #000;
+        }
+    }
+    .describe-font1{
+        width: 225px;
+        height: auto;
+        color: #000;
+        position: absolute;left:590px;top: 148px;text-indent: 20px;
+    }
+    .describe-font2{
+        width: 225px;
+        height: auto;
+        color: #000;
+        position: absolute;left:590px;top: 198px;text-indent: 20px;
+    }
+}

@@ -1,0 +1,108 @@
+.dashboard-body{ z-index:20;width:420px;height:178px;background: url(./images/dashboard_bg.png) no-repeat;position: absolute;bottom: 0px;left: 542px;display: none; }
+.dashboard-body .pointer-left{ width:68px;height:96px;background: url('./images/dashboard_pointer.png') no-repeat;position: absolute;top: 39px;left: 33px;  }
+.dashboard-body .pointer-right{ width:68px;height:96px;background: url('./images/dashboard_pointer.png') no-repeat;position: absolute;top: 39px;left: 321px; }
+.dashboard-body .ignition{ width:37px;height:37px;background: url('./images/dashboard_ignition.png') no-repeat;position: absolute;bottom: 11px;left: 194px; }
+.dashboard-body .datashow{ position: absolute;top: 48px;left: 208px; font-size: 20px;color: #fff;line-height: 30px}
+.ignition-switch{z-index:10; width:73px;height:73px;background: url('./images/ignition_switch.png') no-repeat;position: absolute;bottom: 58px;right: 64px; }
+.ignition-switch .ignition{ width:71px;height:71px;background: url('./images/ignition.png') no-repeat;position: absolute;top: 0px;left: 0px; }
+.dashboard-body .dashborad-screen{width:213px;height:132px;background: url('./images/dashborad_screen.png') no-repeat;position: absolute;top: 0px;left: 107px;}
+.lock-stalls{width: 15px;height: 15px;background: rgba(0,0,0,0); position: absolute;top: 133px;left:182px; cursor: pointer;z-index: 1;}
+.on-stalls{width: 15px;height: 15px;background: rgba(0,0,0,0); position: absolute;top: 119px;left:209px; cursor: pointer;z-index: 1;}
+
+.light .abs{width: 15px;height: 12px; position: absolute;top: 103px;left:88px;background: url('./images/3.png') no-repeat; background-size: contain;}
+.light .airbag{width: 15px;height: 12px; position: absolute;top: 25px;left:323px;background: url('./images/4.png') no-repeat; background-size: contain;}
+
+.light .parking{width: 15px;height: 12px; position: absolute;top: 45px;left:321px;background: url('./images/5.png') no-repeat; background-size: contain;}
+
+.close {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+    line-height: 20px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    font: 18px "microsoft yahei";
+    right: 0px;
+    top: 0px;
+    color: #f1a703;
+}
+.chargebox{
+    width: 20px;
+    height: 35px;
+    background: url(./images/battery.png) no-repeat;
+    overflow: hidden;
+    position: absolute;left: 130px;top: 35px;
+    .unit-box{
+        width: 20px;
+        height: 28px;
+        position: absolute;left:0;top:16px;
+        .unit{
+            width: 16px;
+            height: 4px;
+            position: absolute;left: 3px;
+            background: url(./images/battery-unit.png) no-repeat;
+        }
+        .unit-orange{
+            width: 16px;
+            height: 4px;
+            position: absolute;left: 3px;
+            background: url(./images/battery-unit-orange.png) no-repeat;
+        }
+        .unit1{
+            top: 0;
+        }
+        .unit2{
+            top: 6px;
+        }
+        .unit3{
+            top: 12px;
+        }
+        .unit4{
+            top: 18px;
+        }
+        .unit5{
+            top: 24px;
+        }
+    }
+    
+}
+.chargefont{
+    position: absolute;left: 154px;top: 46px;color: #fff;font-size: 10px;
+}
+
+.hidden{
+    display: none;
+}
+.chargeinfo{
+    position: absolute;left: 208px;top: 8px;color: #f00;font-size: 10px;
+}
+
+.chargepage{
+    width: 213px;
+    height: 132px;
+    background: url(./images/dashborad_screenCharge.png) no-repeat;
+    position: absolute;left: 107px;top: 0;
+    .dahsboardvoltage{
+        position: absolute;left: 174px;top: 60px;color: #fff;font-size: 10px;width: 33px;height: 18px;
+        overflow: hidden;
+        span{
+            position: relative;left: 0;top: 0;color: #fff;font-size: 10px;
+        }
+    }
+    .dahsboardcurrent{
+        position: absolute;left: 174px;top: 77px;color: #fff;font-size: 10px;width: 33px;height: 18px;
+        overflow: hidden;
+    }
+    .chargesignal{
+        width: 14px;
+        height: 11px;
+        background: url(./images/charge.png) no-repeat;
+        position: relative;left: 216px;top: 104px;
+    }
+    .chargefont{
+        position: absolute;left: 95px;top: 88px;color: #fff;font-size: 10px;
+    }
+}
+
+

@@ -1,0 +1,18 @@
+<!--功能 页面-->
+<div class="function-body">
+    <Different *ngIf="pagename=='Different'"></Different>
+    <SingleEnded *ngIf="pagename=='SingleEnded'"></SingleEnded>
+    <Lowtemperature *ngIf="pagename=='Lowtemperature'"></Lowtemperature>
+    <Overcharge  *ngIf="pagename=='Overcharge'"></Overcharge >
+    <Overcharge2  *ngIf="pagename=='Overcharge2'"></Overcharge2 >
+    <Shortcircuit *ngIf="pagename=='Shortcircuit'"></Shortcircuit>
+    <p class="bigfont">影响因素</p>
+    <span class="close" *ngIf ="pagename" (click)="closepage()">关闭</span>
+	<button [ngClass]="{true: 'gray',false:'circle1'}[principledev[0]]" class="performance1" (click)="changeAlertData(0);openpage('Different')" ><p>电池组<span>不一致性</span></p></button>
+	<button [ngClass]="{true: 'gray',false:'circle2'}[principledev[1]]" class="performance2" (click)="changeAlertData(1);openpage('SingleEnded')" ><p>电池单体<span>高温隐患</span></p></button>
+	<button [ngClass]="{true: 'gray',false:'circle3'}[principledev[2]]" class="performance3" (click)="changeAlertData(2);openpage('Lowtemperature')" ><p>锂电池低<span>温性能差</span></p></button>
+	<button [ngClass]="{true: 'gray',false:'circle4'}[principledev[3]]" class="performance4" (click)="changeAlertData(3);openpage('Overcharge')" ><p>过充<span>过放</span></p></button>
+	<button [ngClass]="{true: 'gray',false:'circle6'}[principledev[5]]" class="performance6"  (click)="changeAlertData(5);openpage('Shortcircuit')"><p>短路<span>漏电</span></p></button>
+    <img src="assets/images/discharge_g.png" class="discharge cursor-pointer hide-important"  (click)="changeAlertData(4);openpage('Overcharge2')">
+	<img src="assets/images/charge.png" class="charge cursor-pointer hide-important"  (click)="changeAlertData(3);openpage('Overcharge')">
+</div>

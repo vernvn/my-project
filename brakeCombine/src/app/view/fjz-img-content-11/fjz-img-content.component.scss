@@ -1,0 +1,42 @@
+.body-1{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    padding-left:100px;
+    padding-right:100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    h1{
+        font-size: 20px;
+    }
+    .header-content{
+        padding-top:20px;
+        height: 170px;
+
+        h1{
+            padding-bottom: 10px;
+        }
+
+        p{
+            font-size: 14px;
+            color: #000;
+            padding-bottom: 15px;
+            opacity: 0;
+        }
+    }
+
+    .foot-img {
+        width: 824px;
+        height: 330px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .foot-img .max{
+        max-width:824px ;
+        max-height: 280px;
+    }
+}
+

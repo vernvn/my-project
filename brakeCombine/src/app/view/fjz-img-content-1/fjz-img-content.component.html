@@ -1,0 +1,20 @@
+<div class="body-1" [style.background-image]="'url('+pageData.content?.bgImg+')' ">
+    <div class="header-content" [ngStyle]="pageData.content.head?.style">
+        <h1> {{pageData.content.head.title}} </h1>
+        <p *ngFor="let key of pageData.content.head.p_contents | keys">
+            <span *ngFor="let item of pageData.content.head.p_contents[key]" [ngStyle]='item?.style'> 
+                {{item.content}}
+            </span>
+        </p>
+    </div>
+    <div class="foot-img">
+        <span   *ngFor="let animation of animationTag" id="{{animation?.id}}" [ngStyle]="animation?.startStyle">
+            {{animation?.content}}
+        </span>
+        <span class="word"  [@flyIn]="'right'" [ngStyle]="pageData.content.imgs?.top?.style">{{item?.top?.content}}</span>
+        <div  [@flyIn]="'right'" >
+            <img class="max"  *ngIf="pageData.content?.imgs?.img" src="{{pageData.content?.imgs?.img}}" [ngStyle]='pageData.content.imgs?.imgStyle' >
+        </div>
+        <span   [@flyIn]="'right'" [ngStyle]="pageData.content.imgs?.bottom?.style">{{item?.bottom?.content}}</span>
+    </div>
+</div>

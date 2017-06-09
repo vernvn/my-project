@@ -1,0 +1,19 @@
+.com-button {
+    position: relative;
+
+    // width: 200px;
+    // height: 200px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    span {
+        letter-spacing: normal;
+    }
+    div {
+        display: none;
+    }
+}

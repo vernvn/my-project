@@ -1,0 +1,19 @@
+<div class="instruction-body">
+
+    <ng-template ngFor let-item [ngForOf]="dataObj">
+
+        <sgm-image [data]="item" (event)="this.dataResolverService.eventHandler($event,item)" *ngIf="item.type === 'image'"> </sgm-image>
+        <sgm-button [data]="item" (event)="this.dataResolverService.eventHandler($event,item)" *ngIf="item.type === 'button'"> </sgm-button>
+        <sgm-text [data]="item" (event)="this.dataResolverService.eventHandler($event,item)" *ngIf="item.type === 'text' "> </sgm-text>
+        <sgm-button-tip [data]="item" (event)="this.dataResolverService.eventHandler($event,item)" *ngIf="item.type === 'button-tip'"> </sgm-button-tip>
+
+    </ng-template>
+
+</div>
+
+<!--页码-->
+<div class="pagination-wapper">
+  <div class="button prev"></div>
+  <div class="pagination">--/--</div>
+  <div class="button next"></div>
+</div>

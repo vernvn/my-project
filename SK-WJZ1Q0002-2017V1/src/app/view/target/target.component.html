@@ -1,0 +1,18 @@
+<gy-beacon></gy-beacon>
+<div class="target-body" [style.background-image]="1 ? 'url('+ appService.state.current.img+')': 'grey'">
+    <!--<div class="gy-div">
+       <div class="div">
+           11111111
+       </div>
+    </div>-->
+    <ul>
+        <li *ngFor="let item of imgArr" class="point" (click)="showImg(item)" [class.active]="!item.showed" [ngStyle]="position(item)">
+
+        </li>
+    </ul>
+    <canvas id="canvas"></canvas>
+    <div *ngFor="let item of imgArr "   class="modal" [ngStyle]="positions(item)">
+        <div class="mod" id="mod_{{item.type}}">
+            {{item.content.text}}
+        </div>
+    </div>

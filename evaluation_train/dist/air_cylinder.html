@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu = "self.event.returnValue = false" >
+<head>
+	<meta charset="UTF-8" />
+	<title>air-cylinder</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<script src="js/framework/jquery-1.8.3.min.js"></script>
+	<script src="js/framework/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="main">
+    	<div id="pagerAnimate">
+    		<div class="left">
+    			<div class="left-top">
+    				<div class="big-yibiao">
+    					<div class="big-yibiaozhen"></div>
+    				</div>
+    			</div>
+
+    			<p>表盘</p>
+    			<div class="left-bottom">
+    				<span class="left-bottom-tongbg"></span>
+    				<div class="bg-top"></div>
+    				<span class="keduxian"></span>
+    				<div class="shendu">
+    					<span class="vertical-line"></span>
+    					<div class="shendu-t"></div>
+    				</div>
+    				<div class="rulers-overflow">
+    					<div class="rulers"></div>
+    				</div>
+    			</div>
+                <p>深度表示区</p>
+    		</div>
+
+    		<div class="right" id="Right">
+    			<div class="handle-tips">
+    				<p class="tips-text">请拖动测量工具至2号气缸</p>
+    				<div class="close-tips"></div>
+    			</div>
+    		</div>
+    		<div class="angle-animate-show"></div>
+    		<div class="angle-animate-hide"></div>
+            <div class="celiang-qigang"></div>
+            <div class="ce-liang-biao">
+                <div class="small-yibiao-bg">
+                    <div class="small-yibiao"></div>
+                </div>
+            </div>
+            <div class="qigang-num">
+    			<span>4</span>
+    			<span>3</span>
+    			<span>2</span>
+    			<span>1</span>
+    		</div>
+
+            <span class="alert-button"></span>
+            <span class="table-png"></span>
+    		<div class="percent-parents">
+    			<div class="percent-bar">
+    				<div class="percent-bar-content"></div>
+    				<div class="percent-num">
+    					<span class="value">0%</span>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="vertical-switch">
+    			<span class="vertical-switch-disabled">0°</span>
+    			<span>30°</span>
+    			<span>60°</span>
+    			<span>90°</span>
+    			<span>120°</span>
+    			<span>150°</span>
+    		</div>
+    	</div>
+    </div>
+	<script src= "js/bundle.js"></script>
+	<script type="text/javascript">
+		airCylinder({
+			num: QueryString.num || 'questionNum'
+		});
+	</script>
+</body>
+</html>

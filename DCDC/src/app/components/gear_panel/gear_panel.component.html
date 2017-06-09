@@ -1,0 +1,20 @@
+<!--档位操控面板-->
+<div class="gear-wrap dragSource z-index-100 hide-important" >
+    <button class="close cursor-pointer" (click)=" closeSwitchPanel(1) ">X</button>
+
+    <div class="state-wrap">
+        <span class="stateR cursor-pointer" (click)=" switchGear(1,$event.target) ">R</span>
+        <span class="stateN cursor-pointer" (click)=" switchGear(2,$event.target) ">N</span>
+        <span class="stateD1 cursor-pointer" (click)=" switchGear(3,$event.target) ">D</span>
+    </div>
+    <div class="gear-switch" ></div>
+
+    <div class="data-show">16</div>
+
+    <div class="gear-accelerator">
+        <div class="accelerator" ></div>
+    </div>
+
+    <div class="gear-brake" (click)=" brakeOn($event.target) "></div>
+
+</div>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fault>
+	<metadata>
+		<schema>XCJ</schema>
+		<schemaversion>1.0</schemaversion>
+	</metadata>
+	<name>排除发动机故障灯点亮</name>
+	<courseNumber>SGM_WL_001</courseNumber>
+	<type>emu</type>
+	<types>emuCourseWare</types>
+	<purpose>EVAP系统</purpose>
+	<require>无</require>
+	<keyword>宝骏560智能手动挡故障灯亮无法正常行驶</keyword>
+	<language>中文</language>
+	<version>V0.1</version>
+	<description>无</description>
+	<client>PC</client>
+	<entry>SGM_WL_001/WbtLampCar.html</entry>
+	<progresses>
+<!--		<progress id='P001'  discription='客户陈述' rate="1"/>-->
+		<progress id='P002'  discription='客户陈述第1题' rate="1"/>
+		<progress id='P003'  discription='客户陈述第2题' rate="1"/>
+
+		<progress id='P004'  discription='症状确认第1题' rate="1"/>
+		<progress id='P005'  discription='症状确认第2题' rate="1"/>
+		<progress id='P006'  discription='症状确认第3题' rate="1"/>
+		<progress id='P007'  discription='症状确认第4题' rate="1"/>
+
+		<progress id='P008'  discription='初步检查第1题' rate="1"/>
+		<progress id='P009'  discription='初步检查第2题' rate="1"/>
+		<progress id='P010'  discription='初步检查第3题' rate="1"/>
+		<progress id='P011'  discription='初步检查第4题' rate="1"/>
+		<progress id='P012'  discription='初步检查第5题' rate="1"/>
+		<progress id='P013'  discription='初步检查第6题' rate="1"/>
+
+		<progress id='P014'  discription='故障分析第1题' rate="1"/>
+		<progress id='P015'  discription='故障分析第2题' rate="1"/>
+		<progress id='P016'  discription='故障分析第3题' rate="1"/>
+		<progress id='P017'  discription='故障分析第4题' rate="1"/>
+		<progress id='P018'  discription='故障分析第5题' rate="1"/>
+		<progress id='P019'  discription='故障分析第6题 ' rate="1"/>
+		<progress id='P020'  discription='故障分析第7题' rate="1"/>
+		<progress id='P021'  discription='故障分析第8题' rate="1"/>
+
+		<progress id='P022'  discription='视觉检查第1题' rate="1"/>
+		<progress id='P023'  discription='视觉检查第2题 ' rate="1"/>
+		<progress id='P024'  discription='视觉检查第3题' rate="1"/>
+		<progress id='P025'  discription='视觉检查第4题' rate="1"/>
+		<progress id='P026'  discription='视觉检查第5题' rate="1"/>
+
+		<progress id='P027'  discription='故障诊断第1题' rate="1"/>
+		<progress id='P028'  discription='故障诊断第2题 ' rate="1"/>
+		<progress id='P029'  discription='故障诊断第3题' rate="1"/>
+		<progress id='P030'  discription='故障诊断第4题' rate="1"/>
+		<progress id='P031'  discription='故障诊断第5题' rate="1"/>
+		<progress id='P032'  discription='故障诊断第6题' rate="1"/>
+		<progress id='P033'  discription='故障诊断第7题' rate="1"/>
+		<progress id='P034'  discription='故障诊断第8题 ' rate="1"/>
+		<progress id='P035'  discription='故障诊断第9题' rate="1"/>
+		<progress id='P036'  discription='故障诊断第10题' rate="1"/>
+
+		<progress id='P037'  discription='故障维修第1题' rate="1"/>
+		<progress id='P038'  discription='故障维修第2题' rate="1"/>
+
+		<progress id='P039'  discription='修复确认第1题' rate="1"/>
+		<progress id='P040'  discription='修复确认第2题' rate="1"/>
+		<progress id='P041'  discription='修复确认第3题' rate="1"/>
+	</progresses>
+	
+	<questions>
+        <question description="诊断策略检查" id="q01" remark="">
+            <question description="对故障码P0443的含义的说法，下列描述中正确的是？" id="q01_01" type="1">
+                <option id="q01_01_a1" description="燃油蒸气排放控制系统清污控制阀卡滞在常开的位置。" isRight="0"/>
+                <option id="q01_01_a2" description="燃油蒸气排放控制系统清污控制阀电路故障。" isRight="1"/>
+				<option id="q01_01_a3" description="燃油蒸气排放控制系统清污控制阀卡滞在常闭的位置。" isRight="0"/>
+				<option id="q01_01_a4" description="以上描述都不正确" isRight="0"/>
+            </question>
+        </question>
+		<question description="诊断策略检查" id="q02" remark="">
+			<question description="常温下，清污VSV的电阻测量值，正确的是？" id="q02_01" type="1">
+				<option id="q02_01_a1" description="11Ω" isRight="0"/>
+				<option id="q02_01_a2" description="83Ω" isRight="0"/>
+				<option id="q02_01_a3" description="24Ω" isRight="1"/>
+				<option id="q02_01_a4" description="1Ω" isRight="0"/>
+			</question>
+		</question>
+		<question description="诊断策略检查" id="q03" remark="">
+			<question description="关于发动机线束上清污VSV插头的2号插脚（B19-2）的描述正确的是？" id="q03_01" type="1">
+				<option id="q03_01_a1" description="电源端" isRight="1"/>
+				<option id="q03_01_a2" description="接地端" isRight="0"/>
+				<option id="q03_01_a3" description="控制端。" isRight="0"/>
+				<option id="q03_01_a4" description="以上都不对" isRight="0"/>
+			</question>
+		</question>
+		<question description="诊断策略检查" id="q04" remark="">
+			<question description="用诊断仪测试清污 VSV，下列说法正确的是？" id="q04_01" type="1">
+				<option id="q04_01_a1" description="诊断仪能控制清污VSV打开或关闭。" isRight="1"/>
+				<option id="q04_01_a2" description="诊断仪可指令ECM对清污VSV进行占空比控制。" isRight="0"/>
+				<option id="q04_01_a3" description="诊断仪可以控制清污VSV的开度大小。" isRight="0"/>
+				<option id="q04_01_a4" description="A和B都正确" isRight="0"/>
+			</question>
+		</question>
+		<question description="诊断策略检查" id="q05" remark="">
+			<question description="技师 A 说：发动机暖机后，清污VSV才会工作。技师 B 说：ECM发送占空比信号控制清污VSV" id="q05_01" type="1">
+				<option id="q05_01_a1" description="A技师正确。" isRight="0"/>
+				<option id="q05_01_a2" description="B技师正确。" isRight="0"/>
+				<option id="q05_01_a3" description="两位技师都对。" isRight="1"/>
+				<option id="q05_01_a4" description="两位技师都不对" isRight="0"/>
+			</question>
+		</question>
+    </questions>
+	
+	
+    <scores>
+        <!--维修工单得分-->
+        <score type="question" id="q01" hid="q01_01" rate="20" kp="">
+            <option>q01_01_a2</option>
+        </score>
+		<score type="question" id="q02" hid="q02_01" rate="20" kp="">
+			<option>q02_01_a3</option>
+		</score>
+		<score type="question" id="q03" hid="q03_01" rate="20" kp="">
+			<option>q03_01_a1</option>
+		</score>
+		<score type="question" id="q04" hid="q04_01" rate="20" kp="">
+			<option>q04_01_a1</option>
+		</score>
+		<score type="question" id="q05" hid="q05_01" rate="20" kp="">
+			<option>q05_01_a3</option>
+		</score>
+        <!--动作得分-->
+
+    </scores>
+	
+</fault>

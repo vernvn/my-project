@@ -1,0 +1,287 @@
+html,
+body {
+    height: 100%;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span.active {
+    background-color: gray;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+blockquote,
+th,
+td,
+p {
+    margin: 0;
+    border: none;
+    padding: 0;
+
+    background: none;
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+    word-wrap: break-word;
+    word-break: break-all;
+
+    color: #000;
+    background: #fff;
+}
+
+body,
+input,
+textarea,
+button {
+    font-family: \5FAE\8F6F\96C5\9ED1,Verdana,Arial;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+
+    color: #305999;
+
+    outline: none;
+}
+
+* {
+    word-break: break-word;
+}
+
+/*comm========================================================================================================*/
+.hide-important {
+    display: none !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/*body========================================================================================================*/
+body {
+    margin: 0 auto;
+    width: 1024px;
+    height: 580px;
+}
+
+.container {
+    overflow: hidden;
+
+    position: relative;
+    top: 0;
+    left: 0;
+
+    margin: 0 auto;
+    width: 1024px;
+    height: 580px;
+
+    background: #f5fcea;
+}
+
+/*header======================================================================================================*/
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border-bottom: 1px solid #c0c4ba;
+    width: 100%;
+    height: 50px;
+
+    color: #555;
+    background: url(./images/header_bg.png) no-repeat;
+
+    box-shadow: 1px -1px 3px;
+    .line {
+        position: absolute;
+        top: 13px;
+        left: 70px;
+
+        border-right: 1px solid #000;
+        width: 1px;
+        height: 26px;
+
+        background-color: #4d6d89;
+    }
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 72px;
+
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+
+        background-repeat: no-repeat;
+        background-position: center;
+        &.logo2 {
+            left: 122px;
+        }
+    }
+    h1 {
+        float: right;
+
+        padding-right: 24px;
+        height: 50px;
+
+        font-size: 20px;
+        line-height: 50px;
+
+        color: #fff;
+    }
+}
+
+/*main======================================================================================================*/
+.main {
+    // position: relative;
+    width: 100%;
+    height: 100%;
+}
+.main .main-content {
+    margin: 0 auto;
+    border: 1px #2c2c2c solid;
+    width: 100%;
+    height: 100%;
+
+    background: #fff;
+    box-sizing: border-box;
+}
+
+/*last,next================================================================================================*/
+.foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    margin: 0 auto ;
+    width: 100%;
+    height: 44px;
+
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+
+    background: url(./images/foot_bg.png) no-repeat;
+}
+
+
+/*此功能不可用弹出警告框 ==========================================================================================================*/
+.resistanceWarn {
+    position: absolute;
+    top: 51px;
+    left: 0;
+    z-index: 99;
+
+    width: 1025px;
+    height: 529px;
+
+    background: rgba(0, 0, 0, .5);
+}
+
+.resistanceWarn span.resistanceWarn-alert {
+    display: block;
+
+    margin: 150px auto;
+    width: 300px;
+    height: 200px;
+
+    text-align: center;
+
+    background: #212121;
+}
+
+.resistanceWarn span.resistanceWarn-alert p {
+    position: relative;
+    top: 50px;
+    left: 0;
+
+    width: 100%;
+
+    font: 14px "microsoft yahei";
+    line-height: 24px;
+
+    color: #fff;
+}
+
+.resistanceWarn span.resistanceWarn-alert button {
+    position: relative;
+    top: 120px;
+
+    width: 80px;
+    height: 30px;
+
+    color: #fff;
+    background: #000;
+}
+
+.resistanceWarn span.resistanceWarn-alert button:hover {
+    // color: #000;
+    background: #fff;
+}
+
+/*# sourceMappingURL=comm.css.map */
+
+
+.z-index-100 {
+    z-index: 100;
+}
+.opacity {
+    opacity: 0;
+}
+.hidden {
+    display: none;
+}
+
+*.unselectable {
+    -webkit-user-select:      none;
+       -moz-user-select: -moz-none;
+    /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+        -ms-user-select:      none;
+            user-select:      none;
+
+     -khtml-user-select:      none;
+}

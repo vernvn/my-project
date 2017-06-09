@@ -1,0 +1,122 @@
+
+.close-window-button {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    z-index: 1100;
+
+    width: 30px;
+    height: 30px;
+
+    background-image: url("images/exit_bt.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    &:hover {
+        background-image: url("images/exit_bt_act.png");
+        .tip {
+            display: block;
+        }
+    }
+    button {
+        width: 100%;
+        height: 100%;
+    }
+    .tip {
+        display: none;
+
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        z-index: 1000;
+
+        -moz-box-sizing: border-box;
+             box-sizing: border-box;
+        border-radius: 2px;
+        width: 390px;
+        height: 50px;
+
+        font-size: 16px;
+        line-height: 50px;
+        text-align: center;
+
+        background-color: #fff;
+
+        box-shadow: 0 0 2px 0;
+    }
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(222, 222, 222, .5);
+    .modal-dialog {
+        position: relative;
+
+        margin: 268px auto;
+        border-radius: 5px;
+        width: 598px;
+        height: 158px;
+
+        background-color: #fff;
+        // background-image: url("./images/dialog_bg.png");
+        background-repeat: no-repeat;
+        // border: 1px #2c2c2c solid;
+
+        box-shadow: 0 0 2px 0;
+        h5 {
+            margin-left: 10px;
+            height: 42px;
+
+            font-size: 20px;
+            font-weight: normal;
+            font-style: normal;
+            line-height: 42px;
+            text-align: left;
+
+            color: #fff;
+        }
+        p {
+            padding-top: 40px;
+            padding-bottom: 35px;
+
+            font-size: 16px;
+        }
+        hr {
+            margin: 0 10px;
+        }
+        button {
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+
+            width: 52px;
+            height: 34px;
+
+            background-repeat: no-repeat;
+            background-position: center;
+
+            cursor: pointer;
+
+            &:first-of-type {
+                right: 82px;
+
+                background-image: url("./images/dialog_bt1.png");
+                &:hover {
+                    background-image: url("./images/dialog_bt1_act.png") !important;
+                }
+            }
+            &:last-of-type {
+                color: #fff;
+                background-image: url("./images/dialog_bt2.png");
+                &:hover {
+                    background-image: url("./images/dialog_bt2_act.png") !important;
+                }
+            }
+        }
+    }
+}

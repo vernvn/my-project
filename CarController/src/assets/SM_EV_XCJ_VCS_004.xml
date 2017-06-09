@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fault>
+	<metadata>
+		<schema>XCJ</schema>
+		<schemaversion>1.0</schemaversion>
+	</metadata>
+	<name>整车控制器</name>
+	<courseNumber>SM_EV_XCJ_VCS_004</courseNumber>
+	<type>emu</type>
+	<types>emuCourseWare</types>
+	<purpose>技术方案测试</purpose>
+	<require>无</require>
+	<keyword>学习系统</keyword>
+	<language>中文</language>
+	<version>V0.1</version>
+	<description>无</description>
+	<client>PC</client>
+	<sumScore>100</sumScore>
+	<passCondition>60</passCondition>
+	<completeCondition>60</completeCondition>
+	<entry>SM_EV_XCJ_VCS_004/index.html</entry>
+	<handles>
+		<handle id="ver001" discription="点击“开始课程”进入页面"/>   <!--点击“开始课程”进入页面-->
+		<handle id="ver002" discription="在“整车高压控制”页面点击下一页按钮或点击“整车辅助控制”导航标。"/>   <!--在“整车高压控制”页面点击下一页按钮或点击“整车辅助控制”导航标。-->
+		<handle id="ver003" discription="拖动温度传感器拉条"/>   <!--拖动温度传感器拉条-->
+		<handle id="ver004" discription="点火开关转到ON档"/>   <!--点火开关转到ON档-->
+		<handle id="ver005" discription="点击刹车踏板"/>   <!--点击刹车踏板-->
+		<handle id="ver006" discription="点击拖动油门踏板"/>   <!--点击拖动油门踏板-->
+		<handle id="ver007" discription="点击D档和R档"/>   <!--点击D档和R档-->
+	</handles>
+	<progresses>
+		 <progress type="handle" id="P001" hid="ver001" rate="2" kp=""/>
+ 		 <progress type="handle" id="P002" hid="ver002" rate="2" kp=""/>
+		 <progress type="handle" id="P003" hid="ver003" rate="2" kp=""/>
+ 		 <progress type="handle" id="P004" hid="ver004" rate="2" kp=""/>
+		 <progress type="handle" id="P005" hid="ver005" rate="2" kp=""/>
+		 <progress type="handle" id="P006" hid="ver006" rate="2" kp=""/>
+ 		 <progress type="handle" id="P007" hid="ver007" rate="2" kp=""/>
+	</progresses>
+	<scores>
+	</scores>
+
+	<values>
+	</values>
+
+	<questions>
+	</questions>
+	
+</fault>

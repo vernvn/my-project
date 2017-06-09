@@ -1,0 +1,671 @@
+﻿
+<div id="mask-zdy">
+	<div class="zdy">
+		<!-- <div class="zdy-power" >
+			<P >POWER</P>
+		</div> -->
+		<div class="zdy-return" >
+			<p >返回</p>
+		</div>
+		<div class="coe" id="zdyy"></div>
+		<div class="iframezdy-zdy" id="iframezdy-zdy">
+			<div id="zdyPage1" class="zdy-page">
+				<div class="login-box">
+					<div class="button-box">
+						<div class="login-button" onclick="pageUrl('2');">登录</div>
+						<div class="exit-button">退出</div>
+					</div>
+				</div>
+			</div>
+			<div id="zdyPage2" class="zdy-page">
+				<div class="zdy-top">
+					<p>主菜单</p>
+					<p><br/>BJ1.02.80</p>
+				</div>
+				<ul class="main-menu-list">
+					<li onclick="pageUrl('3');"></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="zdy-footer">
+					<div class="footer-left">
+						<span class="footer-left-active">主菜单</span>
+					</div>
+					<div class="footer-right">
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+			</div>
+
+			<div id="zdyPage3" class="zdy-page">
+				<div class="zdy-top">
+					<p>车型及电控模块配置</p>
+					<p><br/>BJ1.02.80</p>
+				</div>
+				<div class="zdy-footer">
+					<div class="footer-left">
+						<span>主菜单</span>
+						<span class="footer-left-active">车型选择</span>
+					</div>
+					<div class="footer-right">
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<div class="zdy-page3-main">
+					<fieldset>
+						<legend>车型配置</legend>
+						<dl>
+							<dd>
+								<label for="">车型：</label>
+								<select class="car-list" onclick="select1()">  
+									<option></option>  
+									<option disabled>五菱小旋风</option>  
+									<option disabled>五菱征程</option>  
+									<option disabled>宝骏乐驰</option>
+									<option disabled>宝骏730</option>
+									<option value="6">宝骏560</option>
+									<option disabled>宝骏330</option> 
+									<option disabled>五菱宏光S1</option> 
+								</select>
+							</dd>
+							<dd>
+								<label for="">排量：</label>
+								<select disabled class="output-list" onclick="select2()">  
+									<option></option>  
+									<option disabled="disabled">1.8</option>  
+									<option value="3">1.8AMT</option>
+									<option disabled="disabled">B15T</option>
+								</select>
+							</dd>
+							<dd>
+								<label for="">上市年份：</label>
+								<select disabled class="year-list">  
+									<option></option>  
+									<option value ="2">2015</option> 
+								</select>
+							</dd>
+							<dd class="select-right">
+								<span>历史记录</span>
+								<span>清空选择</span>
+							</dd>
+						</dl>
+					</fieldset>
+					<fieldset>
+						<legend>模块选择</legend>	
+						<dl>
+							<dd class="select-module">
+								<ul>
+									<li onclick="pageUrl('4')"></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li onclick="pageUrl('4')"></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</dd>
+						</dl>
+					</fieldset>
+				</div>
+			</div>
+
+			<div id="zdyPage4" class="zdy-page">
+				<div class="zdy-top">
+					<p>诊断功能选择</p>
+					<p>2015 宝骏560 TCM</p>
+					<p>MDI: 已连接 &nbsp;&nbsp;&nbsp;&nbsp;BJ1.02.80</p>
+				</div>
+				<div class="zdy-footer">
+					<div class="footer-left">
+						<span>主菜单</span>
+						<span>车型选择</span>
+						<span class="footer-left-active">功能选择</span>
+					</div>
+					<div class="footer-right">
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<div class="zdy-page4-main">
+					<ul class="page4-ul">
+						<li table="table1" onclick="tableShow(this);pageUrl('5')" class="pointer">诊断故障代码</li>
+						<li table="table3">数据实时显示</li>
+						<li table="table2">特殊功能</li>
+						<li>模块识别信息</li>
+						<li>AMT离合器人工排</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="zdyPage4-2" class="zdy-page">
+				<div class="zdy-top">
+					<p>诊断功能选择</p>
+					<p>2015 宝骏560 TCM</p>
+					<p>MDI: 已连接 &nbsp;&nbsp;&nbsp;&nbsp;BJ1.02.80</p>
+				</div>
+				<div class="zdy-footer">
+					<div class="footer-left">
+						<span>主菜单</span>
+						<span>车型选择</span>
+						<span class="footer-left-active">功能选择</span>
+					</div>
+					<div class="footer-right">
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<div class="zdy-page4-main">
+					<ul class="page4-ul">
+						<li table="table1">诊断故障代码</li>
+						<li table="table3" onclick="tableShow(this);pageUrl('5')" class="pointer">数据实时显示</li>
+						<li table="table2">特殊功能</li>
+						<li>模块识别信息</li>
+						<li>AMT离合器人工排</li>
+					</ul>
+				</div>
+			</div>
+			<div id="zdyPage4-3" class="zdy-page">
+				<div class="zdy-top">
+					<p>诊断功能选择</p>
+					<p>2015 宝骏560 TCM</p>
+					<p>MDI: 已连接 &nbsp;&nbsp;&nbsp;&nbsp;BJ1.02.80</p>
+				</div>
+				<div class="zdy-footer">
+					<div class="footer-left">
+						<span>主菜单</span>
+						<span>车型选择</span>
+						<span class="footer-left-active">功能选择</span>
+					</div>
+					<div class="footer-right">
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<div class="zdy-page4-main">
+					<ul class="page4-ul">
+						<li table="table1">诊断故障代码</li>
+						<li table="table3" onclick="tableShow(this);pageUrl('5')" class="pointer">数据实时显示</li>
+						<li table="table2">特殊功能</li>
+						<li>模块识别信息</li>
+						<li>AMT离合器人工排</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="zdyPage5" class="zdy-page">
+				<div class="zdy-top">
+					<p>诊断功能选择</p>
+					<p>2015 宝骏560 TCM</p>
+					<p>MDI: 已连接 &nbsp;&nbsp;&nbsp;&nbsp;BJ1.02.80</p>
+				</div>
+				<div class="zdy-footer">
+					<div class="footer-left">
+						<span>主菜单</span>
+						<span>车型选择</span>
+						<span>功能选择</span>
+						<span class="footer-left-active"></span>
+						<span></span>
+					</div>
+					<div class="footer-right">
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<div class="zdy-page5-main">
+					<div class="table-outer">
+						<div class="table-main"></div>
+						<div class="table-footer"></div>
+					</div>
+					<ul class="page5-subul">
+						<li table="table3">电压信号</li>
+						<li>行程信息</li>
+						<li>油温信息</li>
+						<li onclick="pageUrl('6')" class="pointer">开关信息</li> <!-- onclick="tableShow2(this)" -->
+						<li>自学习值</li>
+					</ul>
+				</div>
+			</div>
+			<div id="zdyPage6" class="zdy-page">
+				<div class="zdy-top">
+					<p>开关信息</p>
+					<p>2015 宝骏560 TCM</p>
+					<p>MDI: 已连接 &nbsp;&nbsp;&nbsp;&nbsp;BJ1.02.80</p>
+				</div>
+				<div class="zdy-footer">
+					<div class="footer-left">
+						<span>主菜单</span>
+						<span>车型选择</span>
+						<span>功能选择</span>
+						<span>数据分组</span>
+						<span class="footer-left-active">数据显示</span>
+					</div>
+					<div class="footer-right">
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<div class="zdy-page6-main">
+					<div class="page6-table-main">
+						<p>N</p>
+						<p>ON</p>
+
+						<p>ON</p>
+						<p>OFF</p>
+						<p class="zdy-stp">OFF</p>
+						<p class="zdy-st1">ON</p>
+						<p>OFF</p>
+						<p>ON</p>
+						<p>OFF</p>
+					</div>
+					<div class="page6-table-footer">
+						<p class="zdy-stop">停止</p>
+						<p>数据录制</p>
+					</div>
+				</div>
+			</div>
+			<div id="zdyPage7" class="zdy-page">
+				<div class="zdy-top">
+					<p>特殊功能选择</p>
+					<p>2015 宝骏560 TCM</p>
+					<p>MDI:  已连接 &nbsp;&nbsp;&nbsp;&nbsp;BJ1.02.80</p>
+				</div>
+				<div class="zdy-footer">
+					<div class="footer-left">
+						<span>主菜单</span>
+						<span>车型选择</span>
+						<span>功能选择</span>
+						<span>测试选择</span>
+						<span class="footer-left-active">特殊功能</span>
+					</div>
+					<div class="footer-right">
+						<a></a>
+						<a></a>
+					</div>
+				</div>
+				<div class="zdy-page7-main">
+					<div class="page7-table-main">
+						<div class="page7-main-left page7-main-inner">
+							<dl>
+								<dt>测试项目</dt>
+								<dd class="dd-first blue-inner"></dd>
+								<dd class="dd-two blue-inner"></dd>
+								<dd class="dd-bottom">
+									<label for="feedback">反馈状态：</label>
+									<p class="feedback blue-inner"></p>
+								</dd>
+							</dl>
+						</div>
+						<div class="page7-main-right page7-main-inner">
+							<dl>
+								<dt>测试选项</dt>
+								<dd class="blue-inner page7-gears-outer">
+									<ul class="page7-main-right-gears">
+										<li>强制驱动挡位-1挡-执行</li>
+										<li>强制驱动挡位-1挡-停止</li>
+										<li>强制驱动挡位-2挡-执行</li>
+										<li>强制驱动挡位-2挡-停止</li>
+										<li>强制驱动挡位-3挡-执行</li>
+										<li>强制驱动挡位-3挡-停止</li>
+										<li>强制驱动挡位-4挡-执行</li>
+										<li>强制驱动挡位-4挡-停止</li>
+										<li>强制驱动挡位-5挡-执行</li>
+										<li>强制驱动挡位-5挡-停止</li>
+										<li>强制驱动挡位-空挡-执行</li>
+										<li>强制驱动挡位-空挡-停止</li>
+										<li>强制驱动挡位-倒挡-执行</li>
+										<li>强制驱动挡位-倒挡-停止</li>
+										<li>强制驱动离合-排气(分离)-执行</li>
+										<li>强制驱动离合-排气(分离)-停止</li>
+									</ul>
+								</dd>
+								<dd class="page7-right-execute">执行</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(".zdy-page").hide();
+	/*
+	 *裴露婕 2016-1-6
+	*/
+	$('.select-module').hide();
+	$('.page4-subul').hide();
+	$('.table-outer').hide();
+
+	var zdyPageTimes = 0;
+	
+	function select1(){
+		var option1 = $(".car-list option:selected").val();
+		if(option1 === '6') {
+			$('.output-list').attr('disabled', false);
+		}else {
+			$('.output-list').attr('disabled', true);
+		}
+	}
+	function select2(){
+		var option2=$(".output-list option:selected").val();
+		if(option2 === '3') {
+			$(".year-list").find('option').eq(1).attr('selected', true);
+			$('.select-module').show();
+			$('.zdy-page3-main').find('fieldset').eq(1).css('border-width', '1px');
+		} else {
+			$(".year-list").find('option').eq(1).attr('selected', false);
+			$('.select-module').hide();
+		}
+	}
+	var zdyPage5MainTable = [{
+		name: 'table1',
+		footerSpan: ['故障代码'],
+		topP: ['诊断故障代码'],
+		tableFooter: ['详细信息', '清除故障码', '读取故障码','读取冻结帧'],
+		th: ['故障码', '故障码描述', '状态'],
+		td: [{
+			name: 'td1',
+			list: ['P090000', '离合器电机驱动回路故障', '当前的']
+		}]
+	}, {
+		name: 'table2',
+		footerSpan: ['数据分组', '数据显示'],
+		topP: ['电压信号','数据显示分组'],
+		tableFooter: ['停止', '数据录制'],
+		th: ['序号', '项目', '数值', '单位'],
+		td: [
+			{
+				name: 'td1',
+				list : ['1', '控制模块电压', '12.13', 'V']
+			}, {
+				name: 'td2',
+				list : ['2', '离合行程传感器1电压', '1.18', 'V']
+			}, {
+				name: 'td3',
+				list : ['3', '离合行程传感器2电压', '1.18', 'V']
+			}, {
+				name: 'td4',
+				list : ['4', '选挡行程传感器1电压', '2.80', 'V']
+			}, {
+				name: 'td5',
+				list : ['5', '选挡行程传感器2电压', '2.80', 'V']
+			}, {
+				name: 'td6',
+				list : ['6', '换挡行程传感器1电压', '2.49', 'V']
+			}, {
+				name: 'td7',
+				list : ['7', '换挡行程传感器2电压', '2.49', 'V']
+			}, {
+				name: 'td8',
+				list : ['8', '离合电机正极电压', '1.30', 'V']
+			}, {
+				name: 'td9',
+				list : ['9', '离合电机负极电压', '1.30', 'V']
+			}, {
+				name: 'td10',
+				list : ['10', '选挡电机正极电压', '1.30', 'V']
+			}, {
+				name: 'td11',
+				list : ['11', '选挡电机负极电压', '1.30', 'V']
+			}, {
+				name: 'td12',
+				list : ['12', '换挡电机正极电压', '1.30', 'V']
+			}, {
+				name: 'td13',
+				list : ['13', '换挡电机负极电压', '1.30', 'V']
+			}, {
+				name: 'td14',
+				list : ['14', '电机电路电压', '12.08', 'V']
+			}, {
+				name: 'td15',
+				list : ['15', '离合电机检测电流', '0.00', 'V']
+			}, {
+				name: 'td16',
+				list : ['16', '选挡电机检测电流', '0.00', 'V']
+			}, {
+				name: 'td17',
+				list : ['17', '换挡电机检测电流', '-0.50', 'V']
+			}]
+	}, {
+		name: 'table3',
+		footerSpan: ['数据分组', '数据显示'],
+		topP: ['电压信号','数据显示分组'],
+		tableFooter: ['停止', '数据录制'],
+		th: ['序号', '项目', '数值', '单位'],
+		td: [
+				{
+			name: 'td1',
+			list : ['1', '控制模块电压', '12.13', 'V']
+		}, {
+			name: 'td2',
+			list : ['2', '离合行程传感器1电压', '1.18', 'V']
+		}, {
+			name: 'td3',
+			list : ['3', '离合行程传感器2电压', '1.18', 'V']
+		}, {
+			name: 'td4',
+			list : ['4', '选挡行程传感器1电压', '2.80', 'V']
+		}, {
+			name: 'td5',
+			list : ['5', '选挡行程传感器2电压', '2.80', 'V']
+		}, {
+			name: 'td6',
+			list : ['6', '换挡行程传感器1电压', '2.49', 'V']
+		}, {
+			name: 'td7',
+			list : ['7', '换挡行程传感器2电压', '2.49', 'V']
+		}, {
+			name: 'td8',
+			list : ['8', '离合电机正极电压', '1.30', 'V']
+		}, {
+			name: 'td9',
+			list : ['9', '离合电机负极电压', '1.30', 'V']
+		}, {
+			name: 'td10',
+			list : ['10', '选挡电机正极电压', '1.30', 'V']
+		}, {
+			name: 'td11',
+			list : ['11', '选挡电机负极电压', '1.30', 'V']
+		}, {
+			name: 'td12',
+			list : ['12', '换挡电机正极电压', '1.30', 'V']
+		}, {
+			name: 'td13',
+			list : ['13', '换挡电机负极电压', '1.30', 'V']
+		}, {
+			name: 'td14',
+			list : ['14', '电机电路电压', '12.08', 'V']
+		}, {
+			name: 'td15',
+			list : ['15', '离合电机检测电流', '0.00', 'V']
+		}, {
+			name: 'td16',
+			list : ['16', '选挡电机检测电流', '0.00', 'V']
+		}, {
+			name: 'td17',
+			list : ['17', '换挡电机检测电流', '-0.50', 'V']
+		}]
+	}]
+
+	function tableShow(e){
+		var num, flag = false;
+		if($(e).attr('table')){
+			pageUrl('5');
+			var tablenum = $(e).attr('table'); 
+			$.each(zdyPage5MainTable, function(index, item){
+				if(item.name === tablenum){
+					num = index;
+				}
+			})
+			if(tablenum === 'table3' && zdyPage5MainTable[num]) {
+				$('.page5-subul').show();
+				$('.table-outer').hide();
+				$('.zdy-page5-main').css('background', 'none');
+				$('#zdyPage5 .footer-left').find('span').eq(3).text(zdyPage5MainTable[num].footerSpan[0]);
+			} else if(tablenum === 'table2' && zdyPage5MainTable[num]) {
+				createTable(num);
+			} else if(tablenum === 'table1' && zdyPage5MainTable[num]) {
+				if(typeof(pages47)!= "undefined"){
+					zdyPage5MainTable[0].td[0].list[2] = '历史的';
+				}
+				createTable(num);
+				if(typeof openDiagnosticEleven != "undefined"){
+					NextDarkOrLignt(1);
+				}
+			}
+		}
+		//清除故障码
+		if(typeof(pages47)!= "undefined"){
+			$('.table-footer').find('p').eq(1).css('cursor', 'pointer').off().click(function(){
+				$('.table-main').html('');
+				NextDarkOrLignt(1);
+			});
+		}
+	}
+	function tableShow2(e){
+		if(typeof(pages42)!= "undefined"){
+			if($(e).attr('table')){
+				var tablenum = $(e).attr('table'); 
+				$.each(zdyPage5MainTable, function(index, item){
+					if(item.name === tablenum){
+						num = index;
+					}
+				})
+				createTable(num);
+				$('#zdyPage5 .footer-left').find('span').eq(4).text(zdyPage5MainTable[num].footerSpan[1]);
+				addActiveStyle();
+			}
+		}else {
+			return false;
+		}
+	}
+	function addActiveStyle() {
+		$('#zdyPage5 .footer-left').find('span').removeClass('footer-left-active');
+		$('#zdyPage5 .footer-left').find('span:last').addClass('footer-left-active');
+	}
+	function createTable(num){
+		$('.zdy-page5-main').css('background', '#fff');
+		$('.page5-subul').hide();
+		$('.table-outer').show();
+		$('.table-main').html('');
+		$('.table-footer').html('');
+		$('#zdyPage5 .zdy-top').find('p').eq(0).text(zdyPage5MainTable[num].topP[0]);
+		$('#zdyPage5 .footer-left').find('span').eq(3).text(zdyPage5MainTable[num].footerSpan[0]).addClass('footer-left-active').siblings('span').removeClass('footer-left-active');
+
+		var table=$("<table border=\"1\">");
+		table.appendTo($(".table-main"));
+		var tr=$("<tr></tr>");
+		for(var i=0;i< zdyPage5MainTable[num].th.length;i++) {
+    		var th = $('<th>'+ zdyPage5MainTable[num].th[i] +'</th>');
+    		th.appendTo(tr);
+		}
+		tr.appendTo(table);
+		for(var i=0;i< zdyPage5MainTable[num].td.length;i++) {
+			var tr=$("<tr></tr>");
+	    	for(var j=0;j< zdyPage5MainTable[num].td[i].list.length;j++){
+				if(zdyPage5MainTable[num].td[i].gearDrive){
+					var td = $('<td onclick="gearDrive()" class="pointer">'+ zdyPage5MainTable[num].td[i].list[j] +'</td>');
+				} else {
+					var td = $('<td>'+ zdyPage5MainTable[num].td[i].list[j] +'</td>');
+				}
+	    		td.appendTo(tr);
+	    	}
+	    	tr.appendTo(table);
+		}
+		$(".table-main").append("</table>");
+		if(zdyPage5MainTable[num].tableFooter) {
+			$.each(zdyPage5MainTable[num].tableFooter, function(index, item){
+				var p = $('<p>'+ item +'</p>');
+				$('.table-footer').append(p);
+			})
+		}
+	}
+	//----end
+	//返回按钮做页面标记
+	var zdyHtmlBack=0;
+	//
+	function pageUrl(id){
+		var zdynum=id-1;//诊断仪哪一页是需要隐藏的
+		zdyPageTimes ++;
+		if(id === '2'){
+			$(".iframezdy-zdy").css("background-image", "url(template/zdy/images/zdy/zdy_bg.png)");
+		}
+		// console.log(id)
+		if(id==="4"){
+			$("#zdyPage"+zdynum).hide();
+			if(pages41 ===1 ) {
+				$("#zdyPage4").show();
+			} else if(pages46 === 1) {
+				$("#zdyPage4-2").show();
+			} else if(pages25 === 1){
+				$("#zdyPage4-3").show();
+			} else {
+				$("#zdyPage3").hide();
+				$("#zdyPage4").show();
+			}
+		} else if(id==="5"){
+			$("#zdyPage4").hide();
+			$("#zdyPage4-2").hide();
+			$("#zdyPage4-3").hide();
+			$("#zdyPage5").show();
+		} else if(id==="6"){
+			$("#zdyPage"+zdynum).hide();
+			$("#zdyPage"+id).show();
+			if(pages25 === 1){
+				$("#zdyPage6").show();
+			}
+		}
+		else {
+			$("#zdyPage"+zdynum).hide();
+			$("#zdyPage"+id).show();
+		}
+		zdyHtmlBack=zdynum;		//为返回做标记
+	};
+	var gearNumPage7;
+	function gearDrive(){
+		$("#zdyPage5").hide();
+		$("#zdyPage7").show();
+		$('.page7-main-right-gears').find('li').click(function(){
+			gearNumPage7 = $(this).index();
+			if($(this).attr('clickStatus')!='clickTwo'){
+				$(this).attr('clickStatus', 'clickOne');
+			}
+			$(this).addClass('gear-active').siblings('li').removeClass('gear-active');
+			var gearText = $(this).text();
+			$('.dd-first').text(gearText);
+
+			$('.dd-two').text('提示：请踩下制动踏板保持挡位杆为N,引擎、车辆停止');
+			$('.feedback').text('').removeClass('feedback-active');
+			$('.page7-right-execute').removeClass('zdy-stop');
+		});
+		$('.page7-right-execute').click(function(){
+			var txtPage7 = $('.dd-first').text();
+			var footboardPage7 = $('.footboard').attr('name');
+			if(txtPage7 != '' && footboardPage7 === '1'){
+				if(txtPage7){
+					$('.page7-main-right-gears').find('li').eq(gearNumPage7).attr('clickStatus', 'clickTwo');
+				}
+				$(this).addClass('zdy-stop');
+				$('.feedback').text('控制成功').addClass('feedback-active');
+				gearNext();
+			}
+		});
+	}
+	function gearNext(){
+		var gearNum = 0;
+		$.each($('.page7-main-right-gears').find('li'), function(index, item){
+			if(item.getAttribute('clickStatus') === 'clickTwo'){
+				gearNum++;
+			}
+		})
+		// console.log(gearNum, $('.page7-main-right-gears').find('li').length);
+		if(gearNum === $('.page7-main-right-gears').find('li').length){
+			NextDarkOrLignt(1);	
+		}
+	}
+</script>

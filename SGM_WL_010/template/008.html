@@ -1,0 +1,101 @@
+﻿		<div id="container_td" class="inner_container">
+			<!-- <audio src="audio/008.mp3" id="audio1" autoplay="autoplay"></audio> -->
+			<script type="text/javascript">
+				IsSpearker();
+			</script>
+			<audio src="audio/correct.mp3"  id="correct"></audio>
+			<audio src="audio/error.mp3"  id="error"></audio>
+			<div class="selection_box" id="topic" >
+				<p class="selection_box_description">
+					<span>诊断策略检查</span>
+				</p>
+				<div class="selection_box_con">
+					<p class="selection_box_title">
+						请您依照先后顺序排列初步检查项目的顺序(拖拽题):
+					</p>
+					<div id="tdjh" class="tdjh">
+						<div id="tdh2" class="tdh2">
+							<div class="td2">1</div>
+							<div class="td2">2</div>
+							<div class="td2">3</div>
+						</div>
+						<div id="td_nr2" class="td_nr2">
+							<ul id="sortable_gz" class="sortable_gz">
+								<li id="a">检查维修历史</li>
+								<li id="c">检查服务通告</li>
+								<li id="b">检查故障代码</li>
+							</ul>		
+						</div>
+
+						
+					<button   class="btn005 selection_box_submit"  id="btnSubmit" onclick="answerSubmit()" > 提&nbsp;&nbsp;交</button>
+				</div>
+			</div>
+		</div>
+	</div>
+				<div id="myModal" class="reveal-modal" >
+					<h2 class="reveal_modal_c">
+						正确
+					</h2>
+					<p>
+						<span>正确，</span>初步检查项目的排列顺序为：“检查故障代码——检查维修历史——检查服务通告”
+					</p>
+					<button  class="btn_goNext"  ng-click="GoNextPage();" >继续</button>
+
+					<a class="close-reveal-modal">×</a>
+				</div>
+				<div class="clear"></div>
+
+				<div id="myModal_1" class="reveal-modal_1" >
+					<h2 class="reveal_modal_c">
+						错误
+					</h2>
+					<p>
+						<span>不正确，</span>再试试看。
+					</p>
+					<button class="btn_goNext" id="rtn-005">返回</button>
+					<a class="close-reveal-modal">×</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+
+	<script type="text/javascript">
+		slideShowOrHide(0);
+		slideHideAndDark();
+			  $( "#sortable_gz" ).sortable({
+				revert: true,
+				start:function(event,ui){
+					$(ui.item).css('color','#cacaca')
+				},
+				deactivate:function(event,ui){
+					$(ui.item).css('color','#fff')
+				}
+			  });
+			  $( "ul, li" ).disableSelection();
+		 function answerSubmit(){
+			 var answer = "";
+			 $("#sortable_gz li").each(function(i){
+				 answer+=$(this).attr("id");
+				 //answer=answer+$(this).text().split(".")[0].replace(/[\r\n]/g,"");
+			 });
+			 // answers = answer.replace(/\s+/g, "");
+			 $("#correct")[0].load();
+			 $("#error")[0].load();
+			 if(answer=="bac"){
+				 $("#btnSubmit").attr("data-reveal-id","myModal");
+				 $("#audio1")[0].pause();
+				 $("#correct")[0].play();
+				 NextDarkOrLignt(1);
+			 }
+			 else{
+				 $("#btnSubmit").attr("data-reveal-id","myModal_1");
+				 $("#audio1")[0].pause();
+				 $("#error")[0].play();
+			 }
+		 }
+
+		</script>
+
+

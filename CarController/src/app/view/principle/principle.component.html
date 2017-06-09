@@ -1,0 +1,260 @@
+
+<div class="principle-body">
+   <div class="switch-controller"  [ngClass]="{'switch-controller-active':switchStatus}"></div>
+   <div class="switch2vcubox">
+        <div class="switch2vcu"></div>
+    </div>
+    <div class="vcu2dcdc" *ngIf="switchonStatuspublic"></div>
+    <div class="vcu2bms"  *ngIf="switchonStatuspublic"></div>
+    <div class="vcu2mcu"  *ngIf="switchonStatuspublic && dashboardService.stalls == 1"></div>
+
+    <div class="brakeline" *ngIf="(gearpanelService.isBrake == 1)"></div>
+    <div class="gasline"  *ngIf="switchonStatuspublic && dashboardService.stalls == 1"></div>
+    <div class="gearline" *ngIf="switchonStatuspublic && dashboardService.stalls == 1"></div>
+    <div class="signal" *ngIf="switchonStatuspublic && dashboardService.stalls == 1"></div>
+    <div class="arrow1 arrow-purple"></div>
+    <div class="arrow2 arrow-purple"></div>
+    <div class="arrow3 arrow-purple"></div>
+    <div class="arrow4 arrow-blue"></div>
+    <div class="arrow5 arrow-blue"></div>
+    <div class="arrow6 arrow-blue"></div>
+    <div class="arrow7 arrow-blue"></div>
+    <div class="arrow8 arrow-blue"></div>
+    <div class="arrow9 arrow-blue"></div>
+    <div class="machine2vcu"  *ngIf="chargeStatus"></div>
+    <div class="machine2kou" *ngIf="chargeStatus"></div>
+    <div class="arrow-turnBox">
+        <div class="arrow-turn2" id="arrow-turn2"></div>
+    </div>
+
+    <div class="arrow-turnBox2">
+        <div class="arrow-turn2" id="arrow-turn3"></div>
+    </div>
+
+
+    <div class="chargegun" *ngIf="chargeSwitchService.charge"></div>
+
+
+    <div class="parentbox1">
+        <div id="redpointbox">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    </div>
+    <div class="parentbox2">
+        <div id="redpointbox2">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    </div>
+    <div class="parentbox3">
+        <div id="redpointbox3">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    </div>
+    <div class="parentbox4">
+        <div id="redpointbox4">
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+        <div class="redpoint"></div>
+    </div>
+    </div>
+    <div class="parentbox5">
+        <div id="redpointbox5">
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+        </div>
+    </div>
+    <div class="parentbox6">
+        <div id="redpointbox6">
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+        </div>
+    </div>
+    <div class="parentbox7">
+        <div id="redpointbox7">
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+            <div class="smallredpoint"></div>
+        </div>
+    </div>
+    <div class="parentbox8">
+        <div id="redpointbox8">
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+        </div>
+    </div>
+    <div class="parentbox9">
+        <div id="redpointbox9">
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+            <div class="redpoint"></div>
+        </div>
+    </div>
+</div>

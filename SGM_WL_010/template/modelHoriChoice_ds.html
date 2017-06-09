@@ -1,0 +1,69 @@
+<div ng-app="mytool" ng-controller="toolChoice">
+		<!-- <audio ng-src="{{audioSrc(content.audioSrc[0])}}" autoplay="autoplay" id="audio1" on-finish-render-filters></audio> -->
+		<script type="text/javascript">
+			IsSpearker();
+		</script>
+		<audio src="audio/error.mp3"  id="error"></audio>
+	<div class="container_two">
+		<div class="Prompt_box" id="box">
+			<p class="text-1">
+				<button class="btn" id="btn" onclick="closeDiv()">
+					×
+				</button>
+				<span id="p-con" class="p-con" ng-bind="content.tips"></span>
+				<span class="p-con"  id="p-pro" ng-bind="content.tips2"></span>
+			</p>
+		</div>
+		<span id="popBtn" class="popBtn" onclick="toggleDiv()"></span>
+		<div class="titlee_two">
+			<a href="javascript:void(0);" id="btnNext1">
+				<span id="1" class="two"  ng-click="selectID='a';submit(1);">
+				<img src="images/commIcon/007_select1.png" />
+				<span class="two-select1">工具箱</span> </span>
+			</a>
+			<a href="javascript:void(0);" id="btnNext2">
+				<span id="2" class="two" ng-click="selectID='b';submit(2);">
+				<img src="images/commIcon/007_select2.png" />
+				<span class="two-select1">车辆内饰</span> </span>
+			</a>
+			<a href="javascript:void(0);" id="btnNext3">
+				<span id="3" class="two"  ng-click="selectID='c';submit(3);">
+				<img src="images/commIcon/007_select3.png" />
+				<span class="two-select1">车辆外饰</span> </span> </a>
+			<a href="javascript:void(0);" id="btnNext4">
+				<span id="4" class="two"  ng-click="selectID='d';submit(4);">
+				<img src="images/commIcon/007_select4.png" />
+				<span class="two-select1">系统管理</span> </span>
+			</a>
+			<a href="javascript:void(0);" id="btnNext5">
+				<span id="5" class="two"  ng-click="selectID='e';submit(5);">
+				<img src="images/commIcon/007_select5.png" />
+				<span class="two-select1">维修资料</span> </span>
+			</a>
+		</div>
+		<div id="myModal_1" class="reveal-modal_1" ng-hide="myError">
+			<h2 class="reveal_modal_c">
+				错误
+			</h2>
+			<p>
+				<span>不是正确的选择！</span>
+			</p>
+			<a class="close-reveal-modal"  ng-click="closeSubmit()">×</a>
+		</div>
+		<div style="text-align: center; clear: both"></div>
+
+	</div>
+</div>
+
+<script>
+	slideShowOrHide(0);
+	slideHideAndDark();
+	//setTimeout(IsSpearker,300);
+	$(".two").mouseover(function(){
+		$(this).css("margin-top","70px");
+	});
+	$(".two").mouseleave(function(){
+		$(this).css("margin-top","75px");
+	});	
+</script>
+

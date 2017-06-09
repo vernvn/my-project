@@ -1,0 +1,72 @@
+<div class="q-title">案例测试</div>
+<div class="q-main">
+
+    <div class="q-header">
+            <p class="q-header-intro">{{theme}}</p>
+    </div>
+    <ul class="q-body" *ngIf="idx<9">
+        <li *ngFor="let item of option">
+            <div class="part-image"><img src={{item.image}}/></div>
+            <div class="parn-name">{{item.name}}</div>
+            <label (click)="onSelect(item)" [ngClass]=" item.isRight ? 'radio':'un-radio'"   for="{{option.id}}"><input type="radio" name="{{option.id}}" /></label>
+        </li>
+    </ul>
+
+
+    <ul class="q2-head" *ngIf="idx==9">
+        <li id="a3_install">
+            <div *ngIf="dapart.a3">
+                <div  class="part-image"><img  src="./assets/images/question/j393.png"></div>
+                <div  class="parn-name">舒适控制单元</div>
+            </div>
+        </li>
+        <li id="a2_install">
+            <div *ngIf="dapart.a2">
+                <div class="part-image"><img src="./assets/images/question/ecu.png"></div>
+                <div  class="parn-name">ECU</div>
+            </div>
+        </li>
+        <li id="a4_install">
+            <div *ngIf="dapart.a4">
+                <div  class="part-image"><img  src="./assets/images/question/j764.png"></div>
+                <div  class="parn-name">电子转向柱锁</div>
+            </div>
+        </li>
+        <li id="a1_install">
+            <div *ngIf="dapart.a1">
+                <div  class="part-image"><img  src="./assets/images/question/key_group.png"></div>
+                <div  class="parn-name">锁止组件</div>
+            </div>
+        </li>
+    </ul>
+    <ul class="q2-body" *ngIf="idx==9">
+            <li  *ngFor="let item of option">
+                <div *ngIf="!item.isRight"  id={{item.id}}>
+                    <div  class="part-image"><img src={{item.image}}/></div>
+                    <div  class="parn-name">{{item.name}}</div>
+                </div>
+            </li>
+    </ul>
+
+    <div class="q-footer">
+        <button [disabled]="isSelected" class="btn-def" *ngIf="defaultBtn"  (click)="onCheckAnswer()">检查</button>
+        <button [disabled]="isSelected" class="btn-error" *ngIf="isCheck&&!isRight"  (click)="onCheckAnswer()">错误</button>
+        <button [disabled]="isSelected" class="btn-right" *ngIf="isCheck&&isRight"  (click)="onCheckAnswer()">正确</button>
+
+        <button class="q-btn-m" *ngIf="idx!=9" [disabled]="answerNumber >= 3 ? false :true" (click)="onRightKey()"  class="btn-def">答案</button>
+
+        <button class="q-btn-m" *ngIf="idx==9"  (click)="onDragTheme(true)"  class="btn-def">答案</button>
+
+        <button [disabled]="isNext" class="btn-def" *ngIf="idx!=9" (click)="nextQuestion()">提交</button>
+
+        <button [disabled]="isNext" *ngIf="idx==9" class="btn-def" (click)="resetAnswer()">重新测试</button>
+    </div>
+</div>
+
+
+<!--页码-->
+<div class="pagination-wapper">
+  <div class="button prev"></div>
+  <div class="pagination">--/--</div>
+  <div class="button next"></div>
+</div>

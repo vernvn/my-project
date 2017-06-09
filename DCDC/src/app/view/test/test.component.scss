@@ -1,0 +1,58 @@
+
+.test-body{
+    width: 901px;
+    height: 455px;
+    background: url(./images/test-bg.png);
+    position: absolute;left: 62px;top: -1px;
+    .hotareatest{
+        width: 80px;
+        height: 60px;
+        background: #f00;
+        opacity: 0.3;
+        position: absolute;left: 414px;top: 331px;
+        cursor:pointer;
+        z-index: 1;
+    }
+    .hotareareal{
+        width: 80px;
+        height: 60px;
+        position: absolute;left: 414px;top: 331px;
+        cursor:pointer;
+        z-index: 7;
+    }
+    .alert-part{
+        width: 220px;
+        height: 277px;
+        background: url(./images/alert-part.png);
+        position: absolute;left: 432px;top: 98px;
+        display: none;
+        z-index: 5;
+        
+    }
+    .closeAlertPart{
+        position: absolute;left: 623px;top: 104px;
+        color: #f1a703;
+        cursor:pointer;
+        font-size: 16px;
+        z-index: 8;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+    }
+    .hot{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        position: absolute;
+        display: none;
+    }
+    .hot1{
+        left: 493px;top: 203px;
+    }   
+    .hot2{
+        left: 502px;top: 313px;
+    }
+    .hot3{
+        left: 502px;top: 292px; 
+    }
+}

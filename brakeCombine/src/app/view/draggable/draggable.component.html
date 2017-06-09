@@ -1,0 +1,4 @@
+<div class="drag-body" [ngStyle]="{width:dragStyleCommon.width}">
+    <div class="drag-option" [ngStyle]="dragStyle()" [attr.answer]="dataAnswer.dragStyle.answer">{{dataAnswer.text}}</div>
+    <div class="drop-option" [ngStyle]="dropStyle()" [attr.answer]="dataAnswer.dropStyle.answer" *ngIf="!dataAnswer.dropStyle.answerDropNone"></div>
+</div>

@@ -1,0 +1,71 @@
+.plj-diagnostic-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 944px;
+    height: 560px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    .plj-pagination-wapper {
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+        z-index: 3;
+
+        width: 120px;
+        height: 30px;
+        .pagination {
+            float: left;
+
+            width: 60px;
+
+            line-height: 30px;
+            text-align: center;
+        }
+        .button {
+            float: left;
+
+            width: 30px;
+            height: 30px;
+        }
+        .prev {
+            &.light {
+                background-image: url("./images/prev.png");
+
+                cursor: pointer;
+            }
+
+
+            &.gray {
+                background-image: url("./images/prev_gray.png");
+
+                cursor: default;
+            }
+        }
+        .next {
+            &.light {
+                background-image: url("./images/next.png");
+
+                cursor: pointer;
+            }
+            &.gray {
+                background-image: url("./images/next_gray.png");
+
+                cursor: default;
+            }
+        }
+        .prev.light:hover {
+            background-image: url("./images/prev_light.png");
+
+            cursor: pointer;
+        }
+        .next.light:hover {
+            background-image: url("./images/next_light.png");
+
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,69 @@
+<div class="balance-contain dragSourceBalance"  *ngIf="balanceServiceMdata.balanceStatus">
+  <div class="start" (click)="start()" [ngClass]="{'start-active':balanceServiceMdata.balanceStart}"></div>
+  <div class="select" (click)="select()" [ngClass]="{'select-active':balanceServiceMdata.selectStatus}"></div>
+  <div class="up up-fix" (click)="up()" [ngClass]="{'up-active':balanceServiceMdata.upStatus == 2,'up-gray':balanceServiceMdata.upStatus == 0, 'up':balanceServiceMdata.upStatus == 1}"></div>
+  <div class="down down-fix" (click)="down()" [ngClass]="{'down-active':balanceServiceMdata.downStatus == 2,'down-gray':balanceServiceMdata.downStatus == 0,'down':balanceServiceMdata.downStatus == 1}"></div>
+  <div class="power-balance" (click)="power()" [ngClass]="{'power-balance-active':balanceServiceMdata.powerStatus}"></div>
+  <div class="showpage" *ngIf="balanceServiceMdata.powerStatus">
+      <ul>
+        <li class="activebalance gray">放电设置</li>
+        <li >充电设置</li>
+        <li class="gray">参数设置</li>
+      </ul>
+      <div class="selectPage" *ngIf="balanceServiceMdata.selectStatus">
+          <!--<div class="returnbalance" (click)="return()">返回</div>-->
+          <div class="table-head">
+              <span class="modelname">模块</span>
+              <span class="realv">实际电压</span>
+              <span class="setv">设定电压</span>
+              <span class="status">状态</span>
+              <span class="balance">均衡选择</span>
+          </div>
+          <div class="table-main">
+              <div class="model">
+                  <span class="modelname">1#</span>
+                  <span class="realv"><p *ngIf="this.appService.structurepageStatus">{{balanceService.Mout.Out1PowBat_111112_EPO}}</p></span>
+                  <span class="setv">3.7</span>
+                  <span class="status"><p *ngIf="balanceService.Mout.Out1PowBat_111112_EPO==3.7 && balanceServiceMdata.balanceStart && this.appService.structurepageStatus">完成</p><p *ngIf="balanceService.Mout.Out1PowBat_111112_EPO!=3.7 && balanceService.Mdata.balanceStart && this.appService.structurepageStatus">充电</p></span>
+                  <span class="selectyes">是</span>
+              </div>
+              <div class="model">
+                  <span class="modelname">2#</span>
+                  <span class="realv"><p *ngIf="this.appService.structurepageStatus">{{balanceService.Mout.Out1PowBat_112113_EPO}}</p></span>
+                  <span class="setv">3.7</span>
+                  <span class="status"><p *ngIf="balanceService.Mout.Out1PowBat_112113_EPO==3.7 && balanceServiceMdata.balanceStart && this.appService.structurepageStatus">完成</p><p *ngIf="balanceService.Mout.Out1PowBat_112113_EPO!=3.7 && balanceService.Mdata.balanceStart && this.appService.structurepageStatus">充电</p></span>
+                  <span class="selectyes">是</span>
+              </div>
+              <div class="model">
+                  <span class="modelname">3#</span>
+                  <span class="realv"><p *ngIf="this.appService.structurepageStatus">{{balanceService.Mout.Out1PowBat_113114_EPO}}</p></span>
+                  <span class="setv">3.7</span>
+                  <span class="status"><p *ngIf="balanceService.Mout.Out1PowBat_113114_EPO==3.7 && balanceServiceMdata.balanceStart && this.appService.structurepageStatus">完成</p><p *ngIf="balanceService.Mout.Out1PowBat_113114_EPO!=3.7 && balanceService.Mdata.balanceStart && this.appService.structurepageStatus">充电</p></span>
+                  <span class="selectyes">是</span>
+              </div>
+              <div class="model">
+                  <span class="modelname">4#</span>
+                  <span class="realv"><p *ngIf="this.appService.structurepageStatus">{{balanceService.Mout.Out1PowBat_114115_EPO}}</p></span>
+                  <span class="setv">3.7</span>
+                  <span class="status"><p *ngIf="balanceService.Mout.Out1PowBat_114115_EPO==3.7 && balanceServiceMdata.balanceStart && this.appService.structurepageStatus">完成</p><p *ngIf="balanceService.Mout.Out1PowBat_114115_EPO!=3.7 && balanceService.Mdata.balanceStart && this.appService.structurepageStatus">充电</p></span>
+                  <span class="selectyes">是</span>
+              </div>
+              <div class="model">
+                  <span class="modelname">5#</span>
+                  <span class="realv"><p *ngIf="this.appService.structurepageStatus">{{balanceService.Mout.Out1PowBat_115116_EPO}}</p></span>
+                  <span class="setv">3.7</span>
+                  <span class="status"><p *ngIf="balanceService.Mout.Out1PowBat_115116_EPO==3.7 && balanceServiceMdata.balanceStart && this.appService.structurepageStatus">完成</p><p *ngIf="balanceService.Mout.Out1PowBat_115116_EPO!=3.7 && balanceService.Mdata.balanceStart && this.appService.structurepageStatus">充电</p></span>
+                  <span class="selectyes">是</span>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="closebalance" (click)="closebalance()">X</div>
+  <div class="blackscreen" *ngIf="!balanceServiceMdata.powerStatus"></div>
+</div>
+
+<div class="displayboxbalance">
+  <div class="closebalanceindisplay" (click)="closebalance()"></div>
+</div>
+
+

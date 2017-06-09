@@ -1,0 +1,16 @@
+<div class="close-window-button">
+
+    <button class="project-name cursor-pointer" (click)="exitStudy();"></button>
+<div class="tip">
+  【开关】按钮，通过点击您可以保存进度后退出
+</div>
+</div>
+
+<div class="modal" *ngIf="modal" >
+    <div class="modal-dialog">
+        <p>请问您是否要退出该课程</p>
+        <hr>
+        <button (click)="closeWindow()" >是</button>
+        <button (click)="reStudy()">否</button>
+    </div>
+</div>

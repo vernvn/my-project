@@ -1,0 +1,83 @@
+
+@charset "utf-8";
+@font-face {
+    font-family: "UnidreamLED";
+    src: local("UnidreamLED"),
+    local("UnidreamLED"),
+    url("../font/UnidreamLED.ttf") format("truetype"),
+    url("../font/UnidreamLED.svg#UnidreamLED") format("svg"),
+    url("../font/UnidreamLED.ttf") format("truetype"),
+    url("../font/UnidreamLED.woff") format("woff");
+}
+.battery-contain{
+    position: absolute;
+    width:1124px;
+    height: 580px;
+    top: 0px;
+    left: -100px;
+
+    overflow:hidden;
+}
+#mask-battery {
+    position: absolute;
+    width:173px;
+    height: 173px;
+    top: 240px;
+    left: 290px;
+    z-index:10;
+    overflow:hidden;
+}
+.battery {
+    position: absolute;
+    left:0px;
+    width: 173px;
+    height: 173px;
+    float: left;
+    overflow: hidden;
+    background: url(../images/battery.png) no-repeat 0 0;
+}
+
+.battery-top {
+    position:absolute;
+    width: 105px;
+    height: 90px;
+    top:25px;
+    left:25px;
+    line-height:90px;
+    overflow: hidden;
+    text-align:left;
+    color: #454545;
+    font-size:45px;
+    font-family:"UnidreamLED";
+}
+#mask-svg{
+    position: absolute;
+    top: 0px;
+    left: -50px;
+    z-index: 5;
+}
+
+.hotspot{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    cursor: move;
+    z-index:12;
+    background: rgba(255, 0, 0, 0.5);
+}
+.hhjbattery_hotspot1{
+    top: 321px;
+    left: 329px;
+}
+.hhjbattery_hotspot2 {
+    top: 268px;
+    left: 430px;
+}
+.hhjbattery_hotspot3{
+    top: 351px;
+    left: 750px;
+}
+.hhjbattery_hotspot4 {
+    top: 368px;
+    left: 755px;
+}

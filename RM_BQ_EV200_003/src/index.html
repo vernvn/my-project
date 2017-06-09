@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+
+  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+  <link rel="stylesheet" href="./assets/js/progress_bar/progress_bar.css" />
+  <link rel="stylesheet" href="./assets/js/perfect_scrollbar/perfect-scrollbar.min.css" />
+  <script src="./assets/js/jquery-1.11.1.min.js"></script>
+  <script src="./assets/js/jquery-ui.min.js"></script>
+  <script src="./assets/js/shims_for_IE.prod.js"></script>
+  <script src="./assets/js/perfect_scrollbar/perfect-scrollbar.min.js"></script>
+  <script type="text/javascript" src="./assets/js/main.js"></script>
+  <script type="text/javascript" src="./assets/js/animat.js"></script>
+    <!-- <script type="text/javascript" src="./assets/js/error.js"></script> -->
+  <!-- <script type="text/javascript" src="./assets/js/adapter.js"></script> -->
+  <!--后台通讯文件js-->
+  <!-- <script type="text/javascript" src="./assets/js/map.js"></script> -->
+  <!-- <script type="text/javascript" src="./assets/js/dataObject.js"></script> -->
+  <!--后台通讯文件js-->
+  
+  <!--后台通讯文件js-->
+
+  <!--<% if (webpackConfig.htmlElements.headTags) { %>
+    <!-- Configured Head Tags  -->
+    <!--<%= webpackConfig.htmlElements.headTags %>
+      <% } %>-->
+       
+       
+
+</head>
+
+<body>
+
+  <div class="progress-bar" id="progressBar">
+        <div class="percentage" id="percentage">0%</div>
+        <div class="progress-bar-bg">
+            <div class="progress-bar-loading" id="progressBarLoading"> <div class="progress-bar-circle" ></div></div>
+        </div>
+    </div>
+    <app id="app">
+    </app>
+
+<script src="./assets/js/progress_bar/progress_bar.js" type="text/javascript" ></script>
+  <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
+    <!-- Webpack Dev Server reload -->
+    <script src="/webpack-dev-server.js"></script>
+    <% } %>
+
+
+
+</body>
+ <!-- base url -->
+ <!--<base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>-->
+ 
+</html>

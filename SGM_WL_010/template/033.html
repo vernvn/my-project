@@ -1,0 +1,55 @@
+<!-- <audio id="audio1" src="audio/033.mp3" autoplay="autoplay"></audio> -->
+<script type="text/javascript">
+    IsSpearker();
+</script>
+<!-- <audio id="audio3" src="audio/041-2.mp3" ></audio> -->
+<div>
+    <div class="Prompt_box" id="box">
+        <p class="text-1">
+            <button class="btn" id="btn" onclick="closeDiv()">
+                ×
+            </button>
+            <span id="p-con" >断开TCM X3插头，然后选择合适的工具。对其进行测量判断线路是否存在断路和短路。</span>
+            <span id="p-pro" >[说明：测量5、6端子之间电阻，判断线路是否存在断路；分别测量 5、6端子的对地电阻，判断线路是否存在对地短路；打开点火开关分别测量5、6端子对地电压，判断线路是否存在对电源短路。]
+            </span>
+        </p>
+    </div>
+    <span id="popBtn" class="popBtn" onclick="toggleDiv()"></span>
+    <img src="images/bgpages33.png" />
+</div>
+<!--万用表-->
+<ng-include src="'framework/multimeter/template/multimeterSvg.html'"></ng-include>
+<multimeter></multimeter>
+<div class="multimeter-drop">
+    <a rqPosition="1" class="right1" h_y="285" h_x="178"></a> <!--  -->
+    <a rqPosition="3" class="right3" h_y="262" h_x="164"></a> <!--  -->
+    <a rqPosition="2" class="right2" h_y="119" h_x="252"></a><!--  -->
+</div>
+<span class="close-information" onclick="informationHide();"></span>
+<div id="service-information">
+    <img src="images/svg/1940-1931.png" alt="">
+</div>
+<div class="ignition_switch">
+    <img id="switch_stalls" src="images/ignition_switch.png" class="ignition_switch_stalls" onclick="switchStalls()">
+</div>
+<!--<div ui-view="ignition"></div>-->
+<script>
+    slideToolBox(1);
+    slideNavList(1);
+    serviceDataIsFlicker(1);
+    MultimeterisShow = false;
+    stallStatus = true;
+    //裴露婕--20170112
+    $('.multimeter-drop').css('display', 'none');
+
+    function informationHide(){
+        $('#service-information').css('display', 'none');
+        $('.close-information').css('display', 'none');
+        if(MultimeterisShow){
+            slideToolBox(0);
+        }else{
+            slideToolBox(1);
+        }
+    }
+
+</script>

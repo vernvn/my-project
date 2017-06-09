@@ -1,0 +1,300 @@
+
+@mixin redpoint{
+    width: 5px;
+    height: 5px;
+    float: left;
+    margin-left: 5px;
+    position: relative;
+    background: #f00;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+.principle-body{
+    width: 831px;
+    height: 390px;
+    background: url(./images/principle-bg.png);
+    position: absolute;left: 100px;top: 25px;
+    .switchprinciple{
+        width: 16px;
+        height: 36px;
+        background: url(./images/switch.png);
+        position: absolute;left:58px;top: 200px;
+    }
+    .switchprincipletransform{
+        width: 16px;
+        height: 36px;
+        transform: rotate(-16deg);
+        background: url(./images/switch.png);
+        position: absolute;left:63px;top: 200px;
+    }
+    #redpointsquare1{
+        display: none;
+        position: absolute;
+        width: 175px;
+        height: 15px;
+        left: 63px;
+        top: 77px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare2{
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 45px;
+        left: 62px;
+        top: 85px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare3{
+        display: none;
+        position: absolute;
+        width: 175px;
+        height: 15px;
+        left: 70px;
+        top: 346px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare4{
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 45px;
+        left: 62px;
+        top: 310px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare5{
+        display: none;
+        position: absolute;
+        width: 85px;
+        height: 13px;
+        left: 686px;
+        top: 149px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare6{
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 55px;
+        left: 767px;
+        top: 153px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare7{
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 50px;
+        left: 767px;
+        top: 223px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare8{
+        display: none;
+        position: absolute;
+        width: 145px;
+        height: 15px;
+        left: 633px;
+        top: 275px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare9{
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 60px;
+        left: 625px;
+        top: 218px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare10{
+        display: none;
+        position: absolute;
+        width: 223px;
+        height: 15px;
+        left: 408px;
+        top: 211px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare11{
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 25px;
+        left: 237px;
+        top: 80px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare12{
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 25px;
+        left: 238px;
+        top:326px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare13{
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 25px;
+        left: 155px;
+        top:85px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+    #redpointsquare14{
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 25px;
+        left: 155px;
+        top:334px;
+        overflow: hidden;
+        .redpoint{
+            @include redpoint;
+        }
+    }
+
+    .flashransformer{
+        width: 73px;
+        height: 127px;
+        background: #fefe41;
+        position: relative;left: 348px;top: 155px;
+        opacity:0.7;
+        display: none;
+    }
+    .wavefilter{
+        width: 69px;
+        height: 37px;
+        background: #fefe41;
+        position: relative;left: 625px;top: 3px;
+        opacity:0.7;
+        display: none;
+    }
+    .transistor{
+        width: 76px;
+        height: 59px;
+        background: #fefe41;
+        position: absolute;
+        opacity:0.7;
+        display: none;
+    }
+    .transistor1{
+        left: 118px;top: 113px;
+    }
+    .transistor2{
+        left: 118px;top: 277px;
+    }
+    .transistor3{
+        left: 200px;top: 113px;
+    }
+    .transistor4{
+        left: 200px;top: 277px;
+    }
+    .impulsewave1Box{
+        width: 54px;
+        height: 80px;
+        position: absolute;left:175px;top:199px;  
+        overflow: hidden;
+        #impulsewave1{
+            width: 73px;
+            height: 80px;
+            background: url(./images/impulsewave1.png);
+            position: relative;left: -22px;top: 0;
+            display: none;
+        }
+    }
+    .impulsewave2Box{
+        width: 54px;
+        height: 80px;
+        position: absolute;left:259px;top:178px;  
+        overflow: hidden;
+        #impulsewave2{
+            width: 73px;
+            height: 80px;
+            background: url(./images/impulsewave1.png);
+            position: relative;left: -22px;top: 0;
+            display: none;
+        }
+    }
+    .impulsewave3Box{
+        width: 100px;
+        height: 45px;
+        position: absolute;left:412px;top:137px;  
+        overflow: hidden;
+        #impulsewave3{
+            width: 129px;
+            height: 45px;
+            background: url(./images/impulsewave3.png);
+            position: relative;left: -23px;top: 0;
+            display: none;
+        }
+    }
+    .impulsewave4Box{
+        width: 100px;
+        height: 45px;
+        position: absolute;left:412px;top:264px;  
+        overflow: hidden;
+        #impulsewave4{
+            width: 129px;
+            height: 45px;
+            background: url(./images/impulsewave3.png);
+            position: relative;left: -23px;top: 0;
+            display: none;
+        }
+    }   
+    .impulsewave5Box{
+        width: 35px;
+        height: 424px;
+        position: absolute;left:575px;top:130px;  
+        overflow: hidden;
+        #impulsewave5{
+            width: 67px;
+            height: 34px;
+            background: url(./images/impulsewave5.png);
+            position: relative;left: -31px;top: 0;
+            display: none;
+        }
+    } 
+}

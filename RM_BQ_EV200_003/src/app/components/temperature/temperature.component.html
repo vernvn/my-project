@@ -1,0 +1,19 @@
+<div class="temperature-contain"  *ngIf="temperatureServiceMdata.temperatureStatus">
+  <div class="temperature-wrap">
+    <div id="mask-temperature">
+        <div class="temperature" id="hehhe"   (mousemove)="temperaturechangeNum()" (mousedown)="temperatureNumout()" (mouseup)="temperatureNumin()">
+         <!--    <div class="temperature-topUnit"></div> -->
+            <div class="temperature-top" id="temperatureShowData" align="left"
+                  *ngIf="temperatureServiceMdata.temperatureScreenStatus">{{temperatureServiceMdata.temperatureScreenNum}}</div>
+            <div class="temperature-topHot" id="temperature-topHot" ></div>
+                             
+            
+        </div>   
+        <div class="temperature-coe close cursor-pointer" (click)="closetemperature();">X</div>
+    </div>
+    <div id="hhjtemperatureRed-hotspot" class="hhjtemperatureRed-hotspot ui-draggable" *ngIf="temperatureServiceMdata.SvgRedStatus"></div>
+    <div id="hhjtemperatureRed" class="temperatureRed hide-important" *ngIf ="temperatureServiceMdata.SvgRedStatus"></div>
+  </div>
+</div>
+
+

@@ -1,0 +1,13 @@
+.drag-body{
+    .drag-option{
+        cursor: pointer;
+        position: absolute;
+        z-index: 2;
+    }
+    .drop-option{
+        position: absolute;
+        color: #0ec300;
+        background: #fff;
+        z-index: 1;
+    }
+}

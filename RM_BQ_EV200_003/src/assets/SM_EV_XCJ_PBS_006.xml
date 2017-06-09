@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fault>
+	<metadata>
+		<schema>XCJ</schema>
+		<schemaversion>1.0</schemaversion>
+	</metadata>
+	<name>动力电池组的检测</name>
+	<courseNumber>SM_EV_XCJ_PBS_006</courseNumber>
+	<type>emu</type>
+	<types>emuCourseWare</types>
+	<purpose>技术方案测试</purpose>
+	<require>无</require>
+	<keyword>学习系统</keyword>
+	<language>中文</language>
+	<version>V0.1</version>
+	<description>无</description>
+	<client>PC</client>
+	<sumScore>100</sumScore>
+	<passCondition>60</passCondition>
+	<completeCondition>60</completeCondition>
+	<entry>SM_EV_XCJ_PBS_006/index.html</entry>
+	<handles>
+		<handle id="ver001" discription="点击“开始课程”进入页面"/>   <!--点击“开始课程”进入页面-->
+		<handle id="ver002" discription="点击“性能”按钮，或在“结构”页面点击“下一步”按钮，或在“检测”界面点击“上一步”按钮。"/>   <!--点击“性能”按钮，或在“结构”页面点击“下一步”按钮，或在“检测”界面点击“上一步”按钮。-->
+		<handle id="ver003" discription="点击“检测”按钮，或在“性能”页面点击“下一步”按钮。"/>   <!--点击“检测”按钮，或在“性能”页面点击“下一步”按钮。-->
+		<handle id="ver004" discription="点击图中子标题“1”"/>   <!--点击图中子标题“1”-->
+		<handle id="ver005" discription="点击图中子标题“2”"/>   <!--点击图中子标题“2”-->
+		<handle id="ver006" discription="点击图中子标题“3”"/>   <!--点击图中子标题“3”-->
+		<handle id="ver007" discription="点击图中子标题“4”"/>   <!--点击图中子标题“4”-->
+		<handle id="ver008" discription="点击图中子标题“5”"/>   <!--点击图中子标题“5”-->
+		<handle id="ver009" discription="点火开关转到ON档"/>   <!--点火开关转到ON档-->
+		<handle id="ver010" discription="点击“充电”按钮"/>   <!--点击“充电”按钮-->
+		<handle id="ver011" discription="电压测量"> <!--电压测量-->
+			<condition id="ver011_c01" linkVID="v01"  cdt="Equals" cdtValue="V"/>
+			<condition id="ver011_c02" linkVID="v02"  cdt="Equals" cdtValue="redUsed"/>
+			<condition id="ver011_c03" linkVID="v03"  cdt="Equals" cdtValue="blackUsed"/>
+			<condition id="ver011_c04" linkVID="v02"  cdt="NotEquals" cdtID="v03" />
+			<condition id="ver011_c05" linkVID="v10"  cdt="Equals" cdtValue="structure" />
+		</handle>
+		<handle id="ver012" discription="平衡仪使用"> <!--平衡仪使用-->
+			<condition id="ver012_c01" linkVID="v07"  cdt="Equals" cdtValue="openPower"/>
+			<condition id="ver012_c02" linkVID="v08"  cdt="Equals" cdtValue="intoPage"/>
+			<condition id="ver012_c03" linkVID="v09"  cdt="Equals" cdtValue="startBalance"/>
+			<condition id="ver012_c04" linkVID="v10"  cdt="Equals" cdtValue="structure" />
+		</handle>
+		<handle id="ver013" discription="绝缘测量"> <!--绝缘测量-->
+			<condition id="ver013_c01" linkVID="v01"  cdt="Equals" cdtValue="Res"/>
+			<condition id="ver013_c02" linkVID="v02"  cdt="Equals" cdtValue="redUsed"/>
+			<condition id="ver013_c03" linkVID="v03"  cdt="Equals" cdtValue="blackUsed"/>
+			<condition id="ver013_c04" linkVID="v02"  cdt="NotEquals" cdtID="v03" />
+			<condition id="ver013_c05" linkVID="v04"  cdt="Equals" cdtValue="used" />
+			<condition id="ver013_c06" linkVID="v10"  cdt="Equals" cdtValue="test" />
+		</handle>
+		<handle id="ver014" discription="温度测量"> <!--温度测量-->
+			<condition id="ver014_c01" linkVID="v05"  cdt="Equals" cdtValue="draged"/>
+			<condition id="ver014_c02" linkVID="v06"  cdt="Equals" cdtValue="used"/>
+			<condition id="ver014_c03" linkVID="v10"  cdt="Equals" cdtValue="test" />
+		</handle>
+	</handles>
+	<progresses>
+		 <progress type="handle" id="P001" hid="ver001" rate="2" kp=""/>
+ 		 <progress type="handle" id="P002" hid="ver002" rate="2" kp=""/>
+		 <progress type="handle" id="P003" hid="ver003" rate="2" kp=""/>
+ 		 <progress type="handle" id="P004" hid="ver004" rate="2" kp=""/>
+		 <progress type="handle" id="P005" hid="ver005" rate="2" kp=""/>
+		 <progress type="handle" id="P006" hid="ver006" rate="2" kp=""/>
+ 		 <progress type="handle" id="P007" hid="ver007" rate="2" kp=""/>
+		 <progress type="handle" id="P008" hid="ver008" rate="2" kp=""/>
+ 		 <progress type="handle" id="P009" hid="ver009" rate="2" kp=""/>
+		 <progress type="handle" id="P010" hid="ver010" rate="2" kp=""/>
+ 		 <progress type="handle" id="P011" hid="ver011" rate="2" kp=""/>
+		 <progress type="handle" id="P012" hid="ver012" rate="2" kp=""/>
+		 <progress type="handle" id="P013" hid="ver013" rate="2" kp=""/>
+ 		 <progress type="handle" id="P014" hid="ver014" rate="2" kp=""/>
+	</progresses>
+	<scores>
+	</scores>
+
+		<values>
+			<value id="v01" discription="万用表档位" value=""/>
+			<value id="v02" discription="红表笔使用" value=""/>
+			<value id="v03" discription="黑表笔使用" value=""/>
+			<value id="v04" discription="点击绝缘监测按钮" value=""/>
+			<value id="v05" discription="点击拖动温度计" value=""/>
+			<value id="v06" discription="将温度计的射线对准任一黄色热区。" value=""/>
+			<value id="v07" discription="打开平衡仪电源" value=""/>
+			<value id="v08" discription="点击“选择”和“确认”按钮进入平衡界面" value=""/>
+			<value id="v09" discription="点击“开始”按钮，进行平衡" value=""/>
+			<value id="v10" discription="指定页面" value=""/>
+		</values>
+
+	<questions>
+	</questions>
+	
+</fault>

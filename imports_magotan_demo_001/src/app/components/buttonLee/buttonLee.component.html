@@ -1,0 +1,5 @@
+<div class="com-button" [ngStyle]="setStyle()"  *ngIf="!(data.currentStyle?.display==='none')" halo [@halo]="data?.currentState?.animation?.animationOnID">
+    {{data.currentStyle.innerHTML}}
+    
+</div>
+<span *ngFor="let item of data?.currentState?.textArray" [ngStyle]="setTextStyle(item)"><br *ngIf="item?.isLF">{{item?.content}}</span>

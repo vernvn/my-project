@@ -1,0 +1,851 @@
+<div id='mask-obdscan' class="obdscanabs obdscan" *ngIf="!! obdscanServiceZdata.obdscanStatus ">
+	<div class="mask-obdscan obdscanabs"></div>
+	<div class="close" (click)="closedobdscan()">X</div>
+	<div class="is-off" *ngIf="! obdscanServiceZdata.isPower "></div>
+	<div class="obdscanInclude">
+		<!--obdscan-menu-->
+		<ul class="obdscan-menu" *ngIf="!!(obdscanServiceZdata.url=='obdscanMenu')">
+			<li class="active"> <span class="car spanbg" (click)="changeTemplate('car','obdscanMenu')"></span></li>
+			<li class="inactive"><span class="set"></span></li>
+			<li class="inactive"><span class="wxzd"></span></li>
+			<li class="inactive"><span class="sby"></span></li>
+			<li class="inactive"><span class="help"></span></li>
+		</ul>
+		<!--obdscan-menu-->
+
+
+		<!--car-->
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='car')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/品牌</div>
+		</div>
+		<div class="body" *ngIf="!!(obdscanServiceZdata.url=='car')">
+			<ul class="car-list">
+				<li style="cursor: pointer" (click)="changeTemplate('obdscan1','car')">北汽新能源</li>
+
+
+			</ul>
+		</div>
+		<!--car-->
+
+		<!--action-->
+
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='action')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/自动变速器电控系统/动作测试</div>
+		</div>
+		<div class="body" style="overflow: hidden" *ngIf="!!(obdscanServiceZdata.url=='action')">
+			<div class="sub-header" ng-bind="obdscanServiceZdata.obdscanData[obdscanServiceZdata.actionType][0]"></div>
+			<div class="action-box">说明：{{obdscanServiceZdata.obdscanData[obdscanServiceZdata.actionType][1]}}</div>
+			<div class="action-box">可用命令和预测结果：{{obdscanServiceZdata.obdscanData[obdscanServiceZdata.actionType][2]}}</div>
+			<div class="action-box">执行条件：{{obdscanServiceZdata.obdscanData[obdscanServiceZdata.actionType][3]}}</div>
+			<div class="btnwrap">
+				<button class="confirm" (click)="changeTemplate('actiontest','action','1')"></button>
+				<button class="cancel" (click)="changeTemplate('obdscan4','obdscan2','1')"></button>
+			</div>
+		</div>
+
+		<!--action-->
+
+
+		<!--actiontest-->
+		<div id="obsanbody" style="position: relative" *ngIf="!!(obdscanServiceZdata.url=='actiontest')">
+			<div class="header">
+				<div class="header1">小车匠诊断仪</div>
+				<div class="header2">汽车诊断/发动机控制系统/动作测试</div>
+			</div>
+			<div class="body">
+				<div class="obdscan-bottom-bell">
+					<div class="ac">车速</div><span ng-bind="obdscanService.Mout.Out1EngM_x_VehSpeed_x_x"></span>km/h</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">发动机转速</div><span ng-bind="obdscanService.Mout.Out1EngM_x_EngSpeed_x_x"></span>rpm</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">空气流量计</div><span ng-bind="obdscanService.Mout.Out1EngM_x_MAF_x_x"></span>gm/s</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">大气压力</div><span ng-bind="obdscanService.Mout.Out1EngM_x_AtmoPre_x_x"></span>kPa</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">冷却液温度</div><span ng-bind="obdscanService.Mout.Out1Sen_x_CoolantTemp_x_x"></span>℃</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">进气温度</div><span ng-bind="obdscanService.Mout.Out1Sen_x_IntakeAir_x_x"></span>℃</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">蓄电池电压</div><span ng-bind="obdscanService.Mout.Out1Sen_x_BattVolt_x_x"></span>V</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">加速踏板位置传感器1</div><span ng-bind="obdscanService.Mout.Out1Sen_x_AccelSensNo1"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">加速踏板位置传感器2</div><span ng-bind="obdscanService.Mout.Out1Sen_x_AccelSensNo2"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门位置传感器1</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsSensorVlt_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门位置传感器2</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsSensor2Vlt_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">喷油时间</div><span ng-bind="obdscanService.Mout.Out1EngM_x_InjecPort_x_x"></span>ms</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">喷油量</div><span ng-bind="obdscanService.Mout.Out1EngM_x_InjecVolCyl_x_x"></span>ml</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">炭罐电磁阀占空比</div><span ng-bind="obdscanService.Mout.Out1EngM_x_EvapVSV_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">EVAP净化流量</div><span ng-bind="obdscanService.Mout.Out1EngM_x_EvapPurFlow_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">净化密度学习值</div><span ng-bind="obdscanService.Mout.Out1EngM_x_PurDenLeaVal_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">清污阀占空比状态</div><span ng-bind="obdscanService.Mout.Out1EngM_x_EvapPurgeVSV_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">目标空燃比</div><span ng-bind="obdscanService.Mout.Out1EngM_x_TarAFRatio_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">空燃比</div><span ng-bind="obdscanService.Mout.Out1EngM_x_AFLamB1S1_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">空燃比传感器电压</div><span ng-bind="obdscanService.Mout.Out1Sen_x_AFSVltB1S1_x_x"></span>V</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">空燃比传感器电流</div><span ng-bind="obdscanService.Mout.Out1Sen_x_AFSCurrentB1S1_x_x"></span>mA</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">短期燃油修正</div><span ng-bind="obdscanService.Mout.Out1EngM_x_FuelSFT_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">长期燃油修正</div><span ng-bind="obdscanService.Mout.Out1EngM_x_FuelLFT_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">总燃油修正</div><span ng-bind="obdscanService.Mout.Out1EngM_x_TotalFT1_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">点火提前角</div><span ng-bind="obdscanService.Mout.Out1EngM_x_IgnAdvance_x_x"></span>deg</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">制动灯开关</div><span ng-bind="obdscanService.Mout.Out1Sen_x_StopLightSw_x_x"></span></div>
+
+				<div class="obdscan-bottom-bell">
+					<div class="ac">计算负荷</div><span ng-bind="obdscanService.Mout.Out1EngM_x_CalcLoad_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">整车负荷</div><span ng-bind="obdscanService.Mout.Out1EngM_x_VehLoad_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">发动机运行时间</div><span ng-bind="obdscanService.Mout.Out1EngM_x_EngRunTime_x_x"></span>S</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">初始冷却液温度</div><span ng-bind="obdscanService.Mout.Out1Sen_x_InitEngCoolTemp_x_x"></span>℃</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">初始进气温度</div><span ng-bind="obdscanService.Mout.Out1Sen_x_InitIntakeAirTemp_x_x"></span>℃</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门怠速位置</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsIdlePosition_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门计算开启位置</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsReqPosition_x_x"></span>V</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门传感器位置</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsSenPosition_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门位置传感器1</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsPositionNo1_x_x"></span>V</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门位置传感器2</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsPositionNo2_x_x"></span>V</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门位置指令</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsPositionComm_x_x"></span>V</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门位置传感器1开启位置</div><span ng-bind="obdscanService.Mout.Out1Sen_x_SensOpenPos1_x_x">V</span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门位置传感器2开启位置</div><span ng-bind="obdscanService.Mout.Out1Sen_x_SensOpenPos2_x_x">V</span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门电机电流</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsMCurrent_x_x"></span>A</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门电机占空比</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsMDuty_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门电机开启占空比</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsMDutyOpen_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门电机关闭占空比</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsMDutyClose_x_x"></span>%</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门全关时学习值</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TpsFuCloLearn_x_x"></span>V</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">燃油泵/速度</div><span ng-bind="obdscanService.Mout.Out1Sen_x_OPSpeedStatus_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">后氧传感器</div><span ng-bind="obdscanService.Mout.Out1Sen_x_O2SB1S2_x_x"></span>V</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">气缸列1燃油系统状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_FuelSysStatus1_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">气缸列2燃油系统状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_FuelSysStatus2_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">爆震反馈值</div><span ng-bind="obdscanService.Mout.Out1Sen_x_KnockFedbackVal_x_x"></span>deg(CA)</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">爆震校正学习值</div><span ng-bind="obdscanService.Mout.Out1Sen_x_KnockCorrLeaVal_x_x"></span>deg(CA)</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">前氧传感器温度</div><span ng-bind="obdscanService.Mout.Out1Sen_x_CataTempB1S1_x_x"></span>℃</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">后氧传感器温度</div><span ng-bind="obdscanService.Mout.Out1Sen_x_CataTempB1S2_x_x"></span>℃</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">起动机信号</div><span ng-bind="obdscanService.Mout.Out1Sen_x_StarterSig_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">起动机控制</div><span ng-bind="obdscanService.Mout.Out1Sen_x_StarterCtrl_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">助力转向机信号</div><span ng-bind="obdscanService.Mout.Out1Sen_x_PowSteerSig_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">起动继电器</div><span ng-bind="obdscanService.Mout.Out1Sen_x_StartRelay_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">动力转向信号（历史）</div><span ng-bind="obdscanService.Mout.Out1Sen_x_PowStSigRec_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">ACC继电器</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ACCRelay_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">空档位置开关信号</div><span ng-bind="obdscanService.Mout.Out1Sen_x_NeuPosSWSig_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">空调信号</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ACSignal_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">节气门关闭位置开关信号</div><span ng-bind="obdscanService.Mout.Out1Sen_x_CloseTpsPosSw_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">燃油切断状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_FuelCutCond_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">仪表通信</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ImmoCommu_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">电器负荷信号</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ElecLoadSig_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">故障码（包含历史故障）</div><span ng-bind="obdscanService.Mout.Out1Sen_x_CodeIncluHis_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">故障灯点亮后行驶里程</div><span ng-bind="obdscanService.Mout.Out1Sen_x_MilOnRunDis_x_x"></span>Km</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">故障灯点亮后行驶时间</div><span ng-bind="obdscanService.Mout.Out1Sen_x_RunTimMilOn_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">故障码清除后行驶时间</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TimAftDTCCle_x_x"></span>min</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">故障码清除后行驶里程</div><span ng-bind="obdscanService.Mout.Out1Sen_x_DisFroDTCCle_x_x"></span>Km</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">故障码清除后的暖机循环数</div><span ng-bind="obdscanService.Mout.Out1Sen_x_WarCycCleDTC_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">诊断接口端子TC和CG</div><span ng-bind="obdscanService.Mout.Out1Sen_x_TCandTE1_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">点火计数器</div><span ng-bind="obdscanService.Mout.Out1Sen_x_IgnTrigCount_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">一缸失火数</div><span ng-bind="obdscanService.Mout.Out1Sen_x_Cyl1MisCount_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">二缸失火数</div><span ng-bind="obdscanService.Mout.Out1Sen_x_Cyl2MisCount_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">三缸失火数</div><span ng-bind="obdscanService.Mout.Out1Sen_x_Cyl3MisCount_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">四缸失火数</div><span ng-bind="obdscanService.Mout.Out1Sen_x_Cyl4MisCount_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">所有缸失火数</div><span ng-bind="obdscanService.Mout.Out1Sen_x_AllCylMisCount_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">失火时发动机转速</div><span ng-bind="obdscanService.Mout.Out1Sen_x_MisfireRPM_x_x"></span>rpm</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">失火时发动机负荷</div><span ng-bind="obdscanService.Mout.Out1Sen_x_MisfireLoad_x_x"></span>g/rev</div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">发动机缺火极限检测</div><span ng-bind="obdscanService.Mout.Out1Sen_x_MisfireMargin_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">冷却风扇</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ElecFanMotor_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">怠速燃油切断</div><span ng-bind="obdscanService.Mout.Out1Sen_x_IdleFuelCut_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">燃油切断TAU</div><span ng-bind="obdscanService.Mout.Out1Sen_x_FCTAU_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">涡轮输入转速</div><span ng-bind="obdscanService.Mout.Out1Sen_x_SPDNT_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">超速切断开关</div><span ng-bind="obdscanService.Mout.Out1Sen_x_OverCutSw_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">换档杆P档开关状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ShSwStPrange_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">换档杆R档开关状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ShSwStRrange_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">换档杆2档开关状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ShSwSt2range_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">换档杆L档开关状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ShSwStLrange_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">换档杆N档开关状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ShSwStNrange_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">换档杆D档开关状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ShSwStDrange_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">换档杆3档开关状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ShSwSt3range_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">ATF油温度</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ATOilTemp_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">变距器锁止状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_LockUp_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">锁止电磁阀ST状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_STSoleSt_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">锁止电磁阀状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_LockUpSoSt_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">换档杆状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_ShiftSt_x_x"></span></div>
+				<div class="obdscan-bottom-bell">
+					<div class="ac">换档电磁阀SLT状态</div><span ng-bind="obdscanService.Mout.Out1Sen_x_SLTSoleSt_x_x"></span></div>
+			</div>
+
+			<div>
+				<div class="abs tk-1 draghandle" ng-show="obdscanServiceZdata.layerType=='lay1'">
+					<div class="abs title" ng-bind="obdscanServiceZdata.obdscanData[obdscanServiceZdata.actionType][0]"></div>
+					<div class="abs tk-1-zuo" (click)="leftAdjust('tmp1','tk-1-zuo');"></div>
+					<div class="abs tk-1-you" (click)="rightAdjust('tmp1','tk-1-you');"></div>
+					<div class="abs tk-1-cha" (click)="colsedPoplayer('.tk-1')"></div>
+					<div class="abs tk-1-text">1.5%</div>
+					<div class="abs tk-1-gun" style="left:202px;"></div>
+				</div>
+				<div class="abs tk-2 draghandle" ng-show="obdscanServiceZdata.layerType=='lay2'">
+					<div class="abs title" ng-bind="obdscanServiceZdata.obdscanData[obdscanServiceZdata.actionType][0]"></div>
+					<div class="abs tk-2-cha" (click)="colsedPoplayer('.tk-2')"></div>
+					<div class="abs tk-2-text"></div>
+					<div class="abs tk-2-zuo" (click)="adjustData(-12.5)"></div>
+					<div class="abs tk-2-zhong" (click)="adjustData(0)"></div>
+					<div class="abs tk-2-you" (click)="adjustData(12.5)"></div>
+				</div>
+
+				<div class="abs tk-3 draghandle" ng-show="obdscanServiceZdata.layerType=='lay3'">
+					<div class="abs title" ng-bind="obdscanServiceZdata.obdscanData[obdscanServiceZdata.actionType][0]"></div>
+					<div class="abs tk-3-cha" (click)="colsedPoplayer('.tk-3')"></div>
+					<div class="abs tk-3-text"></div>
+					<div class="abs tk-3-zuo" (click)="switchBtn('tk3','off')"></div>
+					<div class="abs tk-3-you" (click)="switchBtn('tk3','on')"></div>
+				</div>
+				<div class="abs tk-4 draghandle" ng-show="obdscanServiceZdata.layerType=='lay4'">
+					<div class="abs title" ng-bind="obdscanServiceZdata.obdscanData[obdscanServiceZdata.actionType][0]"></div>
+					<div class="abs tk-4-cha" (click)="colsedPoplayer('.tk-4')"></div>
+					<div class="abs tk-4-text"></div>
+					<div class="abs tk-4-zuo" (click)="switchBtn('tk4','off')"></div>
+					<div class="abs tk-4-you" (click)="switchBtn('tk4','on')"></div>
+					<div>
+						<div style="top:25px;left:10px" (click)="setInitVal(1)" class="abs tk-4-shu shu1">#1</div>
+						<div style="top:25px;left:73px" (click)="setInitVal(2)" class="abs tk-4-shu shu2">#2</div>
+						<div style="top:25px;left:136px" (click)="setInitVal(3)" class="abs tk-4-shu shu3">#3</div>
+						<div style="top:25px;left:199px" (click)="setInitVal(4)" class="abs tk-4-shu shu4">#4</div>
+						<div style="top:40px;left:10px" (click)="setInitVal(5)" class="abs tk-4-shu shu5">#5</div>
+						<div style="top:40px;left:73px" (click)="setInitVal(6)" class="abs tk-4-shu shu6">#6</div>
+						<div style="top:40px;left:136px" (click)="setInitVal(7)" class="abs tk-4-shu shu7">#7</div>
+						<div style="top:40px;left:199px" (click)="setInitVal(8)" class="abs tk-4-shu shu8">#8</div>
+					</div>
+				</div>
+
+				<div class="abs tk-5 draghandle" ng-show="obdscanServiceZdata.layerType=='lay5'">
+					<div class="abs title" ng-bind="obdscanServiceZdata.obdscanData[obdscanServiceZdata.actionType][0]"></div>
+					<div class="abs tk-5-zuo" (click)="leftAdjust('tmp2','tk-5-zuo');"></div>
+					<div class="abs tk-5-you" (click)="rightAdjust('tmp2','tk-5-you');"></div>
+					<div class="abs tk-5-cha" (click)="colsedPoplayer('.tk-5')"></div>
+					<div class="abs tk-5-text">0</div>
+					<div class="abs tk-5-gun" style="left:202px;"></div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<!--actiontest-->
+
+
+		<!--guzhang-->
+		<div *ngIf="!!(obdscanServiceZdata.url=='guzhang')">
+			<div class="header">
+				<div class="header1">小车匠诊断仪</div>
+				<div class="header2">汽车诊断/驱动电机系统(MCU)</div>
+			</div>
+		</div>
+		<div style="width:150px;height:128px;background: #eee;padding: 17px 91px;font-size: 12px" *ngIf="!!(obdscanServiceZdata.url=='guzhang')">
+			<p>
+				与汽车ECU通讯故障。
+			</p>
+			<p>
+				请确认:
+			</p>
+			<p>
+				1.该汽车是否装备此系统
+			</p>
+			<p>
+				2.此系统是否为电控系统
+			</p>
+			<p>
+				3.诊断接头连接是否正确
+			</p>
+			<p>
+				4.点火钥匙是否打开
+			</p>
+		</div>
+		<!--guzhang-->
+
+		<!--obdscan1-->
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='obdscan1')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/北汽新能源</div>
+		</div>
+		<div class="body" *ngIf="!!(obdscanServiceZdata.url=='obdscan1')">
+			<ul class="car-list">
+				<li style="cursor: pointer" (click)="changeTemplate('system','obdscan1')">EV160</li>
+				<li>绅宝EV</li>
+				<li>E150EV</li>
+				<li>EV200</li>
+				<li>M30EV</li>
+			</ul>
+		</div>
+		<!--obdscan1-->
+
+
+		<!--obdscan2-->
+
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='obdscan2')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/北汽新能源/EV160/驱动电机系统(MCU)</div>
+		</div>
+		<div class="body" *ngIf="!!(obdscanServiceZdata.url=='obdscan2')">
+			<ul class="car-list">
+				<li style="cursor: pointer" (click)="changeTemplate('sbycur','obdscan2','1')">当前故障码</li>
+				<!--<li style="cursor: pointer" (click)="changeTemplate('sby','obdscan2','1')">历史故障码</li>-->
+				<li style="cursor: pointer" (click)="changeTemplate('sby1','obdscan2','0')">清除故障码</li>
+				<li style="cursor: pointer" (click)="changeTemplate('obdscan3','obdscan2','1')">读取数据流</li>
+				<!--<li (click)="">特殊功能</li>-->
+			</ul>
+		</div>
+
+		<!--obdscan2-->
+
+		<!--obdscan3-->
+
+
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='obdscan3')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/驱动电机系统(MCU)/读取数据流</div>
+		</div>
+		<div class="body" *ngIf="!!(obdscanServiceZdata.url=='obdscan3')">
+			<div class="obdscan-bottom-bell">
+				<div class="ac">点火开关</div><span *ngIf="!!(obdscanService.Mout.Out1Mot_Ignit_Key_x_x == 1)">ON</span><span *ngIf="!!(obdscanService.Mout.Out1Mot_Ignit_Key_x_x == 0)">OFF</span></div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">档位</div><span *ngIf="!!(obdscanService.Mout.Out1Mot_Gear_Signal_x_x == 1)">R</span><span *ngIf="!!(obdscanService.Mout.Out1Mot_Gear_Signal_x_x == 2)">N</span>
+				<span
+					*ngIf="!!(obdscanService.Mout.Out1Mot_Gear_Signal_x_x == 3)">D</span>
+			</div>
+
+			<div class="obdscan-bottom-bell">
+				<div class="ac">制动信号</div><span *ngIf="!!(obdscanService.Mout.Out1Mot_Brake_Signal_x_x== 1)">ON</span><span *ngIf="!!(obdscanService.Mout.Out1Mot_Brake_Signal_x_x== 0)">OFF</span></div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">母线电流</div><span ng-bind="obdscanService.Mout.Out1Mot_Busbar_Current_x_x">{{obdscanService.Mout.Out1Mot_Busbar_Current_x_x}}</span>A</div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">母线电压</div><span ng-bind="obdscanService.Mout.Out1Mot_Busbar_Vlt_x_x">{{obdscanService.Mout.Out1Mot_Busbar_Vlt_x_x}}</span>V</div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">电机控制器高压检测完成标志</div><span>已完成</span></div>
+
+
+			<div class="obdscan-bottom-bell">
+				<div class="ac">驱动电机转矩，转速指令方向</div><span *ngIf="!!(obdscanService.Mout.Out1Mot_Drection_Order_x_x == 1)">正转指令</span><span *ngIf="!!(obdscanService.Mout.Out1Mot_Drection_Order_x_x == 0)">反转指令</span></div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">驱动电机当前状态</div><span>电动状态</span></div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">驱动电机当前工作模式 </div><span *ngIf="!!(obdscanService.Mout.Out1Mot_Motor_work_mode_x == 1)">转矩模式</span><span *ngIf="!!(obdscanService.Mout.Out1Mot_Motor_work_mode_x == 0)">发电模式</span></div>
+
+
+			<div class="obdscan-bottom-bell">
+				<div class="ac">MCU接收到的转速指令</div><span ng-bind="obdscanService.Mout.Out1Mot_MCU_Sped_Order_x">{{obdscanService.Mout.Out1Mot_MCU_Sped_Order_x}}</span></div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">电机当前转速</div><span ng-bind="obdscanService.Mout.Out1Mot_Motor_Sped_rpm_x">{{obdscanService.Mout.Out1Mot_Motor_Sped_rpm_x}}</span>rpm</div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">D轴电压</div><span ng-bind="obdscanService.Mout.Out1Mot_D_Shaft_Vlt_x"></span>V</div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">Q轴电压</div><span ng-bind="obdscanService.Mout.Out1Mot_Q_Shaft_Vlt_x"></span>V</div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">D轴电流</div><span ng-bind="obdscanService.Mout.Out1Mot_D_Shaft_Current_x"></span>A</div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">Q轴电流</div><span ng-bind="obdscanService.Mout.Out1Mot_Q_Shaft_Current_x"></span>A</div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">电机温度</div><span ng-bind="obdscanService.Mout.Out1Mot_Motor_Temp_x_x">{{obdscanService.Mout.Out1Mot_Motor_Temp_x_x}}</span>°C</div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">电机控制器温度</div><span ng-bind="obdscanService.Mout.Out1Mot_Motor_Ctr_Temp_x">{{obdscanService.Mout.Out1Mot_Motor_Ctr_Temp_x}}</span>°C</div>
+			<div class="obdscan-bottom-bell">
+				<div class="ac">MCU低压供电电源电压</div><span ng-bind="obdscanService.Mout.Out1Mot_MCU_Batt_Vlt_x"></span>V</div>
+		</div>
+
+		<!--obdscan3-->
+
+
+
+		<!--obdscan4-->
+
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='obdscan4')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/自动变速器电控系统/动作测试</div>
+		</div>
+		<div class="body" *ngIf="!!(obdscanServiceZdata.url=='obdscan4')">
+			<ul class="car-list">
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','1');actionTest('py','lay1');">喷油量测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','1');actionTest('krbcgq','lay2');">空然比传感器测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','0');actionTest('tgdcf','lay3');">碳罐电磁阀测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','1');actionTest('ryb','lay3');">燃油泵测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','1');actionTest('lqfs','lay3');">冷却风扇测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','1');actionTest('qdjdq','lay3');">起动继电器测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','1');actionTest('jqm','lay3');">节气门开启/关闭测试</li>
+
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('jqzstjf','lay5');">进气正时调节阀测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('pqzstjf','lay5');">排气正时调节阀测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('qgdy','lay4');">汽缸断油测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('SLTdcf','lay3');">SLT电磁阀测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('S1dcf','lay3');">S1电磁阀测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('S2dcf','lay3');">S2电磁阀测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('szdcf','lay3');">锁止电磁阀测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('SLdcf','lay3');">SL电磁阀测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('hdw','lay3');">换档位置测试</li>
+				<li style="cursor: pointer" (click)="changeTemplate('action','obdscan4','');actionTest('STdcf','lay3');">ST电磁阀测试</li>
+			</ul>
+		</div>
+		<!--obdscan4-->
+
+
+		<!--pai-->
+
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='pai')">
+			<div class="header1">小车匠诊断仪</div>
+		</div>
+		<div class="pai" *ngIf="!!(obdscanServiceZdata.url=='pai')">
+			<div class="tab_menu">
+				<ul>
+					<li style="border-right: 1px solid #eee" ng-class="{true: 'selected', false: ''}[obdscanServiceZdata.tabBox1]" (click)="tabMenu('tab1',$event.target)">中国车系</li>
+					<li style="border-right: 1px solid #eee" ng-class="{true: 'selected', false: ''}[obdscanServiceZdata.tabBox2]" style="border-right: 1px solid #eee"
+						(click)="tabMenu('tab2',$event.target)">欧美车系</li>
+					<li ng-class="{true: 'selected', false: ''}[obdscanServiceZdata.tabBox3]" (click)="tabMenu('tab3',$event.target)">日韩车系</li>
+				</ul>
+			</div>
+			<div class="tab_box">
+				<div >
+					<ul>
+						<li  class="dihao">帝豪</li>
+						<li class="tianyi" >天津一汽</li>
+						<li class="changcheng">长城</li>
+						<li class="dongnan">东南</li>
+						<li class="lufeng">陆风</li>
+						<li class="xiali">夏利</li>
+						<li class="jinbei">金杯</li>
+						<li class="qirui">奇瑞</li>
+						<li class="huachen">中华</li>
+						<li class="jianghuai">江淮</li>
+						<li class="lingmu">铃木</li>
+						<li class="yiqi">一汽轿车</li>
+						<li class="jili">吉利</li>
+						<li class="dongfeng">东风</li>
+						<li class="changfeng">长丰</li>
+						<li class="byd">比亚迪</li>
+						<li class="beijing">北京</li>
+						<li class="zhongtai">众泰</li>
+						<li class="changan">长安</li>
+						<li class="jiangling">江陵</li>
+						<li class="baojun">宝骏</li>
+						<li class="hafei">哈飞</li>
+					</ul>
+				</div>
+				<div *ngIf="!!(obdscanServiceZdata.tabBox2)">
+					<ul>
+						<li class="benchi">奔驰</li>
+						<li class="kaidilake">凯迪拉克</li>
+						<li class="baoma">宝马</li>
+						<li class="baoshijie">保时捷</li>
+						<li class="aeflmo">阿尔法罗密欧</li>
+						<li class="biaozhi">标志</li>
+						<li class="bieke">别克</li>
+						<li class="dazhong">大众</li>
+						<li class="daoqi">道奇</li>
+						<li class="xuetielong">东风雪铁龙</li>
+						<li class="feiyate">菲亚特</li>
+						<li class="leinuo">雷诺</li>
+						<li class="jiebao">捷豹</li>
+						<li class="kelaisile">克莱斯勒</li>
+						<li  class="aodi">奥迪</li>
+						<li class="fute">福特</li>
+						<li class="xuefolan">雪佛兰</li>
+						<li class="luhu">路虎</li>
+						<li class="mingjue">名爵</li>
+						<li class="mashaladi">玛莎拉蒂</li>
+						<li rongwei>荣威</li>
+						<li class="sikeda">斯柯达</li>
+						<li class="woerwo">沃尔沃</li>
+						<li class="lianhua">莲花</li>
+					</ul>
+				</div>
+				<div ng-show="obdscanServiceZdata.tabBox3">
+					<ul>
+						<li class="nisang">尼桑</li>
+						<li class="dafa">大发</li>
+						<li class="xiandai">现代</li>
+						<li class="fengtian" style="height:62px; padding-top:5px; cursor: pointer" (click)="changeTemplate('car','pai')">丰田</li>
+						<li class="leisa">雷克萨斯</li>
+						<li class="mazida">马自达</li>
+						<li class="bentian">本田</li>
+						<li class="qiya">起亚</li>
+						<li class="sanling">三菱</li>
+						<li class="sibalu">斯巴鲁</li>
+						<li class="dongben">东风本田</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--pai-->
+
+		<!--sby-->
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='sby')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/自动变速器电控系统/历史故障码</div>
+		</div>
+		<div class="body" *ngIf="!!(obdscanServiceZdata.url=='sby')">
+			<ul class="car-list">
+				<div class="eregerer" ng-show="(obdscanService.Mout.Out1Sen_MAF_THA_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_MAF_THALow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_MAF_THAHign_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_MAF_Code_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_MAF_Low_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_MAF_High_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_PVSV_Circuit_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_APP_DCircuit_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_APP_DLow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_APP_DHigh_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_APP_E_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_APP_ELow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_APP_EHigh_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_APP_DandEVltCorr_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_APP_DPerf_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_Low_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_Hign_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_SignalThick_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_SignalThin_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_PumpCurr_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_PumpCurrLow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_PumpCurrHigh_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_GNDLow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_GNDHighLow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_AF_ResSlow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_ACircuit_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_ALow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_AHigh_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_BCircuit_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_BLow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_BHigh_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_ABVltCorr_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_APerf_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_MLow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_MHigh_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_MCtrlOpenPos_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_MCtrlClosePos_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_MPerf_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_TPS_MPerf1_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_Cool_x_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_Cool_Low_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_Cool_High_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_Cool_Perf_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_ICAM_x_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_ICAM_ALow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_ICAM_AHigh_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_ECAM_x_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_ECAM_BLow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_ECAM_BHigh_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_4Cyl_Misfire_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_3Cyl_Misfire_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_2Cyl_Misfire_x_x=='0')&&
+        (obdscanService.Mout.Out1_1Cyl_Misfire_Code=='0')&&
+        (obdscanService.Mout.Out1Sen_ManyCyl_Misfire_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_System_TooThin_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_IC_ConnOne_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_IC_ConnTwo_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_IC_ConnThree_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_IC_ConnFour_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_Crank_x_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_Knock_1BHigh_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_Knock_1BLow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_Oxgen_HeatCtrlLow_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_CAM_Aactutor_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_CAM_AtimAdv_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_CAM_Bactutor_x_x=='0')&&
+        (obdscanService.Mout.Out1Sen_CAM_BtimAdv_x_x=='0')&&
+        (obdscanService.Mout.Out1DFC_OilPropVlv_x_x_x=='0')&&
+        (obdscanService.Mout.Out1DFC_APP_x_x_x=='0')&&
+        (obdscanService.Mout.In1AT_InShaft_Sen_x_Fault=='0')&&
+        (obdscanService.Mout.In1CVT_Gear_Sen_x_Fault=='0')">系统正常</div>
+
+
+
+				<div class="eregerer" ng-show="obdscanServiceMint.In1OBD_x_ClearCode_x_x!='0'"> 故障码已清除
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_MAF_THA_x_x!='0'"> P0110 进气温度电路故障
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_MAF_THALow_x_x!='0'"> P0112 进气温度电路低输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_MAF_THAHign_x_x!='0'"> P0113 进气温度电路高输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_MAF_Code_x_x!='0'"> P0100 质量或体积空气流量电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_MAF_Low_x_x!='0'"> P0102 质量或体积空气流量电路低输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_MAF_High_x_x!='0'"> P0103 质量或体积空气流量电路高输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_PVSV_Circuit_x_x!='0'"> P0443 燃油蒸气排放控制系统清污控制阀电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_APP_DCircuit_x_x!='0'"> P2120 节气门/ 踏板位置传感器/ 开关“D”电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_APP_DLow_x_x!='0'"> P2122 节气门/ 踏板位置传感器/ 开关“D”电路低输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_APP_DHigh_x_x!='0'"> P2123 节气门/ 踏板位置传感器/ 开关“D”电路高输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_APP_E_x_x!='0'"> P2125 节气门/ 踏板位置传感器/ 开关“E”电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_APP_ELow_x_x!='0'"> P2127 节气门/ 踏板位置传感器/ 开关“E”电路低输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_APP_EHigh_x_x!='0'"> P2128 节气门/ 踏板位置传感器/ 开关“E”电路高输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_APP_DandEVltCorr_x_x!='0'"> P2138 节气门/ 踏板位置传感器/ 开关“D” / “E”电压相关性
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_APP_DPerf_x_x!='0'"> P2121 节气门/ 踏板位置传感器/ 开关“D”电路范围/ 性能
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_Low_x_x!='0'"> P0031 氧 (A/F) 传感器加热器控制电路低电位 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_Hign_x_x!='0'"> P0032 氧 (A/F) 传感器加热器控制电路高电位 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_SignalThick_x_x!='0'"> P2196 氧 (A/F) 传感器信号始终偏浓 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_SignalThin_x_x!='0'"> P2195 氧 (A/F) 传感器信号始终偏稀 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_PumpCurr_x_x!='0'"> P2237 氧 (A/F) 传感器泵电流电路/ 断路 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_PumpCurrLow_x_x!='0'"> P2238 氧 (A/F) 传感器泵电流电路低电位 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_PumpCurrHigh_x_x!='0'"> P2239 氧 (A/F) 传感器泵电流电路高电位 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_GNDLow_x_x!='0'"> P2252 氧 (A/F) 传感器参考搭铁电路低电位 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_GNDHighLow_x_x!='0'"> P2253 氧 (A/F) 传感器参考搭铁电路高电位 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_AF_ResSlow_x_x!='0'"> P2A00 A/F 传感器电路响应迟缓 (B1 S1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_ACircuit_x_x!='0'"> P0120 节气门/ 踏板位置传感器/ 开关“A”电路故障
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_ALow_x_x!='0'"> P0122 节气门/ 踏板位置传感器/ 开关“A”电路低输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_AHigh_x_x!='0'"> P0123 节气门/ 踏板位置传感器/ 开关“A”电路高输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_BCircuit_x_x!='0'"> P0220 节气门/ 踏板位置传感器/ 开关“B”电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_BLow_x_x!='0'"> P0222 节气门/ 踏板位置传感器/ 开关“B”电路低输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_BHigh_x_x!='0'"> P0223 节气门/ 踏板位置传感器/ 开关“B”电路高输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_ABVltCorr_x_x!='0'"> P2135 节气门/ 踏板位置传感器/ 开关“A” / “B”电压相关性
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_APerf_x_x!='0'"> P0121 节气门/ 踏板位置传感器/ 开关“A”电路范围/ 性能故障
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_MLow_x_x!='0'"> P2102 节气门执行器控制电动机电路低电位
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_MHigh_x_x!='0'"> P2103 节气门执行器控制电动机电路高电位
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_MCtrlOpenPos_x_x!='0'"> P2111 节气门执行器控制系统 - 卡在打开位置
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_MCtrlClosePos_x_x!='0'"> P2112 节气门执行器控制系统 - 卡在关闭位置
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_MPerf_x_x!='0'"> P2118 节气门执行器控制电动机电流范围/ 性能
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_TPS_MPerf1_x_x!='0'"> P2119 节气门执行器控制节气门体范围/ 性能
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_Cool_x_x_x!='0'"> P0115 发动机冷却液温度电路故障
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_Cool_Low_x_x!='0'"> P0117 发动机冷却液温度电路低输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_Cool_High_x_x!='0'"> P0118 发动机冷却液温度电路高输入
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_Cool_Perf_x_x!='0'"> P0116 发动机冷却液温度电路范围/ 性能故障
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_ICAM_x_x_x!='0'"> P0340 凸轮轴位置传感器电路故障
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_ICAM_ALow_x_x!='0'"> P0342 凸轮轴位置传感器“A”电路低输入（B1 或单个传感器）
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_ICAM_AHigh_x_x!='0'"> P0343 凸轮轴位置传感器“A”电路高输入（B1 或单个传感器）
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_ECAM_x_x_x!='0'"> P0365 凸轮轴位置传感器“B”电路 (B1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_ECAM_BLow_x_x!='0'"> P0367 凸轮轴位置传感器“B”电路低输入 (B1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_ECAM_BHigh_x_x!='0'"> P0368 凸轮轴位置传感器“B”电路高输入 (B1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_4Cyl_Misfire_x_x!='0'"> P0304 检测到 4 号气缸缺火
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_3Cyl_Misfire_x_x!='0'"> P0303 检测到 3 号气缸缺火
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_2Cyl_Misfire_x_x!='0'"> P0302 检测到 2 号气缸缺火
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1_1Cyl_Misfire_Code!='0'"> P0301 检测到 1 号气缸缺火
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_ManyCyl_Misfire_x_x!='0'"> P0300 检测到随机/ 多个气缸缺火
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_System_TooThin_x_x!='0'"> P0171 系统过稀 (B1)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_IC_ConnOne_x_x!='0'"> P0351 点火线圈“A”初级/ 次级电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_IC_ConnTwo_x_x!='0'"> P0352 点火线圈“B”初级/ 次级电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_IC_ConnThree_x_x!='0'"> P0353 点火线圈“C”初级/ 次级电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_IC_ConnFour_x_x!='0'"> P0354 点火线圈“D”初级/ 次级电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_Crank_x_x_x!='0'"> P0335 曲轴位置传感器“A”电路
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_Knock_1BHigh_x_x!='0'"> P0328 爆震传感器 1 电路高输入 （B1 或单个传感器）
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_Knock_1BLow_x_x!='0'"> P0327 爆震传感器 1 电路低输入 （B1 或单个传感器）
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_Oxgen_HeatCtrlLow_x_x!='0'"> P0037 氧传感器加热器控制电路低电位 (B1 S2)
+				</div>
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_CAM_Aactutor_x_x!='0'"> P0010 凸轮轴位置 “A”执行器电路 (B1)
+				</div>
+
+				<!--  <div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_CAM_AtimAdv_x_x!='0'"> P0011 凸轮轴位置 “A” - 正时过于提前或系统性能 (B1)
+        </div>-->
+				<div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_CAM_Bactutor_x_x!='0'"> P0013 凸轮轴位置 “B”执行器电路 / 断路 (B1)
+				</div>
+
+				<!--  <div class="eregerer" ng-show="obdscanService.Mout.Out1Sen_CAM_BtimAdv_x_x!='0'"> P0014 凸轮轴位置 “B” - 正时过于提前或系统性能 (B1)</div>
+-->
+
+			</ul>
+		</div>
+
+		<!--sby-->
+
+
+		<!--sby1-->
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='sby1')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/驱动电机系统(MCU)/清除故障码</div>
+		</div>
+		<div class="body" *ngIf="!!(obdscanServiceZdata.url=='sby1')">
+			<ul class="car-list">
+				<!--        <div class="eregerer" ng-show="obdscanServiceMint.In1OBD_x_ClearCode_x_x!='0'"> 故障码已清除
+        </div>-->
+				<div class="eregerer" ng-show="obdscanServiceMint.In1OBD_x_ClearCode_x_x!='0'"> 故障码已清除
+				</div>
+			</ul>
+		</div>
+
+		<!--sby1-->
+
+
+		<!--sbycur-->
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='sbycur')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/驱动电机系统(MCU)/当前故障码</div>
+		</div>
+		<div class="body" *ngIf="!!(obdscanServiceZdata.url=='sbycur')">
+			<ul class="car-list">
+				<div class="eregerer">系统正常</div>
+
+
+				<!--   <div class="eregerer" ng-show="obdscanServiceMint.In1OBD_x_ClearCode_x_x!='0'"> 故障码已清除
+        </div>-->
+
+				<!--   <div class="eregerer" ng-show="obdscanService.Mout.Out1CVT_Gear_Sen_x_x!='0'"> P0706 多功能开关-F125不可靠信号
+        </div>-->
+
+
+			</ul>
+		</div>
+
+		<!--sbycur-->
+
+
+
+		<!--system-->
+		<div class="header" *ngIf="!!(obdscanServiceZdata.url=='system')">
+			<div class="header1">小车匠诊断仪</div>
+			<div class="header2">汽车诊断/北汽新能源/EV160</div>
+		</div>
+		<div class="body" *ngIf="!!(obdscanServiceZdata.url=='system')">
+			<ul class="car-list">
+				<li style="cursor: pointer" (click)="changeTemplate('obdscan2','system')"> 驱动电机系统(MCU)</li>
+				<li>整车控制器(VCU)</li>
+				<li>动力电池系统(BMS)</li>
+				<li>动力电池充电状态监测</li>
+				<li>车载充电机(CHG)</li>
+				<li>车身电控模块(BCM)</li>
+				<li>组合仪表(ICM)</li>
+				<li>制动防抱死(ABS)</li>
+				<li>安全气囊(SDM)</li>
+				<li>电动助力转向系统(EPS)</li>
+
+			</ul>
+		</div>
+
+		<!--system-->
+
+	</div>
+	<div class="power" (click)="obdscanPower()"></div>
+	<div class="obdscan-return" (click)="obdscanReturn()"></div>
+</div>
