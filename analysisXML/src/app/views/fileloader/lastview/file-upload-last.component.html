@@ -1,0 +1,28 @@
+<div class="file-upload-lastview">
+  <table class="table">
+    <tbody>
+    <tr *ngFor="let fileItem of selectFiles">
+      <td *ngIf="imgPreview">
+        <a [href]="fileItem.dataUrl" target="_blank">
+          <img *ngIf="fileItem.dataUrl" class="img-responsive" [src]="fileItem.dataUrl" [attr.alt]="fileItem.file.name"
+               [style.width]="previewWidth || ''"/>
+        </a>
+      </td>
+      <td>
+        {{fileItem.name}}
+      </td>
+      <td>
+        {{fileItem.displaySize}}
+      </td>
+      <td>
+        {{fileItem.file.lastModified | date:"MM/dd/yy" }}
+      </td>
+      <td>
+        <i *ngIf="!uploaded" class="glyphicon glyphicon-trash text-danger"></i>
+        <i *ngIf="uploaded" class="glyphicon glyphicon-ok text-success" ></i>
+        <i *ngIf=" selectFiles.length" class="glyphicon glyphicon-ban-circle forIn"></i>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

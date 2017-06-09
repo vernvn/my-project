@@ -1,0 +1,52 @@
+
+<ng-template #defaultToolbarTemplate let-toolbar="">
+  <div class="file-upload-toolbar">
+    <input #file type="file" (change)="toolbar.newFileChoose(file)" style="display: none" multiple> 
+    <!--<input type="file" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)" multiple />-->
+    <button class="btn btn-primary" (click)="toolbar.addNewFile(file, $event)"
+            [disabled]="toolbar.isMoreThanMaxItems()">
+      <i class="glyphicon glyphicon-plus"></i> {{toolbar.chooseButton}}
+    </button>
+    <button class="btn btn-info" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.uploadAllFiles()">
+      <i class="glyphicon glyphicon-upload"></i> {{toolbar.uploadButton}}
+    </button>
+    <button class="btn btn-danger" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.removeAllSelectedFiles()">
+      <i class="glyphicon glyphicon-trash"></i> {{toolbar.cancelButton}}
+    </button>
+  </div>
+</ng-template>
+
+
+
+<ng-template #defaultPreviewTemplate let-preview="">
+  <fileloader-preview [selectFiles]="preview.selectFiles" [imgPreview]="preview.imgPreview"
+                          [previewWidth]="preview.previewWidth"
+                          (removeFile)="preview.onRemoveFile($event)" (loadFile)="preview.onLoadFile($event)"></fileloader-preview>
+</ng-template>
+
+<ng-template #defaultLastTemplate let-last="">
+
+  <fileloader-last [selectFiles]="last.uploadFiles" [imgPreview]="last.imgPreview"
+                          [previewWidth]="last.previewWidth"
+                          [uploaded]="true"></fileloader-last>
+</ng-template>
+
+
+<div class="file-upload {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">
+
+  <ng-template [ngTemplateOutlet]="toolbarTemplate || defaultToolbarTemplate"
+               [ngOutletContext]="{ $implicit: this}"></ng-template>
+  <re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"
+                *ngIf="errors.length">
+    <ul>
+      <li *ngFor="let error of errors">{{error}}</li>
+    </ul>
+  </re-alert-box>
+
+  <ng-template [ngTemplateOutlet]="previewTemplate || defaultPreviewTemplate"
+               [ngOutletContext]="{ $implicit: this}"></ng-template>
+
+  <ng-template [ngTemplateOutlet]="lastTemplate || defaultLastTemplate"
+               [ngOutletContext]="{ $implicit: this}"></ng-template>
+</div>
+

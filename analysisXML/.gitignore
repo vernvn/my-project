@@ -1,0 +1,7 @@
+node_modules
+tmp
+*.rar
+source
+~$*.xlsx
+xlsx/*.xlsx
+xlsx/~$*.xlsx

@@ -1,0 +1,11 @@
+<div class="container">
+  <!--<h1 x-large class="sample-content">登录页面</h1>-->
+  <img src="./images/symbol.png" class="logo" alt=“登录” />
+  <div class="login">
+    <form (ngSubmit)="submitState(user)" autocomplete="off">
+      <input [value]="user.username" (input)="user.username = $event.target.value" placeholder="用户名" autofocus>
+      <input [value]="user.password" (input)="user.password = $event.target.value" placeholder="密码">
+      <button>登录</button>
+    </form>
+  </div>
+</div>

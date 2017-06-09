@@ -1,0 +1,27 @@
+
+		<div class="study">
+			<div class="study-demoOn" ng-click="vm.getcodelearning($index)" ng-repeat="x in vm.onstudydata track by $index" title={{x.name}}>
+				<div class="study-content">
+					<img src="images/course_bg.png" class="Study-show">
+					<!-- <p class="describe_font"><span>用心关爱</span><span>赢得信赖</span><span>精益求精</span></p>
+					<p class="describe_fontanother"><span>永无止境</span><span>携手共进</span><span>分享收获</span></p> -->
+					<div class="study-demoOnTitle">{{x.name}}</div>
+					<div class="study-demoOnTimeyear">{{x.data}}</div>			
+					<div class="study-demoOnProgressBarNum">
+						<div class="talkpromp">
+							<span class="percent">{{x.topProgress}}%</span>
+						</div>
+						<progress value={{x.topProgress}} max="100" id="progress" progress-indent>
+					</div>
+				</div>
+				<div class="study-demoOnTitle1">{{x.name}}</div>
+				<img src="images/clock.png" class="clock">
+				<div class="study-demoOnCare">
+					<span class="font20">{{x.minutes}}0:00</span>
+				</div>
+				<div class="study-demoOnCon">
+					分数: <span class="font20">{{x.topScore}}分</span>
+				</div>
+				<div class="underline"></div>
+			</div>
+		</div>

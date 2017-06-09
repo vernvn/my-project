@@ -1,0 +1,28 @@
+{
+  "id": "1",
+  "name": "haoliqiang",
+  "age": "18",
+  "sex": "man",
+  "handles" : {
+    "handle":{
+      "id" : 1,
+      "Des":"sadas"
+    },
+    "handle":{
+      "id" : 2,
+      "Des":"sadsdas"
+    },
+    "handle4":"ASdasdasd"
+  },
+  "progress" : {
+    "handle":{
+      "id" : 1,
+      "Des":"sadas"
+    },
+    "handle2":{
+      "id" : 2,
+      "Des":"sadas"
+    },
+    "handle4":"ASdasdasd"
+  }
+}

@@ -1,0 +1,22 @@
+<div class="login">
+	<div class="content">
+		<div class="container">
+			<div class="form-title">小车匠演示平台</div>
+			<div class="Prompt Js-hhj-index-login-warn-msg" ng-show="vm.loginStatus">*{{vm.errMes}}*</div>
+			<form class="login-form" action="javascript:;" method="post" id="loginForm" name="form" ng-submit="vm.submit(vm.form)">
+				<div class="input-icon left">
+					<div class="border-right"><img src="images/user.png" class="icon-user"></div>
+					<input  class="control-group" type="text" id="username" placeholder="账户名称 邮箱 手机号" name="username" ng-model="vm.form.username" ng-required="true" autofocus ng-change="vm.removeerrMes()"/>
+					<!-- <span ng-show="form.username.$invalid && form.username.$touched" class="loginmate">*请输入6至15位数字字母或下划线*</span> -->
+				</div>
+				<div class="input-icon left">
+					<div class="border-right2"><img src="images/screct.png" class="icon-lock"> </div>
+					<input   class="control-group" id="password" type="password" placeholder="密码" name="password" ng-model="vm.form.password" ng-required="true" autofocus/>
+				</div>
+				<div class="input-icon left">
+					<button class="control-group  button Js-hhj-index-login" type="submit" ng-disabled ="form.username.$invalid || form.password.$invalid" ng-class="{'button':form.username.$valid && form.password.$valid,'grey':form.username.$invalid || form.password.$invalid}">登录</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

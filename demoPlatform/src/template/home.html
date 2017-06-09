@@ -1,0 +1,152 @@
+
+<div class="indexBg" onload="load()">
+	<div class="container_top">
+		<!-- head  start  -->
+		<div class="top">
+			<div class="top-logo">
+				<img src="images/logo.png" class="logo">
+			</div>
+			<div class="top-menu" id="menunavbox">
+				<div class="practiceClassActivebox">
+					<div class="practiceClassActive blue" ng-click="vm.clickpracticeClass()" top-menu ui-sref="home" compile-nav>
+					<a ng-class="{'top-menuSelectActive':vm.mycourseStatus,'top-menuSelect':!vm.mycourseStatus}" class="top-menuSelectActive course">培训课程</a>
+				    </div>
+				    <div id="menubellbox">
+						<div class="main-menuBellActive main-menuBell" ng-click="vm.showData(1)" change-class ui-sref="home">故障模拟诊断</div>
+						<div class="main-menuBell" ng-click="vm.showData(2)" change-class ui-sref="home">情景模拟诊断</div>
+						<div class="main-menuBell" ng-click="vm.showData(3)" change-class ui-sref="home">原理互动教学</div>
+						<div class="main-menuBell" ng-click="vm.showData(4)" change-class ui-sref="home">互动拆装实训</div>
+						<div class="main-menuBell" ng-click="vm.showData(5)" change-class ui-sref="home">云课堂</div>
+						<div class="main-menuBell" ng-click="vm.showData(6)" change-class ui-sref="home">视频</div>
+					</div>
+				</div>
+			    <div class="mergeCoursebox">
+					<div class="mergeCourse" ng-click="vm.clickmergeCource()" top-menu compile-nav>
+			    	<a  class="top-menuSelect course">新能源课程</a>
+			    	</div>
+				</div>
+			    <div class="mystudyClassbox">
+			    	<div class="mystudyClass" ng-click="vm.clickmystudyClass()" top-menu ui-sref="home.studylearning" compile-nav>
+			    	<a ng-class="{'top-menuSelectActive':vm.mystudyStatus,'top-menuSelect':!vm.mystudyStatus}" class="top-menuSelect course">我的学习</a>
+			    	</div>
+				    <div id="menubellboxmystudy">
+						<div class="main-menuBell" ng-click="vm.onstudy()" ui-sref="home.studylearning" change-class>在学</div>
+						<div class="main-menuBell" ng-click="vm.alreadystudy()" ui-sref="home.studylearned" change-class>学完</div>
+					</div>
+			    </div>
+			    <div class="helpbox">
+			    	<div class="help" ui-sref="home.help"  compile-nav ng-click="vm.clickhelp()" top-menu>帮助说明</div>
+				    <div id="menubellboxhelp">
+						<div class="helpnav" change-class ng-click="vm.help()" ui-sref="home.help">使用帮助</div>
+						<div class="helpnav" change-class ng-click="vm.question()" ui-sref="home.help">常见问题</div>
+					</div>
+			    </div>
+			    
+			    <div class="download" onclick="popDownload();" top-menu>插件下载
+					<div class="icon_download"></div>
+			    </div>
+			</div>
+			
+			<div class="top-portrait" id="top-portrait">
+				<!-- <div class="top-portraitImg">
+					<img src="images/wh.jpg" width="46" height="46">
+				</div> -->
+				<div class="top-portraitDrop" id="top-portraitDrop">
+					<div class="headlogobox" person-nav>
+						<img src="images/wh.jpg" class="headlogo">
+						<!-- <div class="buttonpersonal" person-nav></div> -->
+					</div>
+					<div class="personalbox">
+						<div class="personalname">{{vm.name}}</div>
+						<div  class="top-portraitDropPass" ng-click="vm.changepassword()" compile-nav ui-sref="home.changepassword" change-class onclick="emptypassword()">修改密码</div>
+						<a herf="javascript:;" ng-click="vm.exit()" class="top-portraitDropExit">退出</a>
+					</div>
+				</div>
+			</div>
+			<div changepasswordpromp></div>
+		</div>
+		<div class="underlinetext"></div>
+		<div class="currentcourselist">
+			<div class="circletext"></div>
+			<div class="circletextanother"></div>
+			<div class="currentcourse">故障模拟诊断</div>
+		</div>
+		
+		<div class="main-menu">
+		</div>
+	</div>
+	<div class="viewbox">
+		<div class="container" >	
+			<!-- main begin -->
+			<div class="main">
+				 <!-- 右侧整体 -->
+				<div class="main-content" id="" ui-view>	
+					<div class="main-section" >   
+						<div class="main-sectionTitle" >   
+						  <div class="listbox" ng-repeat = "x in vm.lessiondata track by $index" ng-click="vm.getcoursewarepage($index)" title={{x.name}} change-class>
+						  		<!-- <img src="images/courseImg.png" class="courseImg">
+								<img src="images/care.png" class="care"> -->
+								<p class="tit">
+									{{x.name}}	
+								</p>
+								<div class="point1"></div>
+								<div class="pointanother"></div>
+						  </div>
+						</div>
+						<div id="section">
+							<div id="tabcont">		
+								<div id="Ctab_tab1" ng-repeat="y in vm.courselist">
+									<div class="main-sectionCon colorLightgray" 
+									 name="sectionContent" ng-click="vm.studySubmit(y.course_number,y.entry,y.fault_number,y.isPopup,y.isVideo)">
+										<a class="Ctit" title={{y.name}}>
+											{{y.name}}
+										</a>
+										<img src="images/course_bg.png" class="Ctit-show">
+										<!-- <p class="describe_font"><span>用心关爱</span><span>赢得信赖</span><span>精益求精</span></p>
+										<p class="describe_fontanother"><span>永无止境</span><span>携手共进</span><span>分享收获</span></p> -->
+									</div>
+									<p class="courseName">{{y.name}}</p>
+									<img src="images/clock.png" class="clock" ng-show="vm.mainservice.clockshow">
+									<p class="duration">{{y.duration}}</p>
+									<div class="underline"></div>
+								</div>		
+							</div>
+						</div>							
+					</div>				
+				</div> 
+			</div>	
+		</div>
+	</div>
+
+	<div class="paginator" ng-show="vm.mainservice.total > 0">
+		<div class="prev" ng-click="vm.getprev()" ctrl-paginator>
+			<img src="images/prev.png">
+		</div>
+		<ul>
+			<li paginator-action ng-click="vm.getknown(1)" class="first">1</li>
+			<li paginator-action ng-click="vm.getknown(2)">2</li>
+			<li paginator-action ng-click="vm.getknown(3)">3</li>
+			<li paginator-action ng-click="vm.getknown(4)">4</li>
+			<li paginator-action ng-click="vm.getknown(5)">5</li>
+			<li paginator-action ng-click="vm.getknown(6)">6</li>
+			<li paginator-action ng-click="vm.getknown(7)">7</li>
+			<!-- <li >...</li> -->
+		</ul>
+		<div class="next" ng-click="vm.getnext()" ctrl-paginator>
+			<img src="images/next.png">
+		</div>
+	</div>
+	
+	<div promp-err err-message='{{vm.errMessage}}' ng-show="vm.mainservice.erropen"></div>
+
+	<div class="videoBox" ng-if="vm.mainservice.videoStatus">
+		<video ng-src="{{vm.mainservice.videoSrc}}" controls="controls" width='640px' height="360px" autoplay="true"></video>
+		<div class="closeVideo" ng-click="vm.closeVideo()"></div>
+	</div>
+</div>
+<div class="videoShade" ng-show ="vm.mainservice.videoStatus"></div>
+<object id="plugin0" type="application/x-xiaochejiang" width="0px" height="0px" style="display: none">
+		<param name="onload" value="pluginLoaded"/>
+</object>
+
+
